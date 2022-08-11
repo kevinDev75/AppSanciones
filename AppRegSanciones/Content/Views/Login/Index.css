@@ -1,0 +1,31 @@
+﻿#sp-captcha {
+    display: block;
+    height: 45px;
+    padding: 10px 20px;
+    width: 85%;
+    background: #1D2939;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    letter-spacing: 20px;
+    float: left;
+}
+
+.dv-captcha .btn {
+    border-radius: 0;
+    width: 15%;
+    height: 45px;
+}
+/** General **/
+.btn-naranja {
+    color: #fff;
+    background-color: #FF7F07;
+    border-color: #FF7F07;
+}
+
+    .btn-naranja:hover {
+        color: #fff;
+        background-color: #da6004;
+        border-color: #da6004;
+    }

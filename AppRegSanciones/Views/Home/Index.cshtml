@@ -1,5 +1,5 @@
 ﻿
-<div class="Tittle">
+<div class="Tittle" style="margin-top:1rem">
     <h1 style="margin-bottom: 0; font-weight: 600;" class="text-themecolor">
         Lista de infracciones
     </h1>
@@ -9,24 +9,53 @@
 <div class="row manage">
     <div class="col-lg-8">
 
-
-    </div>
-    <div class="col-lg-4">
-        <div class="card">
-            <div class="card-body">
-                <div class="d-flex m-b-30 no-block">
-                    <h5 class="card-title m-b-0 align-self-center">% Infracciones</h5>
-
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="form-group mg-b-0">
+                    <label style="font-weight:500" id="lbl_fecha_inicio_buscador" data-i18n="start-date">Fecha Inicio: </label> <span class="tx-danger">*</span>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <i class="icon ion-calendar tx-16 lh-0 op-6"></i>
+                            </div>
+                        </div>
+                        <input type="text" name="txt_fecha_inicio" id="txt_fecha_inicio" class="form-control fc-datepicker" placeholder="DD/MM/YYYY">
+                    </div>
                 </div>
-                <div id="visitor" style="height:260px; width:100%;"></div>
-                <ul class="list-inline m-t-30 text-center font-12">
-                    <li><i class="fa fa-circle text-purple"></i> Tablet</li>
-                    <li><i class="fa fa-circle text-success"></i> Desktops</li>
-                    <li><i class="fa fa-circle text-info"></i> Mobile</li>
-                </ul>
             </div>
+            <div class="col-lg-6">
+                <div class="form-group mg-b-0">
+                    <label style="font-weight:500" id="lbl_fecha_inicio_buscador" data-i18n="start-date">Fecha Final: </label> <span class="tx-danger">*</span>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <i class="icon ion-calendar tx-16 lh-0 op-6"></i>
+                            </div>
+                        </div>
+                        <input type="text" name="txt_fecha_final" id="txt_fecha_final" class="form-control fc-datepicker" placeholder="DD/MM/YYYY">
+                    </div>
+                </div>
+            </div>
+
+
         </div>
     </div>
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex m-b-30 no-block">
+                        <h5 class="card-title m-b-0 align-self-center">% Infracciones</h5>
 
-</div>
+                    </div>
+                    <div id="visitor" style="height:260px; width:100%;"></div>
+                    <ul class="list-inline m-t-30 text-center font-12">
+                        <li><i class="fa fa-circle text-purple"></i> Tablet</li>
+                        <li><i class="fa fa-circle text-success"></i> Desktops</li>
+                        <li><i class="fa fa-circle text-info"></i> Mobile</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
 
+    </div>
+    @Scripts.Render("~/bundles/Manage")

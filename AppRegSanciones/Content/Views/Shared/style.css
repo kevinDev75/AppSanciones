@@ -1,0 +1,51 @@
+﻿.AjustImage {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+    .AjustImage div {
+        width: 90px;
+        height: 300px;
+        overflow: hidden;
+    }
+
+    .AjustImage img {
+        width: 100%;
+        height: auto;
+    }
+.FontMenu {
+    font-size: 0.7rem;
+    font-weight: bold;
+   
+}
+.menu-item-label {
+    margin-left: 1rem;
+}
+.menu-item-icon:hover, .menu-item-icon:checked{
+    color: #FF933E;
+}
+.br-menu-item {
+    margin-bottom: 0.5rem;
+}
+.pointer{
+    cursor:pointer;
+}
+.styleIcon {
+    float: right;
+    background: white;
+    padding: 0px 0px 0px 20px;
+}
+
+#btn_3_10_Generar {
+    margin-left: 50%;
+    width: 50%;
+    float: right;
+    background: #10242C;
+    border: #1D4352;
+    margin-top: 1rem;
+}
+
+
+

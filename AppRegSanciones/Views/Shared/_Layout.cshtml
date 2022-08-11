@@ -1,23 +1,67 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
-    
+    <title>App Sanciones</title>
 
 
-    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
-    <!-- Tell the browser to be responsive to screen width -->
 
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <!-- Favicon icon -->
+    @Styles.Render("~/Content/fortawesome")
+    @Styles.Render("~/Content/ionicons")
+    @Styles.Render("~/lib/style-github")
+    @Styles.Render("~/lib/style-select2")
+    @Styles.Render("~/Content/bracket")
+    @Styles.Render("~/Content/Shared")
+    @Styles.Render("~/Content/timepicker")
+    @Styles.Render("~/Content/datatables.net-dt")
+    @Styles.Render("~/Content/datatables.net-responsive-dt")
+    @Styles.Render("~/Content/sweetalert")
+    @Styles.Render("~/Content/sweetalert-minimal")
+
+    <!-- Variables -->
+    <!-- Libs -->
+    @RenderSection("scripts", required: false)
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jquery-ui")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/bootstrap-notify")
+    @Scripts.Render("~/bundles/perfect-scrollbar")
+    @Scripts.Render("~/bundles/moment")
+    @Scripts.Render("~/bundles/peity")
+
+    @Scripts.Render("~/bundles/bracket")
+    @Scripts.Render("~/bundles/timepicker")
+    @Scripts.Render("~/bundles/datatables.net")
+    @Scripts.Render("~/bundles/datatables.net-dt")
+    @Scripts.Render("~/bundles/datatables.net-responsive")
+    @Scripts.Render("~/bundles/datatables.net-responsive-dt")
+    @Scripts.Render("~/bundles/jquery.steps")
+
+    @Scripts.Render("~/bundles/sweetalert")
+
+    @Scripts.Render("~/bundles/function")
+    @Scripts.Render("~/bundles/config")
+    @Scripts.Render("~/bundles/layout")
+    @Scripts.Render("~/bundles/jquery.i18n")
+    @Scripts.Render("~/bundles/jquery.i18n.messagestore")
+    @Scripts.Render("~/bundles/jquery.i18n.fallbacks")
+    @Scripts.Render("~/bundles/jquery.i18n.language")
+
+    @Scripts.Render("~/bundles/internationalization")
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/highcharts-more.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+
     <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/favicon.png">
     <title>AdminWrap - Easy to Customize Bootstrap 4 Admin Template</title>
     <!-- Bootstrap Core CSS -->
-    <link href="../../assets/node_modules/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="../../assets/node_modules/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet">
     <!-- This page CSS -->
     <!-- chartist CSS -->
@@ -30,12 +74,8 @@
     <link href="../../css/pages/dashboard1.css" rel="stylesheet">
     <!-- You can change the theme colors from here -->
     <link href="../../css/colors/default.css" id="theme" rel="stylesheet">
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+
+
 
 </head>
 <body class="fix-header fix-sidebar card-no-border">
@@ -142,38 +182,36 @@
         <div class="page-wrapper">
             <div class="container-fluid">
                 @RenderBody()
-                </div>
-                <footer class="footer"> © 2018 Adminwrap by wrappixel.com </footer>
             </div>
-
+            <footer class="footer"> © 2018 Adminwrap by wrappixel.com </footer>
         </div>
 
+    </div>
 
-        @RenderSection("scripts", required: false)
 
-        <script src="../../assets/node_modules/jquery/jquery.min.js"></script>
-        <!-- Bootstrap popper Core JavaScript -->
-        <script src="../../assets/node_modules/bootstrap/js/popper.min.js"></script>
-        <script src="../../assets/node_modules/bootstrap/js/bootstrap.min.js"></script>
-        <!-- slimscrollbar scrollbar JavaScript -->
-        <script src="../../js/perfect-scrollbar.jquery.min.js"></script>
-        <!--Wave Effects -->
-        <script src="../../js/waves.js"></script>
-        <!--Menu sidebar -->
-        <script src="../../js/sidebarmenu.js"></script>
-        <!--Custom JavaScript -->
-        <script src="../../js/custom.min.js"></script>
-        <!-- ============================================================== -->
-        <!-- This page plugins -->
-        <!-- ============================================================== -->
-        <!--morris JavaScript -->
-        <script src="../../assets/node_modules/raphael/raphael-min.js"></script>
-        <script src="../../assets/node_modules/morrisjs/morris.min.js"></script>
-        <!--c3 JavaScript -->
-        <script src="../../assets/node_modules/d3/d3.min.js"></script>
-        <script src="../../assets/node_modules/c3-master/c3.min.js"></script>
-        <!-- Chart JS -->
-        <script src="../../js/dashboard1.js"></script>
+    @RenderSection("scripts", required: false)
+
+    <!-- Bootstrap popper Core JavaScript -->
+    <script src="../../assets/node_modules/bootstrap/js/popper.min.js"></script>
+    <!-- slimscrollbar scrollbar JavaScript -->
+    <script src="../../js/perfect-scrollbar.jquery.min.js"></script>
+    <!--Wave Effects -->
+    <script src="../../js/waves.js"></script>
+    <!--Menu sidebar -->
+    <script src="../../js/sidebarmenu.js"></script>
+    <!--Custom JavaScript -->
+    <script src="../../js/custom.min.js"></script>
+    <!-- ============================================================== -->
+    <!-- This page plugins -->
+    <!-- ============================================================== -->
+    <!--morris JavaScript -->
+    <script src="../../assets/node_modules/raphael/raphael-min.js"></script>
+    <script src="../../assets/node_modules/morrisjs/morris.min.js"></script>
+    <!--c3 JavaScript -->
+    <script src="../../assets/node_modules/d3/d3.min.js"></script>
+    <script src="../../assets/node_modules/c3-master/c3.min.js"></script>
+    <!-- Chart JS -->
+    <script src="../../js/dashboard1.js"></script>
 
 </body>
 </html>
