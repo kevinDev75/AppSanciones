@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sanciones.Entidades
+namespace Sanciones.Data
 {
-    public class Class1
+    public class SancionDa
     {
+
     }
 }
