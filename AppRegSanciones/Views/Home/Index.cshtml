@@ -1,6 +1,8 @@
 ﻿
 <div class="Tittle" style="margin-top:1rem">
-    <h1 style="margin-bottom: 0; font-weight: 600;" class="text-themecolor">
+    <h1 style="        margin-bottom: 0;
+        font-weight: 600;
+        color: #072327 !important" class="text-themecolor">
         Lista de infracciones
     </h1>
     <p>Historial de incidencias registradas por el superior a cargo</p>
@@ -39,20 +41,104 @@
 
 
         </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="form-group mg-b-0">
+                    <label style="font-weight:500" id="lbl_fecha_inicio_buscador" data-i18n="start-date">Estado: </label>
+                    <div class="input-group">
+                        <select class="form-control form-control-line">
+                            <option>Procesado</option>
+                            <option>Ejecutado</option>
+                            <option>Anulado</option>
+                        </select>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="align-self-lg-auto">
+                    <a style=" padding: 7px 25px;" href="" class="btn waves-effect waves-light btn btn-info pull-right hidden-sm-down">Buscar</a>
+                </div>
+            </div>
+
+        </div>
+
     </div>
-        <div class="col-lg-4">
+    <div class="col-lg-4">
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex m-b-30 no-block">
+                    <h5 class="card-title m-b-0 align-self-center">% Infracciones</h5>
+
+                </div>
+                <div id="visitor" style="height:260px; width:100%;"></div>
+                <ul class="list-inline m-t-30 text-center font-12">
+                    <li><i class="fa fa-circle text-purple"></i> Tablet</li>
+                    <li><i class="fa fa-circle text-success"></i> Desktops</li>
+                    <li><i class="fa fa-circle text-info"></i> Mobile</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-8">
+
+
+    </div>
+
+    </div>
+
+    <div class="row">
+        <!-- Column -->
+        <div class="col-lg-12">
             <div class="card">
                 <div class="card-body">
-                    <div class="d-flex m-b-30 no-block">
-                        <h5 class="card-title m-b-0 align-self-center">% Infracciones</h5>
 
+                    <div class="table-responsive m-t-20 no-wrap">
+                        <table class="table vm no-th-brd pro-of-month">
+                            <thead>
+                                <tr style="text-align:center;">
+                                    <th>Codigo</th>
+                                    <th>Descripción</th>
+                                    <th>Fecha ejecutado</th>
+                                    <th>Sancionador</th>
+                                    <th>Estado</th>
+                                    <th>Puntaje Demeritado</th>
+                                    <th>Opciónes</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="text-align:center;font-weight:400">
+
+                                    <td>
+                                        <h6>01604844</h6>
+                                    </td>
+                                    <td>Fumar o poseción de dragos o cigarros</td>
+                                    <td>10/01/2022</td>
+                                    <td>Kevin Rafael Cordova Sanchez</td>
+                                    <td>Procesado</td>
+                                    <td style="color:red">-3</td>
+                                    <td><div style="cursor:pointer"><i style="color: #50BDBA" class="fa fa-folder"></i></div></td>
+                                </tr>
+                                <tr style="text-align:center;font-weight:400">
+
+                                    <td>
+                                        <h6>01604844</h6>
+                                    </td>
+                                    <td>Fumar o poseción de dragos o cigarros</td>
+                                    <td>10/01/2022</td>
+                                    <td>Kevin Rafael Cordova Sanchez</td>
+                                    <td>Procesado</td>
+                                    <td style="color:red">-3</td>
+                                    <td><div style="cursor:pointer"><i style="color: #50BDBA" class="fa fa-folder"></i></div></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
                     </div>
-                    <div id="visitor" style="height:260px; width:100%;"></div>
-                    <ul class="list-inline m-t-30 text-center font-12">
-                        <li><i class="fa fa-circle text-purple"></i> Tablet</li>
-                        <li><i class="fa fa-circle text-success"></i> Desktops</li>
-                        <li><i class="fa fa-circle text-info"></i> Mobile</li>
-                    </ul>
                 </div>
             </div>
         </div>
