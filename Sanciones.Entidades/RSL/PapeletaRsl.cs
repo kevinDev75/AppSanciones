@@ -23,5 +23,6 @@ namespace Sanciones.Entidades.RSL
         public int id_estado_papeleta { get; set; }
         public string Nota { get; set; }
         public string nom_estado { get; set; }
+        public int id_tipo_sancion { get; set; }
     }
 }

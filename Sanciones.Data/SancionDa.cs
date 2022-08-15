@@ -29,7 +29,6 @@ namespace Sanciones.Data
                     parametros.Add("@cip_sancionador", oSavePapeletaFlt.cip_sancionador);
                     parametros.Add("@cip_sancionado", oSavePapeletaFlt.cip_sancionado);
                     parametros.Add("@codigo_infraccion", oSavePapeletaFlt.codigo_infraccion);
-                    parametros.Add("@id_estado_papeleta", oSavePapeletaFlt.id_estado_papeleta);
                     parametros.Add("@Nota", oSavePapeletaFlt.Nota);
 
                     db.Execute("SP_PAPELETA_INFRACCION_DISCIPLINARIA_INS_01", param: parametros, commandType: CommandType.StoredProcedure);
@@ -99,7 +98,6 @@ namespace Sanciones.Data
                 using (IDbConnection db = new SqlConnection(cadenaConexion))
                 {
                     var parametros = new DynamicParameters();
-                    parametros.Add("@id_reg_infraccion", oSaveRegistroInfraccionFlt.id_reg_infraccion);
                     parametros.Add("@id_papeleta_infraccion_disc", oSaveRegistroInfraccionFlt.id_papeleta_infraccion_disc);
                     parametros.Add("@cip_sancionador", oSaveRegistroInfraccionFlt.cip_sancionador);
                     parametros.Add("@cip_sancionado", oSaveRegistroInfraccionFlt.cip_sancionado);

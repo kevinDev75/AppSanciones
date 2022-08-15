@@ -12,7 +12,6 @@ namespace Sanciones.Entidades.FLT
 
     public class SaveRegistroInfraccionFlt
     {
-        public long id_reg_infraccion { get; set; }
         public long id_papeleta_infraccion_disc { get; set; }
         public string cip_sancionador { get; set; }
         public string cip_sancionado { get; set; }

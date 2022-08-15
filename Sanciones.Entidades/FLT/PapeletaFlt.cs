@@ -16,7 +16,6 @@ namespace Sanciones.Entidades.FLT
         public string cip_sancionador { get; set; }
         public string cip_sancionado { get; set; }
         public string codigo_infraccion { get; set; }
-        public int id_estado_papeleta { get; set; }
         public string Nota { get; set; }
     }
 
