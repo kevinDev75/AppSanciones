@@ -44,11 +44,11 @@ namespace AppRegSanciones.Controllers
         }
 
         [HttpPost]
-        public JsonResult GetListPapeletaInfraccion(UpdatePapeletaInfraccionFlt request)
+        public JsonResult GetListPapeletaInfraccion(GetListPapeletaInfraccionFlt request)
         {
-            var DataString = System.Web.HttpContext.Current.Request.Params.Get("JsonMaster").ToString();
+           
 
-            var response = _SancionBl.GetListPapeletaInfraccion(DataString);
+            var response = _SancionBl.GetListPapeletaInfraccion(request);
 
             return Json(new
             {

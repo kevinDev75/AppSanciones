@@ -49,13 +49,13 @@ namespace Sanciones.Logica
             return response;
         }
 
-        public List<GetListPapeletaRsl> GetListPapeletaInfraccion(string stringJson)
+        public List<GetListPapeletaRsl> GetListPapeletaInfraccion(GetListPapeletaInfraccionFlt request)
         {
             List<GetListPapeletaRsl> ListEntity = new List<GetListPapeletaRsl>();
 
             try
             {
-                GetListPapeletaInfraccionFlt request = JsonConvert.DeserializeObject<GetListPapeletaInfraccionFlt>(stringJson);
+                //GetListPapeletaInfraccionFlt request = JsonConvert.DeserializeObject<GetListPapeletaInfraccionFlt>(stringJson);
                 var oSancionDa = new SancionDa();
                 ListEntity = oSancionDa.GetListPapeletaInfraccion(request);
             }
