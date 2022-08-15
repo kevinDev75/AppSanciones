@@ -35,6 +35,7 @@
       <HintPath>..\packages\Dapper.1.10\lib\net40\Dapper.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -44,11 +45,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="CadetesDa.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SancionDa.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sanciones.Entidades\Sanciones.Entidades.csproj">
+      <Project>{181F0C1F-62BF-4ECA-B702-0907CCC36477}</Project>
+      <Name>Sanciones.Entidades</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

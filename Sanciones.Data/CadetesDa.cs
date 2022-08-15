@@ -1,13 +1,12 @@
 ﻿using Dapper;
 using Sanciones.Entidades.FLT;
+using Sanciones.Entidades.RSL;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Sanciones.Data
 {
@@ -43,6 +42,28 @@ namespace Sanciones.Data
             {
                 throw;
             }
+        }
+
+        public List<GetListCadetesRsl> GetListCadetes()
+        {
+            List<GetListCadetesRsl> ListEntity = new List<GetListCadetesRsl>();
+
+            try
+            {
+                using (IDbConnection db = new SqlConnection(cadenaConexion))
+                {
+                    var parametros = new DynamicParameters();
+                    
+                    ListEntity = db.Query<GetListCadetesRsl>("SP_CADETES_SEL_01", param: parametros, commandType: CommandType.StoredProcedure).ToList();
+                    db.Close();
+                    db.Dispose();
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return ListEntity;
         }
 
 

@@ -12,7 +12,6 @@ namespace Sanciones.Entidades.FLT
 
     public class SavePapeletaFlt
     {
-        public long id_papeleta_infraccion_disc { get; set; }
         public string codigo_papeleta_infraccion_disc { get; set; }
         public string cip_sancionador { get; set; }
         public string cip_sancionado { get; set; }
@@ -20,4 +19,21 @@ namespace Sanciones.Entidades.FLT
         public int id_estado_papeleta { get; set; }
         public string Nota { get; set; }
     }
+
+    public class UpdatePapeletaInfraccionFlt
+    {
+        public long id_papeleta_infraccion_disc { get; set; }
+        public int id_estado_papeleta { get; set; }
+        public string Nota { get; set; }
+    }
+
+    public class GetListPapeletaInfraccionFlt
+    {
+        public DateTime fecha_inicio { get; set; }
+        public DateTime fecha_fin { get; set; }
+        public string codigo_papeleta_infraccion_disc { get; set; }
+        public string cip_sancionador { get; set; }
+        public string cip_sancionado { get; set; }
+    }
+
 }

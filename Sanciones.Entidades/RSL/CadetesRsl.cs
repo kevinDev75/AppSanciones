@@ -4,9 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sanciones.Logica
+namespace Sanciones.Entidades.RSL
 {
-    public class Class1
+    class CadetesRsl
     {
     }
+
+    public class GetListCadetesRsl
+    {
+
+    }
+
+
 }

@@ -21,6 +21,8 @@ namespace Sanciones.Entidades.FLT
         public int puntaje_anterior { get; set; }
         public int puntaje_demerito { get; set; }
         public int puntaje_posterior { get; set; }
+        public int cant_arresto_simple { get; set; }
+        public int cant_arresto_rigor { get; set; }
     }
 
 }
