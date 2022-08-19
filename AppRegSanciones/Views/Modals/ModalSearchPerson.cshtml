@@ -1,19 +1,77 @@
 ﻿<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                ...
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 style="        font-weight: 800;
+        color: #545454
+" class="modal-title" id="exampleModalLabel">
+                        Buscar Persona
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <label for="recipient-name" class="col-form-label">CIP:</label>
+                                    <input type="text" class="form-control" id="recipient-name">
+                                </div>
+                                <div class="col-lg-7">
+                                    <label for="recipient-name" class="col-form-label">Nombres Completos:</label>
+                                    <input type="text" class="form-control" id="recipient-name">
+                                </div>
+                                <div class="col-lg-2">
+                                    <label style="opacity:0" for="recipient-name" class="col-form-label">.</label>
+                                    <button class="btn btn-outline-secondary form-control" type="button">Buscar</button>
+                                    <!--- <a class="btn waves-effect waves-light btn btn-info pull-right hidden-sm-down">Buscar</a>---->
+
+                                </div>
+
+                            </div>
+                            <div class="form-group">
+                                <div class="table-responsive m-t-20 no-wrap">
+                                    <table class="table vm no-th-brd pro-of-month">
+                                        <thead>
+                                            <tr style="text-align:center;">
+                                                <th>Codigo</th>
+                                                <th>Nombre Completos</th>
+                                                <th>Estado</th>
+                                                <th>Opciónes</th>
+
+
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr style="text-align:center;font-weight:400">
+
+                                                <td>
+                                                    <h6>01604844</h6>
+                                                </td>
+                                                <td>Kevin Rafael Cordova Sanchez</td>
+                                                <td>Activo</td>
+
+                                                <td><div style="cursor:pointer"><i style="color: #50BDBA" class="fa fa-check"></i></div></td>
+                                            </tr>
+
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+
+                </div>
             </div>
         </div>
     </div>

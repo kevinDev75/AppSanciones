@@ -95,6 +95,38 @@ namespace AppRegSanciones
             bundles.Add(new ScriptBundle("~/bundles/Manage").Include(
                      "~/Scripts/Manage/search.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/jquery.i18n").Include(
+           "~/Scripts/jquery.i18n/jquery.i18n.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/jquery.i18n.messagestore").Include(
+                "~/Scripts/jquery.i18n/jquery.i18n.messagestore.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/jquery.i18n.fallbacks").Include(
+                "~/Scripts/jquery.i18n/jquery.i18n.fallbacks.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/jquery.i18n.language").Include(
+                "~/Scripts/jquery.i18n/jquery.i18n.language.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/jquery.i18n.parser").Include(
+                "~/Scripts/jquery.i18n/jquery.i18n.parser.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/jquery.i18n.emitter").Include(
+                "~/Scripts/jquery.i18n/jquery.i18n.emitter.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/jquery.i18n.emitter.bidi").Include(
+                "~/Scripts/jquery.i18n/jquery.i18n.emitter.bidi.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/internationalization").Include(
+                "~/Scripts/internationalization/index.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/pdf/jquery-ui").Include(
+                "~/Scripts/pdf/jquery-ui.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/pdf/pdf-min").Include(
+                "~/Scripts/pdf/pdf.min.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/pdf/pdf-worker").Include(
+                "~/Scripts/pdf/pdf.worker.js"));
 
             #endregion
 
