@@ -1,11 +1,21 @@
 ﻿
 <div class="Tittle" style="margin-top:1rem">
-    <h1 style="        margin-bottom: 0;
+    <div class="row">
+        <div class="col-lg-10">
+            <h1 style="        margin-bottom: 0;
         font-weight: 600;
         color: #072327 !important" class="text-themecolor">
-        Lista de infracciones
-    </h1>
-    <p>Historial de incidencias registradas por el superior a cargo</p>
+                Lista de infracciones
+            </h1>
+            <p>Historial de incidencias registradas por el superior a cargo</p>
+        </div>
+        <div class="col-lg-2">
+            <button  style="float:right;margin:auto" type="button" class="btn btn-dark">Crear Infracción</button>
+        </div>
+    </div>
+
+
+
 </div>
 <br />
 <div class="row manage">
@@ -56,6 +66,20 @@
 
 
             </div>
+            <div class="col-lg-8">
+                <div class="form-group">
+                    <label style="font-weight:500" class="">Sancionador : </label>
+                    <div class="" style="display:flex">
+                        <input type="text" placeholder="Johnathan Doe" class="form-control form-control-line">
+
+                        <div style="margin: auto;padding: 0px 0.5rem 0 0.5rem;" class="" data-toggle="modal" data-target=".bd-example-modal-lg">
+                            <i style="cursor: pointer; font-size: 25px" class="fa fa-search"></i>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
         </div>
 
 
@@ -72,7 +96,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="align-self-lg-auto">
-                    <a style=" padding: 7px 25px;" href="" class="btn waves-effect waves-light btn btn-info pull-right hidden-sm-down">Buscar</a>
+                    <a style=" padding: 7px 25px;color:white" id="btnbuscar" class="btn waves-effect waves-light btn btn-info pull-right hidden-sm-down">Buscar</a>
                 </div>
             </div>
 
@@ -80,8 +104,15 @@
 
     </div>
     <div class="col-lg-4">
+
         <div class="card">
             <div class="card-body">
+                <h2 style="padding-bottom:1rem;        FONT-WEIGHT: 400;
+        TEXT-ALIGN: CENTER;
+        color: #545454
+">
+                    Puntaje Actual : <span style="FONT-WEIGHT: 800;">184</span>
+                </h2>
                 <div class="d-flex m-b-30 no-block">
                     <h5 class="card-title m-b-0 align-self-center">% Infracciones</h5>
 
@@ -117,6 +148,7 @@
                                 <th>Fecha ejecutado</th>
                                 <th>Sancionador</th>
                                 <th>Estado</th>
+<<<<<<< HEAD
                                 <th>Puntaje Demeritado</th>
                                 <th>Opciónes</th>
                             </tr>
@@ -134,6 +166,13 @@
                                 <td style="color:red">-3</td>
                                 <td><div style="cursor:pointer"><i style="color: #50BDBA" class="fa fa-folder"></i></div></td>
                             </tr>
+=======
+
+                                <th>Opciónes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+>>>>>>> 3df4b525c86e96aafe5706951ddb73d207b4f067
                             <tr style="text-align:center;font-weight:400">
 
                                 <td>
@@ -143,10 +182,41 @@
                                 <td>10/01/2022</td>
                                 <td>Kevin Rafael Cordova Sanchez</td>
                                 <td>Procesado</td>
+<<<<<<< HEAD
                                 <td style="color:red">-3</td>
                                 <td><div style="cursor:pointer"><i style="color: #50BDBA" class="fa fa-folder"></i></div></td>
                             </tr>
 
+=======
+
+                                <td><div style="cursor:pointer"><i style="color: #50BDBA" class="fa fa-folder"></i></div></td>
+                            </tr>
+                            <tr style="text-align:center;font-weight:400">
+
+                                <td>
+                                    <h6>01604844</h6>
+                                </td>
+                                <td>Fumar o poseción de dragos o cigarros</td>
+                                <td>10/01/2022</td>
+                                <td>Kevin Rafael Cordova Sanchez</td>
+                                <td>Procesado</td>
+
+                                <td><div style="cursor:pointer"><i style="color: #50BDBA" class="fa fa-folder"></i></div></td>
+                            </tr>
+                            <tr style="text-align:center;font-weight:400">
+
+                                <td>
+                                    <h6>01604844</h6>
+                                </td>
+                                <td>Fumar o poseción de dragos o cigarros</td>
+                                <td>10/01/2022</td>
+                                <td>Kevin Rafael Cordova Sanchez</td>
+                                <td>Procesado</td>
+
+                                <td><div style="cursor:pointer"><i style="color: #50BDBA" class="fa fa-folder"></i></div></td>
+                            </tr>
+
+>>>>>>> 3df4b525c86e96aafe5706951ddb73d207b4f067
                         </tbody>
                     </table>
                 </div>
@@ -154,8 +224,15 @@
         </div>
     </div>
 
+<<<<<<< HEAD
 </div>
 
 @{await Html.RenderPartialAsync("MyView", Model);}
 
+=======
+    @Html.Partial("../Modals/ModalSearchPerson")
+
+
+</div>
+>>>>>>> 3df4b525c86e96aafe5706951ddb73d207b4f067
 @Scripts.Render("~/bundles/Manage")

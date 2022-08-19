@@ -121,7 +121,11 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+<<<<<<< HEAD
     <Compile Include="Controllers\ManageController.cs" />
+=======
+    <Compile Include="Controllers\SancionController.cs" />
+>>>>>>> 3df4b525c86e96aafe5706951ddb73d207b4f067
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -2435,7 +2439,11 @@
     <Content Include="Scripts\login\index.js~RF5049d15.TMP" />
     <Content Include="Scripts\login\longbow.slidercaptcha.min.js.map" />
     <Content Include="Scripts\peity\LICENCE" />
+<<<<<<< HEAD
     <Content Include="Views\Manage\SearchCadete.cshtml" />
+=======
+    <Content Include="Views\Modals\ModalSearchPerson.cshtml" />
+>>>>>>> 3df4b525c86e96aafe5706951ddb73d207b4f067
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -2444,7 +2452,11 @@
     <Folder Include="Content\ionicons\scss\" />
     <Folder Include="Content\Views\Home\" />
     <Folder Include="Models\" />
+<<<<<<< HEAD
     <Folder Include="Views\NewFolder1\" />
+=======
+    <Folder Include="Views\Sancion\" />
+>>>>>>> 3df4b525c86e96aafe5706951ddb73d207b4f067
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -2458,6 +2470,16 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sanciones.Entidades\Sanciones.Entidades.csproj">
+      <Project>{181F0C1F-62BF-4ECA-B702-0907CCC36477}</Project>
+      <Name>Sanciones.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sanciones.Logica\Sanciones.LogicaNegocio.csproj">
+      <Project>{FB3F9A50-AD21-4C6B-B0A8-0C226ED4B2F0}</Project>
+      <Name>Sanciones.LogicaNegocio</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
