@@ -9,8 +9,9 @@
             </h1>
             <p>Historial de incidencias registradas por el superior a cargo</p>
         </div>
-        <div class="col-lg-2">
-            <button  style="float:right;margin:auto" type="button" class="btn btn-dark">Crear Infracción</button>
+        <div class="col-lg-2 ">
+            <!---data-toggle="modal" data-target=".bd-incidence-modal-lg" type="button"-->
+            <button style="float:right;margin:auto" class="btn btn-dark" id="btnIncidencia">Crear Infracción</button>
         </div>
     </div>
 
@@ -24,7 +25,7 @@
         <div class="row">
             <div class="col-lg-6">
                 <div class="form-group mg-b-0">
-                    <label style="font-weight:500" id="lbl_fecha_inicio_buscador" data-i18n="start-date">Fecha Inicio: </label> <span class="tx-danger">*</span>
+                    <label style="font-weight:500" id="lbl_fecha_inicio_buscador" >Fecha Inicio: </label> <span class="tx-danger">*</span>
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <div class="input-group-text">
@@ -37,7 +38,7 @@
             </div>
             <div class="col-lg-6">
                 <div class="form-group mg-b-0">
-                    <label style="font-weight:500" id="lbl_fecha_inicio_buscador" data-i18n="start-date">Fecha Final: </label> <span class="tx-danger">*</span>
+                    <label style="font-weight:500" id="lbl_fecha_inicio_buscador" >Fecha Final: </label> <span class="tx-danger">*</span>
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <div class="input-group-text">
@@ -58,6 +59,7 @@
                     <div class="input-group">
                         <select class="form-control form-control-line">
                             <option>Procesado</option>
+
                             <option>Ejecutado</option>
                             <option>Anulado</option>
                         </select>
@@ -70,7 +72,7 @@
                 <div class="form-group">
                     <label style="font-weight:500" class="">Sancionador : </label>
                     <div class="" style="display:flex">
-                        <input type="text" placeholder="Johnathan Doe" class="form-control form-control-line">
+                        <input disabled="disabled" id="txtSancionador" type="text" placeholder="Johnathan Doe" class="form-control form-control-line">
 
                         <div style="margin: auto;padding: 0px 0.5rem 0 0.5rem;" class="" data-toggle="modal" data-target=".bd-example-modal-lg">
                             <i style="cursor: pointer; font-size: 25px" class="fa fa-search"></i>
@@ -81,17 +83,6 @@
             </div>
 
         </div>
-
-
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="align-self-lg-auto">
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button>
-                </div>
-            </div>
-
-        </div>
-
 
         <div class="row">
             <div class="col-lg-12">
@@ -148,49 +139,11 @@
                                 <th>Fecha ejecutado</th>
                                 <th>Sancionador</th>
                                 <th>Estado</th>
-<<<<<<< HEAD
-                                <th>Puntaje Demeritado</th>
-                                <th>Opciónes</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr style="text-align:center;font-weight:400">
-
-                                <td>
-                                    <h6>01604844</h6>
-                                </td>
-                                <td>Fumar o poseción de dragos o cigarros</td>
-                                <td>10/01/2022</td>
-                                <td>Kevin Rafael Cordova Sanchez</td>
-                                <td>Procesado</td>
-                                <td style="color:red">-3</td>
-                                <td><div style="cursor:pointer"><i style="color: #50BDBA" class="fa fa-folder"></i></div></td>
-                            </tr>
-=======
 
                                 <th>Opciónes</th>
                             </tr>
                         </thead>
                         <tbody>
->>>>>>> 3df4b525c86e96aafe5706951ddb73d207b4f067
-                            <tr style="text-align:center;font-weight:400">
-
-                                <td>
-                                    <h6>01604844</h6>
-                                </td>
-                                <td>Fumar o poseción de dragos o cigarros</td>
-                                <td>10/01/2022</td>
-                                <td>Kevin Rafael Cordova Sanchez</td>
-                                <td>Procesado</td>
-<<<<<<< HEAD
-                                <td style="color:red">-3</td>
-                                <td><div style="cursor:pointer"><i style="color: #50BDBA" class="fa fa-folder"></i></div></td>
-                            </tr>
-
-=======
-
-                                <td><div style="cursor:pointer"><i style="color: #50BDBA" class="fa fa-folder"></i></div></td>
-                            </tr>
                             <tr style="text-align:center;font-weight:400">
 
                                 <td>
@@ -215,8 +168,19 @@
 
                                 <td><div style="cursor:pointer"><i style="color: #50BDBA" class="fa fa-folder"></i></div></td>
                             </tr>
+                            <tr style="text-align:center;font-weight:400">
 
->>>>>>> 3df4b525c86e96aafe5706951ddb73d207b4f067
+                                <td>
+                                    <h6>01604844</h6>
+                                </td>
+                                <td>Fumar o poseción de dragos o cigarros</td>
+                                <td>10/01/2022</td>
+                                <td>Kevin Rafael Cordova Sanchez</td>
+                                <td>Procesado</td>
+
+                                <td><div style="cursor:pointer"><i style="color: #50BDBA" class="fa fa-folder"></i></div></td>
+                            </tr>
+
                         </tbody>
                     </table>
                 </div>
@@ -224,15 +188,13 @@
         </div>
     </div>
 
-<<<<<<< HEAD
-</div>
-
-@{await Html.RenderPartialAsync("MyView", Model);}
-
-=======
     @Html.Partial("../Modals/ModalSearchPerson")
 
-
+    @Html.Partial("../Modals/ModalCreateincidence")
 </div>
->>>>>>> 3df4b525c86e96aafe5706951ddb73d207b4f067
+
+<script type="text/javascript">
+    var RouteRegistrar = '@Url.Action("Registrar", "Sancion")';
+</script>
+
 @Scripts.Render("~/bundles/Manage")

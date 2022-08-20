@@ -1,6 +1,6 @@
 ﻿<!-- Modal -->
 
-<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<div class="modal fade bd-example-modal-lg" id="ModalPersonSearch" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-content">
@@ -57,7 +57,7 @@
                                                 <td>Kevin Rafael Cordova Sanchez</td>
                                                 <td>Activo</td>
 
-                                                <td><div style="cursor:pointer"><i style="color: #50BDBA" class="fa fa-check"></i></div></td>
+                                                <td><div onclick="getPerson(12,'Kevin Rafael Cordova ')" style="cursor:pointer"><i style="color: #50BDBA" class="fa fa-check"></i></div></td>
                                             </tr>
 
 
@@ -76,3 +76,5 @@
         </div>
     </div>
 </div>
+
+@Scripts.Render("~/bundles/Manage")

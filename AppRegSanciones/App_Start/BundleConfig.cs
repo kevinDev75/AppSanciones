@@ -95,6 +95,9 @@ namespace AppRegSanciones
             bundles.Add(new ScriptBundle("~/bundles/Manage").Include(
                      "~/Scripts/Manage/search.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/createIncidence").Include(
+                    "~/Scripts/Manage/createIncidence.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/jquery.i18n").Include(
            "~/Scripts/jquery.i18n/jquery.i18n.js"));
 
@@ -132,6 +135,13 @@ namespace AppRegSanciones
 
 
             #region CSS
+
+            bundles.Add(new StyleBundle("~/css/ModalCreateIncidence").Include(
+                 "~/css/modals/ModalCreateIncidence.css"));
+            bundles.Add(new StyleBundle("~/css/RegistrarIncidence").Include(
+                 "~/css/view/RegistrarIncidence.css"));
+
+            
 
             bundles.Add(new StyleBundle("~/Content/fortawesome").Include(
                      "~/Content/fortawesome/all.min.css"));

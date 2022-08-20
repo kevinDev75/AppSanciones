@@ -79,7 +79,10 @@ namespace AppRegSanciones.Controllers
                 response
             }, JsonRequestBehavior.AllowGet);
         }
-
+        public ActionResult Registrar()
+        {
+            return View();
+        }
 
 
     }

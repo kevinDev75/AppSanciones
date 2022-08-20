@@ -121,11 +121,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-<<<<<<< HEAD
-    <Compile Include="Controllers\ManageController.cs" />
-=======
     <Compile Include="Controllers\SancionController.cs" />
->>>>>>> 3df4b525c86e96aafe5706951ddb73d207b4f067
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1092,6 +1088,7 @@
     <Content Include="css\colors\default.css" />
     <Content Include="css\icons\font-awesome\css\font-awesome.css" />
     <Content Include="css\icons\font-awesome\old\css\font-awesome.css" />
+    <Content Include="css\modals\ModalCreateIncidence.css" />
     <Content Include="css\pages\bootstrap-switch.css" />
     <Content Include="css\pages\breadcrumb-page.css" />
     <Content Include="css\pages\card-page.css" />
@@ -1127,6 +1124,7 @@
     <Content Include="css\pages\widget-page.css" />
     <Content Include="css\spinners.css" />
     <Content Include="css\style.css" />
+    <Content Include="css\view\RegistrarIncidence.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -2079,6 +2077,7 @@
     <Content Include="Scripts\login\longbow.slidercaptcha.js" />
     <Content Include="Scripts\login\longbow.slidercaptcha.min.js" />
     <Content Include="Scripts\main\index.js" />
+    <Content Include="Scripts\Manage\createIncidence.js" />
     <Content Include="Scripts\Manage\search.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\moment\ender.js" />
@@ -2439,11 +2438,9 @@
     <Content Include="Scripts\login\index.js~RF5049d15.TMP" />
     <Content Include="Scripts\login\longbow.slidercaptcha.min.js.map" />
     <Content Include="Scripts\peity\LICENCE" />
-<<<<<<< HEAD
-    <Content Include="Views\Manage\SearchCadete.cshtml" />
-=======
     <Content Include="Views\Modals\ModalSearchPerson.cshtml" />
->>>>>>> 3df4b525c86e96aafe5706951ddb73d207b4f067
+    <Content Include="Views\Modals\ModalCreateincidence.cshtml" />
+    <Content Include="Views\Sancion\Registrar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -2452,11 +2449,6 @@
     <Folder Include="Content\ionicons\scss\" />
     <Folder Include="Content\Views\Home\" />
     <Folder Include="Models\" />
-<<<<<<< HEAD
-    <Folder Include="Views\NewFolder1\" />
-=======
-    <Folder Include="Views\Sancion\" />
->>>>>>> 3df4b525c86e96aafe5706951ddb73d207b4f067
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

@@ -149,7 +149,7 @@ let jsonLabel = {
         "WORK_INTEGRITY": {
             "lbl_titulo": "Registro de pedido",
             "lbl_codigo_buscador": "Código",
-            "lbl_fecha_inicio_buscador": "Data de Início:",
+            "lbl_fecha_inicio_buscador": "Fecha de Inicio:",
             "lbl_fecha_fin_buscador": "Dados Finais:",
             "lbl_dni_buscador": "RG :",
             "lbl_buscar_buscador": "Olhe para",                                                
