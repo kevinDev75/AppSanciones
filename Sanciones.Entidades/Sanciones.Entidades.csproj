@@ -45,13 +45,17 @@
     <Compile Include="FLT\CadeteFlt.cs" />
     <Compile Include="FLT\PapeletaFlt.cs" />
     <Compile Include="FLT\RegistroInfraccionFlt.cs" />
+    <Compile Include="GEN\LoginRequest.cs" />
+    <Compile Include="GEN\Rol.cs" />
+    <Compile Include="GEN\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RSL\CadetesRsl.cs" />
+    <Compile Include="RSL\CargoRsl.cs" />
+    <Compile Include="RSL\GradoRsl.cs" />
     <Compile Include="RSL\PapeletaRsl.cs" />
     <Compile Include="RSL\RegistroInfraccionRsl.cs" />
+    <Compile Include="VM\UsuarioVm.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="VM\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

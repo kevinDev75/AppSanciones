@@ -1,0 +1,86 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="Tittle" style="margin-top:1rem">
+    <div class="row">
+        <div class="col-lg-10">
+            <h1 style="        margin-bottom: 0;
+        font-weight: 800;"
+                class="text-themecolor">
+                Mantenimiento Cadete
+            </h1>
+        </div>
+
+    </div>
+
+
+
+</div>
+<br />
+<div class="row manage" style="padding: 0% 5% 0% 5%;">
+    <div class="modal-body">
+        <form>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <label for="txt_cip" class="col-form-label">CIP:</label>
+                        <input type="text" disabled="disabled" class="form-control" value="@ViewData["CIP"]" id="txt_cip">
+                    </div>
+                    <div class="col-lg-3">
+                        <label for="recipient-name" class="col-form-label">Apellido Paterno:</label>
+                        <input type="text" class="form-control" id="txt_ape_paterno">
+                    </div>
+                    <div class="col-lg-3">
+                        <label for="txt_ape_materno" class="col-form-label">Apellido Materno:</label>
+                        <input type="text" class="form-control" id="txt_ape_materno">
+                    </div>
+                    <div class="col-lg-3">
+                        <label for="txt_nombres" class="col-form-label">Nombres:</label>
+                        <input type="text" class="form-control" id="txt_nombres">
+                    </div>
+                    <div class="col-lg-3">
+                        <label for="sl_id_grado" class="col-form-label">Grado:</label>
+                        <div class="input-group">
+                            <select class="form-control form-control-line" id="sl_id_grado">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <label for="sl_id_cargo" class="col-form-label">Cargo:</label>
+                        <div class="input-group">
+                            <select class="form-control form-control-line" id="sl_id_cargo">
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-top:3rem;">
+                    <div class="col-lg-12">
+                        <button style="padding: .6rem 2rem 0.6rem 2rem; float: right;margin-left: 1rem;" type="button" id="btnGuardar" class="btn btn-info">Guardar</button>
+                        <button style=" padding: .6rem 2rem 0.6rem 2rem;float:right" type="button" id="btnCancelar" class="btn btn-dark">Cancelar</button>
+                    </div>
+                </div>
+
+
+            </div>
+        </form>
+    </div>
+
+
+    @*@Html.Partial("../Modals/ModalSearchPerson")*@
+</div>
+
+
+<script>
+    var urlGetListGrado = '@Url.Action("GetListGrado", "Cadete")';
+    var urlGetListCargo = '@Url.Action("GetListCargo", "Cadete")';
+    var RouteCancelar = '@Url.Action("Index", "Cadete")';
+    var urlGetDatosCadete = '@Url.Action("GetDatosCadete", "Cadete")';
+    var urlSaveCadete = '@Url.Action("SaveCadete", "Cadete")';
+</script>
+
+@*@Styles.Render("~/css/RegistrarIncidence")*@
+
+@Scripts.Render("~/bundles/mantenimiento_cadete")

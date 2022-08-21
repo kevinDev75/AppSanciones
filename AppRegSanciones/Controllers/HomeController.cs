@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AppMercurial.Tags;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,7 @@ namespace AppRegSanciones.Controllers
 {
     public class HomeController : Controller
     {
+        [Autenticado]
         public ActionResult Index()
         {
             return View();

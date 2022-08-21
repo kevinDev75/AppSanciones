@@ -120,12 +120,16 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CadeteController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\SancionController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tags\AutenticadoAttribute.cs" />
+    <Compile Include="Tags\ValidatePageAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\images\custom-select.png" />
@@ -2009,6 +2013,8 @@
     <Content Include="assets\node_modules\raphael\bower.json" />
     <Content Include="assets\package.json" />
     <Content Include="js\prepros-6.config" />
+    <Content Include="Scripts\cadetes\index.js" />
+    <Content Include="Scripts\cadetes\mantenimiento_cadete.js" />
     <Content Include="Scripts\config\index.js~RFd106f0c.TMP" />
     <Content Include="Scripts\config\index.js~RFf85e9c7.TMP" />
     <Content Include="Scripts\config\index.js~RFf87f98c.TMP" />
@@ -2441,6 +2447,9 @@
     <Content Include="Views\Modals\ModalSearchPerson.cshtml" />
     <Content Include="Views\Modals\ModalCreateincidence.cshtml" />
     <Content Include="Views\Sancion\Registrar.cshtml" />
+    <Content Include="Views\Cadete\Index.cshtml" />
+    <Content Include="Views\Cadete\Registrar.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -2471,6 +2480,10 @@
     <ProjectReference Include="..\Sanciones.Logica\Sanciones.LogicaNegocio.csproj">
       <Project>{FB3F9A50-AD21-4C6B-B0A8-0C226ED4B2F0}</Project>
       <Name>Sanciones.LogicaNegocio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sanciones.Utilities\Sanciones.Utilidades.csproj">
+      <Project>{409A24DE-AE5F-45F3-82A0-4E0F19E0B640}</Project>
+      <Name>Sanciones.Utilidades</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

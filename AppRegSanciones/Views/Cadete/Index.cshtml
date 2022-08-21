@@ -1,0 +1,106 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="Tittle" style="margin-top:1rem">
+    <div class="row">
+        <div class="col-lg-10">
+            <h1 style="        margin-bottom: 0;
+        font-weight: 600;
+        color: #072327 !important" class="text-themecolor">
+                Lista de cadetes
+            </h1>
+        </div>
+        <div class="col-lg-2 ">
+            <!---data-toggle="modal" data-target=".bd-incidence-modal-lg" type="button"-->
+            <button style="float:right;margin:auto" class="btn btn-dark" id="btnNuevoCadete">Crear cadete</button>
+        </div>
+    </div>
+
+
+
+</div>
+<br />
+
+
+<div class="row">
+    <!-- Column -->
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+
+                <div class="table-responsive m-t-20 no-wrap">
+                    <table id="tbl_data_cadetes" class="table vm no-th-brd pro-of-month">
+                        <thead>
+                            <tr style="text-align:center;">
+                                <th>CIP</th>
+                                <th>nombre_completo</th>
+                                <th>des_grado</th>
+                                <th>des_cargo</th>
+                                <th>Opciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Modal Register -->
+<div id="modal_historial_sanciones" class="modal fade">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content tx-size-sm">
+            <div class="modal-header">
+                <h6 class="tx-14 mg-b-0 tx-uppercase tx-inverse tx-bold" id="lbl_modal_historial_sanciones">SANCIONES APLICADAS</h6>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="wizard2">
+                    <div class="row">
+                        <!-- Column -->
+                        <div class="col-lg-12">
+
+                            <div class="table-responsive m-t-20 no-wrap">
+                                <table id="tbl_data_registro_sanciones" class="table vm no-th-brd pro-of-month">
+                                    <thead>
+                                        <tr style="text-align:center;">
+                                            <th>CIP</th>
+                                            <th>nombre_completo</th>
+                                            <th>des_grado</th>
+                                            <th>des_cargo</th>
+                                            <th>Opciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div><!-- modal-body -->
+        </div>
+    </div><!-- modal-dialog -->
+</div><!-- modal -->
+
+
+<script type="text/javascript">
+    var RouteRegistrar = '@Url.Action("Registrar", "Cadete")';
+    var urlGetListCadetes = '@Url.Action("GetListCadetes", "Cadete")';
+</script>
+
+@Scripts.Render("~/bundles/cadetes")
+
+

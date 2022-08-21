@@ -24,6 +24,7 @@ namespace Sanciones.Data
             {
                 using (IDbConnection db = new SqlConnection(cadenaConexion))
                 {
+                    db.Open();
                     var parametros = new DynamicParameters();
                     parametros.Add("@ape_paterno", oSaveCadeteFlt.ape_paterno);
                     parametros.Add("@ape_materno", oSaveCadeteFlt.ape_materno);
@@ -52,9 +53,56 @@ namespace Sanciones.Data
             {
                 using (IDbConnection db = new SqlConnection(cadenaConexion))
                 {
+                    db.Open();
                     var parametros = new DynamicParameters();
                     
                     ListEntity = db.Query<GetListCadetesRsl>("SP_CADETES_SEL_01", param: parametros, commandType: CommandType.StoredProcedure).ToList();
+                    db.Close();
+                    db.Dispose();
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return ListEntity;
+        }
+
+        public List<GradoRsl> GetListGrado()
+        {
+            List<GradoRsl> ListEntity = new List<GradoRsl>();
+
+            try
+            {
+                using (IDbConnection db = new SqlConnection(cadenaConexion))
+                {
+                    db.Open();
+                    var parametros = new DynamicParameters();
+
+                    ListEntity = db.Query<GradoRsl>("SP_GRADO_SEL_01", param: parametros, commandType: CommandType.StoredProcedure).ToList();
+                    db.Close();
+                    db.Dispose();
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return ListEntity;
+        }
+
+        public List<CargoRsl> GetListCargo()
+        {
+            List<CargoRsl> ListEntity = new List<CargoRsl>();
+
+            try
+            {
+                using (IDbConnection db = new SqlConnection(cadenaConexion))
+                {
+                    db.Open();
+                    var parametros = new DynamicParameters();
+
+                    ListEntity = db.Query<CargoRsl>("SP_CARGO_SEL_01", param: parametros, commandType: CommandType.StoredProcedure).ToList();
                     db.Close();
                     db.Dispose();
                 }

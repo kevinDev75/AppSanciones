@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CadetesBl.cs" />
+    <Compile Include="LoginBl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SancionBl.cs" />
   </ItemGroup>
@@ -56,6 +57,10 @@
     <ProjectReference Include="..\Sanciones.Entidades\Sanciones.Entidades.csproj">
       <Project>{181F0C1F-62BF-4ECA-B702-0907CCC36477}</Project>
       <Name>Sanciones.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sanciones.Utilities\Sanciones.Utilidades.csproj">
+      <Project>{409A24DE-AE5F-45F3-82A0-4E0F19E0B640}</Project>
+      <Name>Sanciones.Utilidades</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -24,6 +24,7 @@ namespace Sanciones.Data
             {
                 using (IDbConnection db = new SqlConnection(cadenaConexion))
                 {
+                    db.Open();
                     var parametros = new DynamicParameters();
                     parametros.Add("@codigo_papeleta_infraccion_disc", oSavePapeletaFlt.codigo_papeleta_infraccion_disc);
                     parametros.Add("@cip_sancionador", oSavePapeletaFlt.cip_sancionador);
@@ -48,6 +49,7 @@ namespace Sanciones.Data
             {
                 using (IDbConnection db = new SqlConnection(cadenaConexion))
                 {
+                    db.Open();
                     var parametros = new DynamicParameters();
                     parametros.Add("@id_papeleta_infraccion_disc", oUpdatePapeletaInfraccionFlt.id_papeleta_infraccion_disc);
                     parametros.Add("@id_estado_papeleta", oUpdatePapeletaInfraccionFlt.id_estado_papeleta);
@@ -72,6 +74,7 @@ namespace Sanciones.Data
             {
                 using (IDbConnection db = new SqlConnection(cadenaConexion))
                 {
+                    db.Open();
                     var parametros = new DynamicParameters();
                     parametros.Add("@fecha_inicio", oGetListPapeletaInfraccionFlt.fecha_inicio);
                     parametros.Add("@fecha_fin", oGetListPapeletaInfraccionFlt.fecha_fin);
@@ -97,6 +100,7 @@ namespace Sanciones.Data
             {
                 using (IDbConnection db = new SqlConnection(cadenaConexion))
                 {
+                    db.Open();
                     var parametros = new DynamicParameters();
                     parametros.Add("@id_papeleta_infraccion_disc", oSaveRegistroInfraccionFlt.id_papeleta_infraccion_disc);
                     parametros.Add("@cip_sancionador", oSaveRegistroInfraccionFlt.cip_sancionador);
@@ -123,6 +127,7 @@ namespace Sanciones.Data
             {
                 using (IDbConnection db = new SqlConnection(cadenaConexion))
                 {
+                    db.Open();
                     var parametros = new DynamicParameters();
                     parametros.Add("@cip_sancionado", cip_sancionado);
 

@@ -15,7 +15,7 @@ namespace Sanciones.Logica
     {
         public ApiResponse SavePapeletaInfraccion(string stringJson)
         {
-            ApiResponse response = new ApiResponse("Ok", string.Empty);
+            ApiResponse response = new ApiResponse("OK", string.Empty);
 
             try
             {
@@ -33,7 +33,7 @@ namespace Sanciones.Logica
 
         public ApiResponse UpdateEstadoPapeletaInfraccion(string stringJson)
         {
-            ApiResponse response = new ApiResponse("Ok", string.Empty);
+            ApiResponse response = new ApiResponse("OK", string.Empty);
 
             try
             {
@@ -49,8 +49,9 @@ namespace Sanciones.Logica
             return response;
         }
 
-        public List<GetListPapeletaRsl> GetListPapeletaInfraccion(GetListPapeletaInfraccionFlt request)
+        public ApiResponse GetListPapeletaInfraccion(GetListPapeletaInfraccionFlt request)
         {
+            ApiResponse response = new ApiResponse("OK", string.Empty);
             List<GetListPapeletaRsl> ListEntity = new List<GetListPapeletaRsl>();
 
             try
@@ -58,17 +59,20 @@ namespace Sanciones.Logica
                 //GetListPapeletaInfraccionFlt request = JsonConvert.DeserializeObject<GetListPapeletaInfraccionFlt>(stringJson);
                 var oSancionDa = new SancionDa();
                 ListEntity = oSancionDa.GetListPapeletaInfraccion(request);
+                response.data = ListEntity;
             }
             catch (Exception ex)
             {
                 ListEntity = null;
+                response.status = "Error";
+                response.msg = ex.Message;
             }
-            return ListEntity;
+            return response;
         }
 
         public ApiResponse SaveRegistroInfraccion(string stringJson)
         {
-            ApiResponse response = new ApiResponse("Ok", string.Empty);
+            ApiResponse response = new ApiResponse("OK", string.Empty);
 
             try
             {
@@ -84,20 +88,24 @@ namespace Sanciones.Logica
             return response;
         }
 
-        public List<GetListRegistroInfraccionRsl> GetListRegistroInfraccion(string cip_sancionado)
+        public ApiResponse GetListRegistroInfraccion(string cip_sancionado)
         {
+            ApiResponse response = new ApiResponse("OK", string.Empty);
             List<GetListRegistroInfraccionRsl> ListEntity = new List<GetListRegistroInfraccionRsl>();
 
             try
             {
                 var oSancionDa = new SancionDa();
                 ListEntity = oSancionDa.GetListRegistroInfraccion(cip_sancionado);
+                response.data = ListEntity;
             }
             catch (Exception ex)
             {
                 ListEntity = null;
+                response.status = "Error";
+                response.msg = ex.Message;
             }
-            return ListEntity;
+            return response;
         }
 
 

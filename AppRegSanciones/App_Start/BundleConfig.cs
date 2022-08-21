@@ -131,6 +131,12 @@ namespace AppRegSanciones
             bundles.Add(new ScriptBundle("~/bundles/pdf/pdf-worker").Include(
                 "~/Scripts/pdf/pdf.worker.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/cadetes").Include(
+                "~/Scripts/cadetes/index.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/mantenimiento_cadete").Include(
+                "~/Scripts/cadetes/mantenimiento_cadete.js"));
+
             #endregion
 
 
