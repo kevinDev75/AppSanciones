@@ -70,6 +70,50 @@ namespace Sanciones.Logica
             return response;
         }
 
+        public ApiResponse GetSearchSanciones(GetSearchInfraccionFlt request)
+        {
+            ApiResponse response = new ApiResponse("OK", string.Empty);
+            List<GetSearchInfraccionRsl> ListEntity = new List<GetSearchInfraccionRsl>();
+
+            try
+            {
+                //GetListPapeletaInfraccionFlt request = JsonConvert.DeserializeObject<GetListPapeletaInfraccionFlt>(stringJson);
+                var oSancionDa = new SancionDa();
+                ListEntity = oSancionDa.GetSearchSanciones(request);
+                response.data = ListEntity;
+            }
+            catch (Exception ex)
+            {
+                ListEntity = null;
+                response.status = "Error";
+                response.msg = ex.Message;
+            }
+            return response;
+        }
+
+        
+
+            public ApiResponse GetListTipoSancion( )
+        {
+            ApiResponse response = new ApiResponse("OK", string.Empty);
+            List<TipoSancionRsl> ListEntity = new List<TipoSancionRsl>();
+
+            try
+            {
+                //GetListPapeletaInfraccionFlt request = JsonConvert.DeserializeObject<GetListPapeletaInfraccionFlt>(stringJson);
+                var oSancionDa = new SancionDa();
+                ListEntity = oSancionDa.GetListTipoSancion();
+                response.data = ListEntity;
+            }
+            catch (Exception ex)
+            {
+                ListEntity = null;
+                response.status = "Error";
+                response.msg = ex.Message;
+            }
+            return response;
+        }
+
         public ApiResponse SaveRegistroInfraccion(string stringJson)
         {
             ApiResponse response = new ApiResponse("OK", string.Empty);

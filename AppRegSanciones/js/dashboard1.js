@@ -14,10 +14,10 @@ $(function() {
         bindto: '#visitor',
         data: {
             columns: [
-                ['Other', 30],
-                ['Desktop', 10],
-                ['Tablet', 40],
-                ['Mobile', 50],
+                ['Other', 0],
+                ['A/S', 85],
+                ['A/R', 14],
+                ['BAJA', 1],
             ],
 
             type: 'donut',
@@ -29,7 +29,7 @@ $(function() {
             label: {
                 show: false
             },
-            title: "Visits",
+            title: "% Sancion-",
             width: 20,
 
         },

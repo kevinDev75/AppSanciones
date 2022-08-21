@@ -134,6 +134,9 @@ namespace AppRegSanciones
             bundles.Add(new ScriptBundle("~/bundles/cadetes").Include(
                 "~/Scripts/cadetes/index.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/Sancion").Include(
+                "~/Scripts/Manage/Sancion.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/mantenimiento_cadete").Include(
                 "~/Scripts/cadetes/mantenimiento_cadete.js"));
 

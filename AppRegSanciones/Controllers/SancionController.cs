@@ -55,6 +55,17 @@ namespace AppRegSanciones.Controllers
                 response
             }, JsonRequestBehavior.AllowGet);
         }
+        [HttpGet]
+        public JsonResult GetListTipoSancion()
+        {
+            var response = _SancionBl.GetListTipoSancion();
+
+            return Json(new
+            {
+                response
+            }, JsonRequestBehavior.AllowGet);
+        }
+        
 
         [HttpPost]
         public JsonResult SaveRegistroInfraccion(SaveRegistroInfraccionFlt request)
@@ -79,6 +90,18 @@ namespace AppRegSanciones.Controllers
                 response
             }, JsonRequestBehavior.AllowGet);
         }
+
+        [HttpPost]
+        public JsonResult GetSearchSanciones(GetSearchInfraccionFlt request )
+        {
+            var response = _SancionBl.GetSearchSanciones(request);
+
+            return Json(new
+            {
+                response
+            }, JsonRequestBehavior.AllowGet);
+        }
+
         public ActionResult Registrar()
         {
             return View();

@@ -2084,6 +2084,7 @@
     <Content Include="Scripts\login\longbow.slidercaptcha.min.js" />
     <Content Include="Scripts\main\index.js" />
     <Content Include="Scripts\Manage\createIncidence.js" />
+    <Content Include="Scripts\Manage\Sancion.js" />
     <Content Include="Scripts\Manage\search.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\moment\ender.js" />
@@ -2450,6 +2451,7 @@
     <Content Include="Views\Cadete\Index.cshtml" />
     <Content Include="Views\Cadete\Registrar.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Modals\ModalSearchSancion.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

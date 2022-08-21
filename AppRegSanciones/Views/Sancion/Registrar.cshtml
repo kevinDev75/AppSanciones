@@ -21,6 +21,36 @@
         <form>
             <div class="form-group">
                 <div class="row">
+                    <div class="col-lg-4">
+                        <div class="form-group mg-b-0">
+                            <label style="font-weight:500" id="lbl_fecha_inicio_buscador">Fecha Registro: </label> <span class="tx-danger">*</span>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="icon ion-calendar tx-16 lh-0 op-6"></i>
+                                    </div>
+                                </div>
+                                <input type="text" name="txt_fecha_inicio" id="txt_fecha_registro" class="form-control fc-datepicker" placeholder="DD/MM/YYYY">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="form-group mg-b-0">
+                            <label style="font-weight:500" id="lblestado">Estado: </label>
+                            <div class="input-group">
+                                <select class="form-control form-control-line" disabled="disabled">
+                                    <option>Registrado</option>
+                                    <option>Procesado</option>
+                                    <option>Ejecutado</option>
+                                    <option>Anulado</option>
+                                </select>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="row">
                     <div class="col-lg-3">
                         <label for="recipient-name" class="col-form-label">CIP:</label>
                         <input type="text" disabled="disabled" class="form-control" value="002898" id="recipient-name">
@@ -31,31 +61,43 @@
                     </div>
                     <div class="col-lg-2">
                         <label for="recipient-name" class="col-form-label">Rango:</label>
-                        <input type="text" class="form-control" id="recipient-name" disabled="disabled" value="2">
+                        <input type="text" class="form-control" id="recipient-name" disabled="disabled" value="2 año">
                     </div>
                 </div>
                 <div class="row" style="margin-top:1rem;">
                     <div class="col-lg-5">
                         <label style="font-weight:500" class="">Sancionador : </label>
                         <div class="" style="display:flex">
-                            <input disabled="disabled" id="txtSancionador" type="text" placeholder="Johnathan Doe" class="form-control form-control-line">
+                            <input readonly="readonly" id="txtSancionador" type="text" placeholder="" class="form-control form-control-line">
 
-                            <div style="margin: auto;padding: 0px 0.5rem 0 0.5rem;" class=""
-                                 data-bs-target="#ModalPersonSearch" data-bs-toggle="modal" data-bs-dismiss="modal">
+                            <div style="margin: auto;padding: 0px 0.5rem 0 0.5rem;" class="" data-toggle="modal" data-target=".bd-example-modal-lg">
                                 <i style="cursor: pointer; font-size: 25px" class="fa fa-search"></i>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-7">
                         <label style="padding-top: 0;  padding-bottom: calc(0.5rem + 1px);" for="recipient-name" class="col-form-label">Infracción:</label>
-                        <input type="text" class="form-control" id="recipient-name" value="">
+                        <div class="" style="display:flex">
+                            <input readonly="readonly" id="txtSancionador" type="text" placeholder="" class="form-control form-control-line">
+                            <div style="margin: auto;padding: 0px 0.5rem 0 0.5rem;" class="" data-toggle="modal" data-target=".bd-Sancion-modal-lg">
+                                <i style="cursor: pointer; font-size: 25px" class="fa fa-search"></i>
+                            </div>
+                        </div>
                     </div>
+                </div>
+                <div class="row" style="margin-top:1rem;">
+                    <div class="col-lg-12">
+                        <label for="exampleFormControlTextarea1">Nota:</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
+
+
                 </div>
 
                 <div class="row" style="margin-top:3rem;">
                     <div class="col-lg-12">
-                        <button  style="padding: .6rem 2rem 0.6rem 2rem; float: right;margin-left: 1rem;" type="button" class="btn btn-info">Guardar</button>
-                        <button style=" padding: .6rem 2rem 0.6rem 2rem;float:right"  type="button" class="btn btn-dark">Cancelar</button>
+                        <button style="padding: .6rem 2rem 0.6rem 2rem; float: right;margin-left: 1rem;" type="button" class="btn btn-info">Guardar</button>
+                        <button style=" padding: .6rem 2rem 0.6rem 2rem;float:right" type="button" class="btn btn-dark">Cancelar</button>
                     </div>
                 </div>
 
@@ -66,6 +108,7 @@
 
 
     @Html.Partial("../Modals/ModalSearchPerson")
+    @Html.Partial("../Modals/ModalSearchSancion")
 </div>
 
 
