@@ -63,6 +63,19 @@ namespace AppRegSanciones.Controllers
             return Json(apiResponse);
         }
 
+        [HttpPost]
+        public ActionResult SingOut()
+        {
+            SessionHelper.DestroyUserSession();
+            //return RedirectToAction("Index", "Home");
+            return Json(new
+            {
+
+            },
+                JsonRequestBehavior.AllowGet);
+
+        }
+
 
     }
 }

@@ -8,9 +8,9 @@ function logout() {
         async:true,
         dataType: 'json',
         success: function (data) {
-            console.log(data);
+            //console.log(data);
             // --
-            console.log(urlMain);
+            //console.log(urlMain);
             location.reload();
 
         }
@@ -23,16 +23,17 @@ function GetUser() {
     // --
     $.ajax({
         url: urlGetUser,
-        type: 'GET',
+        type: 'POST',
         cache: false,
         async: false,
         dataType: 'json',
         success: function (data) {
-            //console.log(data);
-            if (data.Data.length > 0) {
-                $('#lbl_login_usuario').text(data.Data[0].NombreUsuario)
-                $('#lbl_nombre_apellido_usuario').text(data.Data[0].Nombre + ' ' + data.Data[0].ApellidoPaterno + ' ' + data.Data[0].ApellidoMaterno)
-                $('#lbl_correo_usuario').text(data.Data[0].Email)
+            let objData = data.response.data
+            console.log(data);
+            if (data.response.status == "OK") {
+                //$('#lbl_login_usuario').text(objData.CIP)
+                console.log(objData.nombre + ' ' + objData.apellido_paterno + ' ' + objData.apellido_materno)
+                $('#lbl_nombre_apellido_usuario').text(objData.nombre + ' ' + objData.apellido_paterno)
             }
         }
     })
@@ -88,4 +89,4 @@ function ValidateAcceso() {
 }
 
 //ValidateAcceso()
-//GetUser()
+GetUser()

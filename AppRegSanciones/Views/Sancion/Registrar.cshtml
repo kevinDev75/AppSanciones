@@ -1,4 +1,10 @@
 ﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
 <div class="Tittle" style="margin-top:1rem">
     <div class="row">
         <div class="col-lg-10">
@@ -30,7 +36,7 @@
                                         <i class="icon ion-calendar tx-16 lh-0 op-6"></i>
                                     </div>
                                 </div>
-                                <input type="text" name="txt_fecha_inicio" id="txt_fecha_registro" class="form-control fc-datepicker" placeholder="DD/MM/YYYY">
+                                <input type="text" name="txt_fecha_inicio" id="txt_fecha_registro" class="form-control fc-datepicker hasDatepicker" placeholder="DD/MM/YYYY">
                             </div>
                         </div>
                     </div>
@@ -39,10 +45,10 @@
                             <label style="font-weight:500" id="lblestado">Estado: </label>
                             <div class="input-group">
                                 <select class="form-control form-control-line" disabled="disabled">
-                                    <option>Registrado</option>
-                                    <option>Procesado</option>
-                                    <option>Ejecutado</option>
-                                    <option>Anulado</option>
+                                    <option value="1">PROCESADO</option>
+                                    @*<option value="2">APROBADO</option>
+                                        <option value="3">EJECUTADO</option>
+                                        <option value="5">ANULADO</option>*@
                                 </select>
                             </div>
                         </div>
@@ -78,7 +84,7 @@
                     <div class="col-lg-7">
                         <label style="padding-top: 0;  padding-bottom: calc(0.5rem + 1px);" for="recipient-name" class="col-form-label">Infracción:</label>
                         <div class="" style="display:flex">
-                            <input readonly="readonly" id="txtSancionador" type="text" placeholder="" class="form-control form-control-line">
+                            <input readonly="readonly" id="txtInfraccion" type="text" placeholder="" class="form-control form-control-line">
                             <div style="margin: auto;padding: 0px 0.5rem 0 0.5rem;" class="" data-toggle="modal" data-target=".bd-Sancion-modal-lg">
                                 <i style="cursor: pointer; font-size: 25px" class="fa fa-search"></i>
                             </div>

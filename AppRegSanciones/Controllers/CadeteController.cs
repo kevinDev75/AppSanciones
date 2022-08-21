@@ -1,4 +1,5 @@
-﻿using Sanciones.Entidades.FLT;
+﻿using AppMercurial.Tags;
+using Sanciones.Entidades.FLT;
 using Sanciones.Logica;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,7 @@ namespace AppRegSanciones.Controllers
         }
 
         // GET: Cadete
+        [Autenticado]
         public ActionResult Index()
         {
             return View();
@@ -48,6 +50,7 @@ namespace AppRegSanciones.Controllers
         }
 
         [HttpGet]
+        [Autenticado]
         public ActionResult Registrar(string CIP)
         {
             ViewData["CIP"] = CIP;

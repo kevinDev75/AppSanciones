@@ -19,16 +19,16 @@
                         <div class="form-group">
                             <div class="row">
                                 <div class="col-lg-3">
-                                    <label for="recipient-name" class="col-form-label">CIP:</label>
-                                    <input type="text" class="form-control" id="recipient-name">
+                                    <label for="txt_cip_buscar_sancionador" class="col-form-label">CIP:</label>
+                                    <input type="text" class="form-control" id="txt_cip_buscar_sancionador">
                                 </div>
                                 <div class="col-lg-7">
-                                    <label for="recipient-name" class="col-form-label">Nombres Completos:</label>
-                                    <input type="text" class="form-control" id="recipient-name">
+                                    <label for="txt_nombres_buscar_sancionador" class="col-form-label">Nombres Completos:</label>
+                                    <input type="text" class="form-control" id="txt_nombres_buscar_sancionador">
                                 </div>
                                 <div class="col-lg-2">
                                     <label style="opacity:0" for="recipient-name" class="col-form-label">.</label>
-                                    <button class="btn btn-outline-secondary form-control" type="button">Buscar</button>
+                                    <button class="btn btn-outline-secondary form-control" id="btnbuscarSancionador" type="button">Buscar</button>
                                     <!--- <a class="btn waves-effect waves-light btn btn-info pull-right hidden-sm-down">Buscar</a>---->
 
                                 </div>
@@ -36,20 +36,17 @@
                             </div>
                             <div class="form-group">
                                 <div class="table-responsive m-t-20 no-wrap">
-                                    <table class="table vm no-th-brd pro-of-month">
+                                    <table id="tbl_data_sancionador" class="table vm no-th-brd pro-of-month">
                                         <thead>
                                             <tr style="text-align:center;">
                                                 <th>Codigo</th>
                                                 <th>Nombre Completos</th>
-                                                <th>Estado</th>
-                                                <th>Opciónes</th>
-
-
-
+                                                <th>Grado</th>
+                                                <th>Opciones</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr style="text-align:center;font-weight:400">
+                                            @*<tr style="text-align:center;font-weight:400">
 
                                                 <td>
                                                     <h6>01604844</h6>
@@ -58,7 +55,7 @@
                                                 <td>Activo</td>
 
                                                 <td><div onclick="getPerson(12,'Kevin Rafael Cordova ')" style="cursor:pointer"><i style="color: #50BDBA" class="fa fa-check"></i></div></td>
-                                            </tr>
+                                            </tr>*@
 
 
                                         </tbody>
@@ -76,5 +73,8 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    var urlGetSearchSancionador = '@Url.Action("GetSearchSancionador", "Sancion")';
 
+</script>
 @Scripts.Render("~/bundles/Manage")

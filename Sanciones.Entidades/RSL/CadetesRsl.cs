@@ -22,6 +22,7 @@ namespace Sanciones.Entidades.RSL
         public int puntaje_actual { get; set; }
         public string des_grado { get; set; }
         public string des_cargo { get; set; }
+        public int Nivel { get; set; }
     }
 
 

@@ -48,6 +48,7 @@
     <Compile Include="LoginBl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SancionBl.cs" />
+    <Compile Include="UsuarioBl.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Sanciones.Data\Sanciones.AccesoDatos.csproj">

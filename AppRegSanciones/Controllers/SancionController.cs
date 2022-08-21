@@ -1,4 +1,5 @@
-﻿using Sanciones.Entidades.FLT;
+﻿using AppMercurial.Tags;
+using Sanciones.Entidades.FLT;
 using Sanciones.Logica;
 using System;
 using System.Collections.Generic;
@@ -102,10 +103,23 @@ namespace AppRegSanciones.Controllers
             }, JsonRequestBehavior.AllowGet);
         }
 
+        [Autenticado]
         public ActionResult Registrar()
         {
             return View();
         }
+
+        [HttpPost]
+        public JsonResult GetSearchSancionador(GetSearchSancionadorFlt request)
+        {
+            var response = _SancionBl.GetSearchSancionador(request);
+
+            return Json(new
+            {
+                response
+            }, JsonRequestBehavior.AllowGet);
+        }
+
 
 
     }
