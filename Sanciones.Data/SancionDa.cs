@@ -103,11 +103,10 @@ namespace Sanciones.Data
             {
                 using (IDbConnection db = new SqlConnection(cadenaConexion))
                 {
-                    db.Open();
                     var parametros = new DynamicParameters();
                     parametros.Add("@codigo_infraccion", oGetListPapeletaInfraccionFlt.codigo_infraccion);
                     parametros.Add("@des_infraccion", oGetListPapeletaInfraccionFlt.des_infraccion);
-                    parametros.Add("@id_tipo_sancion", oGetListPapeletaInfraccionFlt.id_tipo_sancion);
+                    parametros.Add("@id_tipo_sancion", (oGetListPapeletaInfraccionFlt.id_tipo_sancion));
                     
                     ListEntityRsl = db.Query<GetSearchInfraccionRsl>("SP_BUSCAR_INFRACCION_SEL_01", param: parametros, commandType: CommandType.StoredProcedure).ToList();
                     db.Close();
