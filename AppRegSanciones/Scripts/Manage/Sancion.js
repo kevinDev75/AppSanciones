@@ -20,6 +20,12 @@ var tableDataSancionador = $('#tbl_data_sancionador').DataTable({
     //order: [[0, "desc"]]
 })
 
+$('#txt_fecha_registroInfr').datepicker({
+    showOtherMonths: true,
+    selectOtherMonths: true,
+    dateFormat: 'dd/mm/yy'
+})
+
 function cargarTipoSancion() {
    
         $.ajax({
@@ -90,7 +96,7 @@ function buscarInfracion() {
                         element.des_infraccion,
                         element.des_breve_sancion,
                         //' <div style="text-align:center;" data-id="' + element.codigo_infraccion + '" id="btn_seleccionar_sancion_row"><i style="color: #50BDBA" class="fa fa-check"></i></div>' +
-                        ' <div class= "btn btn-sm btn-primary" data-id="' + element.codigo_infraccion + '" id="btn_seleccionar_sancion_row"> <i class="fa fa-check"></i></div>'
+                        ' <div style="text-align:center;" class= "btn btn-sm btn-primary" data-id="' + element.codigo_infraccion + '" id="btn_seleccionar_sancion_row"> <i class="fa fa-check"></i></div>'
                     ]).draw(false);
                     tableDataSancion.columns.adjust()
                         .responsive.recalc();
