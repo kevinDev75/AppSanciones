@@ -20,4 +20,11 @@ namespace Sanciones.Entidades.FLT
         public int id_tipo_sancion { get; set; }
 
     }
+    public class GetSearchSancionadorFlt
+    {
+        public string CIP { get; set; }
+
+        public string nombres_completos { get; set; }
+
+    }
 }

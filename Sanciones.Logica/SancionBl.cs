@@ -91,9 +91,7 @@ namespace Sanciones.Logica
             return response;
         }
 
-        
-
-            public ApiResponse GetListTipoSancion( )
+       public ApiResponse GetListTipoSancion( )
         {
             ApiResponse response = new ApiResponse("OK", string.Empty);
             List<TipoSancionRsl> ListEntity = new List<TipoSancionRsl>();
@@ -141,6 +139,40 @@ namespace Sanciones.Logica
             {
                 var oSancionDa = new SancionDa();
                 ListEntity = oSancionDa.GetListRegistroInfraccion(cip_sancionado);
+                response.data = ListEntity;
+            }
+            catch (Exception ex)
+            {
+                ListEntity = null;
+                response.status = "Error";
+                response.msg = ex.Message;
+            }
+            return response;
+        }
+
+        public ApiResponse GetSearchSancionador(GetSearchSancionadorFlt request)
+        {
+            ApiResponse response = new ApiResponse("OK", string.Empty);
+            List<GetListCadetesRsl> ListEntity = new List<GetListCadetesRsl>();
+
+            try
+            {
+                var oCadetesDa = new CadetesDa();
+                ListEntity = oCadetesDa.GetListCadetes();
+                ListEntity = ListEntity.Where(x => x.Nivel > 1).ToList(); //Omitimos a los aspirantes
+                if(request.CIP != null && request.CIP.Length > 0)
+                {
+                    ListEntity = ListEntity.Where(x => x.CIP == request.CIP).ToList();
+                }
+                else if(request.nombres_completos != null && request.nombres_completos.Length > 0)
+                {
+                    ListEntity = ListEntity.FindAll(
+                            delegate (GetListCadetesRsl current)
+                            {
+                                return current.nombre_completo.Contains(request.nombres_completos);
+                            }
+                        );
+                }
                 response.data = ListEntity;
             }
             catch (Exception ex)

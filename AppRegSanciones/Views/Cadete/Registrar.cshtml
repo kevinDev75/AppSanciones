@@ -27,7 +27,14 @@
                 <div class="row">
                     <div class="col-lg-3">
                         <label for="txt_cip" class="col-form-label">CIP:</label>
-                        <input type="text" disabled="disabled" class="form-control" value="@ViewData["CIP"]" id="txt_cip">
+                        @if (ViewData["CIP"].ToString() != "00000000")
+                        {
+                            <input type="text" disabled="disabled" class="form-control" value="@ViewData["CIP"]" id="txt_cip">
+                        }
+                        else
+                        {
+                            <input type="text" class="form-control" value="" id="txt_cip">
+                        }
                     </div>
                     <div class="col-lg-3">
                         <label for="recipient-name" class="col-form-label">Apellido Paterno:</label>

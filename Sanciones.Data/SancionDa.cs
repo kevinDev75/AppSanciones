@@ -109,7 +109,6 @@ namespace Sanciones.Data
                     parametros.Add("@des_infraccion", oGetListPapeletaInfraccionFlt.des_infraccion);
                     parametros.Add("@id_tipo_sancion", oGetListPapeletaInfraccionFlt.id_tipo_sancion);
                     
-                    db.Open();
                     ListEntityRsl = db.Query<GetSearchInfraccionRsl>("SP_BUSCAR_INFRACCION_SEL_01", param: parametros, commandType: CommandType.StoredProcedure).ToList();
                     db.Close();
                     db.Dispose();

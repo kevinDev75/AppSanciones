@@ -135,6 +135,8 @@
     <Content Include="assets\images\custom-select.png" />
     <Content Include="assets\images\favicon.png" />
     <Content Include="assets\images\big\img1.jpg" />
+    <Content Include="assets\images\icono-usuario.jpg" />
+    <Content Include="assets\images\icono-usuario.png" />
     <Content Include="assets\images\users\1.jpg" />
     <Content Include="assets\images\users\2.jpg" />
     <Content Include="assets\images\users\3.jpg" />
@@ -2452,6 +2454,7 @@
     <Content Include="Views\Cadete\Registrar.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Modals\ModalSearchSancion.cshtml" />
+    <Content Include="Views\Manage\SearchCadete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

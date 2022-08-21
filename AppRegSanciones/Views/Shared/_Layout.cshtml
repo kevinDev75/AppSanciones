@@ -22,6 +22,12 @@
     @Styles.Render("~/Content/sweetalert-minimal")
 
     <!-- Variables -->
+<script>
+        var urlGetUser = '@Url.Action("GetUsuario", "Home")';
+	var urlLogOut = '@Url.Action("SingOut", "Login")';
+
+</script>
+
     <!-- Libs -->
     @RenderSection("scripts", required: false)
     @Scripts.Render("~/bundles/jquery")
@@ -44,7 +50,6 @@
 
     @Scripts.Render("~/bundles/function")
     @Scripts.Render("~/bundles/config")
-    @Scripts.Render("~/bundles/layout")
     @Scripts.Render("~/bundles/jquery.i18n")
     @Scripts.Render("~/bundles/jquery.i18n.messagestore")
     @Scripts.Render("~/bundles/jquery.i18n.fallbacks")
@@ -93,7 +98,7 @@
                 <!-- Logo -->
                 <!-- ============================================================== -->
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" @*href="index.html"*@>
                         <!-- Logo icon --><b>
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                             <!-- Dark Logo icon -->
@@ -138,7 +143,10 @@
                         <!-- ============================================================== -->
                         <!-- ============================================================== -->
                         <li class="nav-item dropdown u-pro">
-                            <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/images/users/1.jpg" alt="user" class="" /> <span class="hidden-md-down">Kevin Rafael &nbsp;</span> </a>
+                            <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"*<img src="assets/images/icono-usuario.jpg" alt="user" class="" /><span id="lbl_nombre_apellido_usuario" class="hidden-md-down"> Usuario</span> </a>
+                        </li>
+                        <li class="nav-item dropdown u-pro">
+                            <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onclick="logout()"><i class="icon ion-power"></i><span> Sign Out</span></a>
                         </li>
                     </ul>
                 </div>
@@ -164,19 +172,19 @@
                             <a class="waves-effect waves-dark" href="table-basic.html" aria-expanded="false"><i class="fa fa-table"></i><span class="hide-menu">Reportes</span></a>
                         </li>
                         <!--<li>
-        <a class="waves-effect waves-dark" href="icon-fontawesome.html" aria-expanded="false"><i class="fa fa-smile-o"></i><span class="hide-menu">Icons</span></a>
-    </li>
-    <li>
-        <a class="waves-effect waves-dark" href="map-google.html" aria-expanded="false"><i class="fa fa-globe"></i><span class="hide-menu">Map</span></a>
-    </li>
-    <li>
-        <a class="waves-effect waves-dark" href="pages-blank.html" aria-expanded="false"><i class="fa fa-bookmark-o"></i><span class="hide-menu">Blank</span></a>
-    </li>
-    <li>
-        <a class="waves-effect waves-dark" href="pages-error-404.html" aria-expanded="false"><i class="fa fa-question-circle"></i><span class="hide-menu">404</span></a>
-    </li>-->
+                            <a class="waves-effect waves-dark" href="icon-fontawesome.html" aria-expanded="false"><i class="fa fa-smile-o"></i><span class="hide-menu">Icons</span></a>
+                        </li>
+                        <li>
+                            <a class="waves-effect waves-dark" href="map-google.html" aria-expanded="false"><i class="fa fa-globe"></i><span class="hide-menu">Map</span></a>
+                        </li>
+                        <li>
+                            <a class="waves-effect waves-dark" href="pages-blank.html" aria-expanded="false"><i class="fa fa-bookmark-o"></i><span class="hide-menu">Blank</span></a>
+                        </li>
+                        <li>
+                            <a class="waves-effect waves-dark" href="pages-error-404.html" aria-expanded="false"><i class="fa fa-question-circle"></i><span class="hide-menu">404</span></a>
+                        </li>-->
                     </ul>
-                  
+
                 </nav>
                 <!-- End Sidebar navigation -->
             </div>
@@ -186,7 +194,7 @@
             <div class="container-fluid">
                 @RenderBody()
             </div>
-            <footer class="footer"> © 2018 Adminwrap by wrappixel.com </footer>
+            <footer class="footer"> © 2018 App Sanciones </footer>
         </div>
 
     </div>
@@ -216,5 +224,6 @@
     <!-- Chart JS -->
     <script src="../../js/dashboard1.js"></script>
 
+    @Scripts.Render("~/bundles/layout")
 </body>
 </html>
