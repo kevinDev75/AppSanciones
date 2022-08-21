@@ -78,7 +78,7 @@ function buscarInfracion() {
                         element.codigo_infraccion,
                         element.des_infraccion,
                         element.des_breve_sancion,
-                        ' <div style="text-align:center;"><i style="color: #50BDBA" class="fa fa-check"></i></div>' 
+                        ' <div style="text-align:center;"><i  style="color: #50BDBA;cursor:pointer" class="fa fa-check"></i></div>' 
                     ]).draw(false);
                     tableDataSancion.columns.adjust()
                         .responsive.recalc();
