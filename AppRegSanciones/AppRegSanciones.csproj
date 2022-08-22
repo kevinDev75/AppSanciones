@@ -123,6 +123,7 @@
     <Compile Include="Controllers\CadeteController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\SancionController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -2085,7 +2086,9 @@
     <Content Include="Scripts\login\longbow.slidercaptcha.js" />
     <Content Include="Scripts\login\longbow.slidercaptcha.min.js" />
     <Content Include="Scripts\main\index.js" />
+    <Content Include="Scripts\Manage\aprobar_papeleta_infraccion.js" />
     <Content Include="Scripts\Manage\createIncidence.js" />
+    <Content Include="Scripts\Manage\registrar_papeleta_infraccion.js" />
     <Content Include="Scripts\Manage\Sancion.js" />
     <Content Include="Scripts\Manage\search.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
@@ -2455,6 +2458,8 @@
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Modals\ModalSearchSancion.cshtml" />
     <Content Include="Views\Manage\SearchCadete.cshtml" />
+    <Content Include="Views\Home\_MenuLayout.cshtml" />
+    <Content Include="Views\Sancion\AprobarInfracciones.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

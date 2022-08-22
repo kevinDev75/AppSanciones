@@ -1,0 +1,178 @@
+﻿
+@{
+    ViewBag.Title = "AprobarInfracciones";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="Tittle" style="margin-top:1rem">
+    <div class="row">
+        <div class="col-lg-10">
+            <h1 style="        margin-bottom: 0;
+        font-weight: 600;
+        color: #072327 !important" class="text-themecolor">
+                Lista de infracciones por aprobar
+            </h1>
+            <p>Historial de incidencias registradas para aprobar</p>
+        </div>
+    </div>
+
+
+
+</div>
+<br />
+<div class="row">
+    <!-- Column -->
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+
+                <div class="table-responsive m-t-20 no-wrap">
+                    <table id="tbl_data_papeletas_por_aprobar" class="table vm no-th-brd pro-of-month">
+                        <thead>
+                            <tr style="text-align:center;">
+                                <th>Codigo Papeleta</th>
+                                <th>Codigo Infraccion</th>
+                                <th>Descripción</th>
+                                <th>Fecha registro</th>
+                                <th>Fecha aprobado</th>
+                                <th>Sancionado</th>
+                                <th>Estado</th>
+                                <th>Opciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade bd-example-modal-lg" id="ModalDatosPapeleta" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 style="font-weight: 800; color: #545454" class="modal-title" id="exampleModalLabel">
+                        Papeleta
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <label for="txt_codigo_papeleta_det_papeleta" class="col-form-label">Codigo Papeleta:</label>
+                                    <input type="text" class="form-control" disabled="disabled" id="txt_codigo_papeleta_det_papeleta">
+                                </div>
+                                <div class="col-lg-3">
+                                    <label for="txt_codigo_infraccion_datos_papeleta" class="col-form-label">Codigo Infracción:</label>
+                                    <input type="text" class="form-control" disabled="disabled" id="txt_codigo_infraccion_datos_papeleta">
+                                </div>
+                                <div class="col-lg-6">
+                                    <label for="txt_des_infraccion_datos_papeleta" class="col-form-label">Descripción Infracción:</label>
+                                    <textarea type="text" rows="2" class="form-control" disabled="disabled" id="txt_des_infraccion_datos_papeleta"></textarea>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label for="txt_fecha_registro_datos_papeleta" class="col-form-label">Fecha Registro:</label>
+                                    <input type="text" class="form-control" disabled="disabled" id="txt_fecha_registro_datos_papeleta">
+                                </div>
+                                <div class="col-lg-3">
+                                    <label for="txt_fecha_aprobacion_datos_papeleta" class="col-form-label">Fecha Aprobación:</label>
+                                    <input type="text" class="form-control" disabled="disabled" id="txt_fecha_aprobacion_datos_papeleta">
+                                </div>
+                                <div class="col-lg-6">
+                                    <label for="txt_cadete_sancionador_datos_papeleta" class="col-form-label">Sancionador:</label>
+                                    <input type="text" class="form-control" disabled="disabled" id="txt_cadete_sancionador_datos_papeleta">
+                                </div>
+                                <div class="col-lg-6">
+                                    <label for="txt_nombres_buscar_sancionador" class="col-form-label">Estado:</label>
+                                    <select id="sl_estado_papeleta_datos_papeleta" class="form-control form-control-line" disabled="disabled">
+                                        <option value="1">PROCESADO</option>
+                                        <option value="2">APROBADO</option>
+                                        <option value="3">EJECUTADO</option>
+                                        <option value="5">ANULADO</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-6">
+                                    <label for="txt_cadete_sancionado_datos_papeleta" class="col-form-label">Sancionado:</label>
+                                    <input type="text" class="form-control" disabled="disabled" id="txt_cadete_sancionado_datos_papeleta">
+                                </div>
+
+                                <div class="col-lg-12">
+                                    <label for="txt_nota_datos_papeleta" class="col-form-label">Nota:</label>
+                                    <textarea type="text" class="form-control" disabled="disabled" id="txt_nota_datos_papeleta"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade bd-example-modal-lg" id="ModalIngresarCantidadArrestoRigor" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 style="font-weight: 800; color: #545454" class="modal-title" id="exampleModalLabel">
+                        Papeleta
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <label for="txt_nombres_buscar_sancionador" class="col-form-label">Estado:</label>
+                                    <select id="sl_estado_papeleta_datos_papeleta" class="form-control form-control-line" disabled="disabled">
+                                        <option value="1">1 A/R</option>
+                                        <option value="2">2 A/R</option>
+                                        <option value="3">3 A/R</option>
+                                        <option value="4">4 A/R</option>
+                                        <option value="5">5 A/R</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    var urlGetListPapeletaInfraccionParaAprobar = '@Url.Action("GetListPapeletaInfraccionParaAprobar", "Sancion")';
+    var urlGetListPrivilegios = '@Url.Action("GetListPrivilegios", "Home")';
+    var urlUpdateEstadoPapeletaInfraccion = '@Url.Action("UpdateEstadoPapeletaInfraccion", "Sancion")';
+    var urlEjecutarSancionPapeleta = '@Url.Action("EjecutarSancionPapeleta", "Sancion")';
+</script>
+
+@Scripts.Render("~/bundles/aprobar_papeleta_infraccion")
+
+

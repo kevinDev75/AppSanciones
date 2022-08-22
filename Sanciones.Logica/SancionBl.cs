@@ -3,6 +3,7 @@ using Sanciones.Data;
 using Sanciones.Entidades;
 using Sanciones.Entidades.FLT;
 using Sanciones.Entidades.RSL;
+using Sanciones.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,15 +14,15 @@ namespace Sanciones.Logica
 {
     public class SancionBl
     {
-        public ApiResponse SavePapeletaInfraccion(string stringJson)
+        public ApiResponse SavePapeletaInfraccion(SavePapeletaFlt saveEntity)
         {
             ApiResponse response = new ApiResponse("OK", string.Empty);
 
             try
             {
-                SavePapeletaFlt saveEntity = JsonConvert.DeserializeObject<SavePapeletaFlt>(stringJson);
                 var oSancionDa = new SancionDa();
                 oSancionDa.SavePapeletaInfraccion(saveEntity);
+                response.msg = Constant.success_insert;
             }
             catch (Exception ex)
             {
@@ -31,13 +32,12 @@ namespace Sanciones.Logica
             return response;
         }
 
-        public ApiResponse UpdateEstadoPapeletaInfraccion(string stringJson)
+        public ApiResponse UpdateEstadoPapeletaInfraccion(UpdatePapeletaInfraccionFlt saveEntity)
         {
             ApiResponse response = new ApiResponse("OK", string.Empty);
 
             try
             {
-                UpdatePapeletaInfraccionFlt saveEntity = JsonConvert.DeserializeObject<UpdatePapeletaInfraccionFlt>(stringJson);
                 var oSancionDa = new SancionDa();
                 oSancionDa.UpdateEstadoPapeletaInfraccion(saveEntity);
             }
@@ -59,6 +59,51 @@ namespace Sanciones.Logica
                 //GetListPapeletaInfraccionFlt request = JsonConvert.DeserializeObject<GetListPapeletaInfraccionFlt>(stringJson);
                 var oSancionDa = new SancionDa();
                 ListEntity = oSancionDa.GetListPapeletaInfraccion(request);
+                response.data = ListEntity;
+            }
+            catch (Exception ex)
+            {
+                ListEntity = null;
+                response.status = "Error";
+                response.msg = ex.Message;
+            }
+            return response;
+        }
+
+        public ApiResponse GetListPapeletaInfraccionParaAprobar()
+        {
+            GetListPapeletaInfraccionParaAprobarFlt request;
+            ApiResponse response = new ApiResponse("OK", string.Empty);
+            List<GetListPapeletaRsl> ListEntity = new List<GetListPapeletaRsl>();
+
+            try
+            {
+                var oSancionDa = new SancionDa();
+                var oUsuarioBl = new UsuarioBl();
+
+                //Traer la lista para aprobar por parte del sancionador
+                request = new GetListPapeletaInfraccionParaAprobarFlt()
+                {
+                    cip_sancionador = SessionHelper.GetValueSession(Settings.Session.CIP).ToString(),
+                    id_estado_papeleta = 1 //PROCESADO
+                };
+                ListEntity = oSancionDa.GetListPapeletaInfraccionParaAprobar(request);
+
+                bool PermisoTraerListaSancionesParaEjecutar = oUsuarioBl.ExistsPrivilegio(1);
+                if (PermisoTraerListaSancionesParaEjecutar)
+                {
+                    request = new GetListPapeletaInfraccionParaAprobarFlt()
+                    {
+                        cip_sancionador = null,
+                        id_estado_papeleta = 2 //APROBADO POR EL SANCIONADOR
+                    };
+                    var lista = oSancionDa.GetListPapeletaInfraccionParaAprobar(request);
+                    if (lista.Count > 0)
+                    {
+                        ListEntity.AddRange(lista);
+                    }
+                }
+
                 response.data = ListEntity;
             }
             catch (Exception ex)
@@ -112,14 +157,20 @@ namespace Sanciones.Logica
             return response;
         }
 
-        public ApiResponse SaveRegistroInfraccion(string stringJson)
+        public ApiResponse SaveRegistroInfraccion(SaveRegistroInfraccionFlt saveEntity)
         {
             ApiResponse response = new ApiResponse("OK", string.Empty);
 
             try
             {
-                SaveRegistroInfraccionFlt saveEntity = JsonConvert.DeserializeObject<SaveRegistroInfraccionFlt>(stringJson);
                 var oSancionDa = new SancionDa();
+
+                var oUpdatePapeletaInfraccionFlt = new UpdatePapeletaInfraccionFlt() { 
+                    id_papeleta_infraccion_disc = saveEntity.id_papeleta_infraccion_disc,
+                    id_estado_papeleta = 3,
+                    Nota = saveEntity.Nota
+                };
+                oSancionDa.UpdateEstadoPapeletaInfraccion(oUpdatePapeletaInfraccionFlt);
                 oSancionDa.SaveRegistroInfraccion(saveEntity);
             }
             catch (Exception ex)

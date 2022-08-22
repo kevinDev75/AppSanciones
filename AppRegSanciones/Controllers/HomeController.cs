@@ -23,24 +23,39 @@ namespace AppRegSanciones.Controllers
             return View();
         }
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
-
         [HttpPost]
         public JsonResult GetUsuario()
         {
             var response = _UsuarioBl.GetUsuario();
+
+            return Json(new
+            {
+                response
+            }, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public JsonResult GetFechaActual()
+        {
+            var response = DateTime.Now.ToShortDateString();
+
+            return Json(new
+            {
+                response
+            }, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult MenuLayout()
+        {
+            var response = _UsuarioBl.GetListAccesos();
+
+            return PartialView("_MenuLayout", response.data);
+        }
+
+        [HttpGet]
+        public JsonResult GetListPrivilegios()
+        {
+            var response = _UsuarioBl.GetListPrivilegios();
 
             return Json(new
             {

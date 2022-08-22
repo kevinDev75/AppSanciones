@@ -1,6 +1,7 @@
 ﻿using AppMercurial.Tags;
 using Sanciones.Entidades.FLT;
 using Sanciones.Logica;
+using Sanciones.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -82,6 +83,18 @@ namespace AppRegSanciones.Controllers
         [HttpGet]
         public JsonResult GetDatosCadete(string cip)
         {
+            var response = _CadetesBl.GetDatosCadete(cip);
+
+            return Json(new
+            {
+                response
+            }, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public JsonResult GetDatosCadeteSession()
+        {
+            string cip = SessionHelper.GetValueSession(Settings.Session.CIP).ToString();
             var response = _CadetesBl.GetDatosCadete(cip);
 
             return Json(new
