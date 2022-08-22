@@ -18,6 +18,8 @@ namespace Sanciones.Entidades.FLT
         public string des_infraccion { get; set; }
 
         public int id_tipo_sancion { get; set; }
+        public int id_clasif_inf_fundamento { get; set; }
+        public int id_clasif_inf_gravedad { get; set; }
 
     }
     public class GetSearchSancionadorFlt

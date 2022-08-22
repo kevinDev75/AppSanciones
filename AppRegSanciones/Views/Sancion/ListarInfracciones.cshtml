@@ -25,16 +25,17 @@
 </div>
 <br />
 
+
 <div class="row">
     <div class="col-lg-8">
         <div class="row" style="margin-bottom:1rem">
             <div class="col-lg-2">
                 <label style="padding-top: 0;  padding-bottom: calc(0.5rem + 1px);" for="recipient-name" class="col-form-label">N° Codigo:</label>
-                <input type="text" class="form-control" id="recipient-name" value="">
+                <input type="text" class="form-control" id="idCodigoInfra" value="">
             </div>
             <div class="col-lg-10">
                 <label style="padding-top: 0;  padding-bottom: calc(0.5rem + 1px);" for="recipient-name" class="col-form-label">Nombre :</label>
-                <input type="text" class="form-control" id="recipient-name" value="">
+                <input type="text" class="form-control" id="idNombreInfra" value="">
             </div>
         </div>
 
@@ -42,9 +43,9 @@
         <div class="row">
             <div class="col-lg-4">
                 <div class="form-group mg-b-0">
-                    <label style="font-weight:500" id="lbl_fecha_inicio_buscador">Tipo Sancion: </label>
+                    <label style="font-weight:500" >Tipo Sancion: </label>
                     <div class="input-group">
-                        <select class="form-control form-control-line">
+                        <select class="form-control form-control-line" id="idTipoSancion">
                             <option value="0">TODOS</option>
                             <option value="1">Amonestación</option>
                             <option value="2">A/S</option>
@@ -55,9 +56,9 @@
             </div>
             <div class="col-lg-4">
                 <div class="form-group mg-b-0">
-                    <label style="font-weight:500" id="lbl_fecha_inicio_buscador">Clasf Fundamento: </label>
+                    <label style="font-weight:500" >Clasf Fundamento: </label>
                     <div class="input-group">
-                        <select class="form-control form-control-line">
+                        <select class="form-control form-control-line" id="idtipoClasFunda">
                             <option value="0">TODOS</option>
                             <option value="1">Contra la jerarquía/subordinación</option>
                             <option value="2">Contra la disciplina, el orden y los deberes militares.</option>
@@ -69,9 +70,9 @@
             </div>
             <div class="col-lg-4">
                 <div class="form-group mg-b-0">
-                    <label style="font-weight:500" id="lbl_fecha_inicio_buscador">Clasf. Gravedad: </label>
+                    <label style="font-weight:500" >Clasf. Gravedad: </label>
                     <div class="input-group">
-                        <select class="form-control form-control-line">
+                        <select class="form-control form-control-line" id="idtipoClasGrave">
                             <option value="0">TODOS</option>
                             <option value="1">LEVE</option>
                             <option value="2">GRAVE</option>
@@ -83,7 +84,7 @@
 
 
         </div>
-       
+
 
         <div class="row" style="margin-bottom:2rem">
             <div class="col-lg-12">
@@ -104,7 +105,7 @@
             <div class="card-body">
 
                 <div class="table-responsive m-t-20 no-wrap">
-                    <table id="tbl_data_cadetes" class="table vm no-th-brd pro-of-month">
+                    <table id="tbl_data_infraciones" class="table vm no-th-brd pro-of-month">
                         <thead>
                             <tr style="text-align:center;">
                                 <th>Codigo</th>
@@ -125,53 +126,12 @@
 
 </div>
 
-<!-- Modal Register -->
-<div id="modal_historial_sanciones" class="modal fade">
-    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-        <div class="modal-content tx-size-sm">
-            <div class="modal-header">
-                <h6 class="tx-14 mg-b-0 tx-uppercase tx-inverse tx-bold" id="lbl_modal_historial_sanciones">SANCIONES APLICADAS</h6>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div id="wizard2">
-                    <div class="row">
-                        <!-- Column -->
-                        <div class="col-lg-12">
 
-                            <div class="table-responsive m-t-20 no-wrap">
-                                <table id="tbl_data_registro_sanciones" class="table vm no-th-brd pro-of-month">
-                                    <thead>
-                                        <tr style="text-align:center;">
-                                            <th>CIP</th>
-                                            <th>nombre_completo</th>
-                                            <th>des_grado</th>
-                                            <th>des_cargo</th>
-                                            <th>Opciones</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div><!-- modal-body -->
-        </div>
-    </div><!-- modal-dialog -->
-</div><!-- modal -->
 
 
 <script type="text/javascript">
-    var RouteRegistrar = '@Url.Action("Registrar", "Cadete")';
-    var urlGetListCadetes = '@Url.Action("GetListCadetes", "Cadete")';
+    var urlGetSearchSanciones = '@Url.Action("GetSearchSanciones", "Sancion")';
 </script>
-
+@Scripts.Render("~/bundles/mantenimiento_infraccion")
 
 

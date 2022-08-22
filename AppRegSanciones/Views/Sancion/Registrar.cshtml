@@ -36,7 +36,7 @@
                                         <i class="icon ion-calendar tx-16 lh-0 op-6"></i>
                                     </div>
                                 </div>
-                                <input type="text" name="txt_fecha_inicio" id="txt_fecha_registroInfr" class="form-control fc-datepicker hasDatepicker" placeholder="DD/MM/YYYY">
+                                <input type="text" name="txt_fecha_registroInfr" id="txt_fecha_registroInfr" class="form-control fc-datepicker hasDatepicker" disabled="disabled" placeholder="DD/MM/YYYY">
                             </div>
                         </div>
                     </div>
@@ -44,7 +44,7 @@
                         <div class="form-group mg-b-0">
                             <label style="font-weight:500" id="lblestado">Estado: </label>
                             <div class="input-group">
-                                <select class="form-control form-control-line" disabled="disabled">
+                                <select id="sl_estado_papeleta" class="form-control form-control-line" disabled="disabled">
                                     <option value="1">PROCESADO</option>
                                     @*<option value="2">APROBADO</option>
                                         <option value="3">EJECUTADO</option>
@@ -59,15 +59,15 @@
                 <div class="row">
                     <div class="col-lg-3">
                         <label for="recipient-name" class="col-form-label">CIP:</label>
-                        <input type="text" disabled="disabled" class="form-control" value="002898" id="recipient-name">
+                        <input type="text" disabled="disabled" class="form-control" value="002898" id="txt_cip_sancionado">
                     </div>
                     <div class="col-lg-7">
                         <label for="recipient-name" class="col-form-label">Nombres Completos:</label>
-                        <input type="text" class="form-control" disabled="disabled" value="Kevin Rafael Cordova Sanchez" id="recipient-name">
+                        <input type="text" class="form-control" disabled="disabled" value="" id="txt_nombres_completos_sancionado">
                     </div>
                     <div class="col-lg-2">
                         <label for="recipient-name" class="col-form-label">Rango:</label>
-                        <input type="text" class="form-control" id="recipient-name" disabled="disabled" value="2 año">
+                        <input type="text" class="form-control" id="txt_rango_sancionado" disabled="disabled" value="2 año">
                     </div>
                 </div>
                 <div class="row" style="margin-top:1rem;">
@@ -94,7 +94,7 @@
                 <div class="row" style="margin-top:1rem;">
                     <div class="col-lg-12">
                         <label for="exampleFormControlTextarea1">Nota:</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <textarea class="form-control" id="txt_nota" maxlength="500" rows="3"></textarea>
                     </div>
 
 
@@ -102,7 +102,7 @@
 
                 <div class="row" style="margin-top:3rem;">
                     <div class="col-lg-12">
-                        <button style="padding: .6rem 2rem 0.6rem 2rem; float: right;margin-left: 1rem;" type="button" class="btn btn-info">Guardar</button>
+                        <button style="padding: .6rem 2rem 0.6rem 2rem; float: right;margin-left: 1rem;" type="button" id="btnGuardar" class="btn btn-info">Guardar</button>
                         <button style=" padding: .6rem 2rem 0.6rem 2rem;float:right" type="button" class="btn btn-dark">Cancelar</button>
                     </div>
                 </div>
@@ -116,6 +116,13 @@
     @Html.Partial("../Modals/ModalSearchPerson")
     @Html.Partial("../Modals/ModalSearchSancion")
 </div>
+<script type="text/javascript">
+    var urlGetDatosCadeteSession = '@Url.Action("GetDatosCadeteSession", "Cadete")';
+    var urlGetFechaActual = '@Url.Action("GetFechaActual", "Home")';
+    var urlSaveCadete = '@Url.Action("SavePapeletaInfraccion", "Sancion")';
+    var RouteInfracciones = '@Url.Action("Index", "Home")';
+</script>
 
+@Scripts.Render("~/bundles/registrar_papeleta_infraccion")
 
 @Styles.Render("~/css/RegistrarIncidence")

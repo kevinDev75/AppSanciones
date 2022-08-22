@@ -23,9 +23,10 @@
 
     <!-- Variables -->
 <script>
-        var urlGetUser = '@Url.Action("GetUsuario", "Home")';
-	var urlLogOut = '@Url.Action("SingOut", "Login")';
-
+    var urlGetUser = '@Url.Action("GetUsuario", "Home")';
+    var urlLogOut = '@Url.Action("SingOut", "Login")';
+    var RouteAprobarInfracciones = '@Url.Action("AprobarInfracciones", "Sancion")';
+    var urlGetListPapeletasParaAprobar = '@Url.Action("GetListPapeletaInfraccionParaAprobar", "Sancion")';
 </script>
 
     <!-- Libs -->
@@ -142,8 +143,11 @@
                         <!-- Profile -->
                         <!-- ============================================================== -->
                         <!-- ============================================================== -->
+                        <li id="mostrar_notificaciones_papeletas" hidden="hidden" class="nav-item dropdown u-pro">
+                            <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onclick="RutaAprobarInfracciones()"><i class="fa fa-bell-o"><span id="lbl_cantidad_papeletas_por_aprobar">1</span></i></a>
+                        </li>
                         <li class="nav-item dropdown u-pro">
-                            <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"*<img src="assets/images/icono-usuario.jpg" alt="user" class="" /><span id="lbl_nombre_apellido_usuario" class="hidden-md-down"> Usuario</span> </a>
+                            <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" *<img src="assets/images/icono-usuario.jpg" alt="user" class="" /><span id="lbl_nombre_apellido_usuario" class="hidden-md-down"> Usuario</span> </a>
                         </li>
                         <li class="nav-item dropdown u-pro">
                             <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onclick="logout()"><i class="icon ion-power"></i><span> Sign Out</span></a>
@@ -158,8 +162,11 @@
             <div class="scroll-sidebar">
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
-                    <ul id="sidebarnav">
-                        <li>
+                    @Html.Action("MenuLayout", "Home")
+                    <!--  <ul id="sidebarnav">
+
+
+                    <!--      <li>
                             <a class="waves-effect waves-dark" href="/Home/Index" aria-expanded="false"><i class="fa fa-tachometer"></i><span class="hide-menu">Gestión</span></a>
                         </li>
                         <li>
@@ -174,7 +181,7 @@
                         <li>
                             <a class="waves-effect waves-dark" href="/Sancion/ListarInfracciones" aria-expanded="false"><i class="fa fa-gears"></i><span class="hide-menu">Infracciones</span></a>
                         </li>
-                        <!--<li>
+                   <li>
         <a class="waves-effect waves-dark" href="icon-fontawesome.html" aria-expanded="false"><i class="fa fa-smile-o"></i><span class="hide-menu">Icons</span></a>
     </li>
     <li>
@@ -185,8 +192,11 @@
     </li>
     <li>
         <a class="waves-effect waves-dark" href="pages-error-404.html" aria-expanded="false"><i class="fa fa-question-circle"></i><span class="hide-menu">404</span></a>
-    </li>-->
-                    </ul>
+    </li>
+                </ul>-->
+
+
+
 
                 </nav>
                 <!-- End Sidebar navigation -->
