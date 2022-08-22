@@ -9,7 +9,7 @@ namespace Sanciones.Entidades.FLT
     public class SancionFlt
     {
 
-      
+
     }
     public class GetSearchInfraccionFlt
     {
@@ -20,6 +20,18 @@ namespace Sanciones.Entidades.FLT
         public int id_tipo_sancion { get; set; }
         public int id_clasif_inf_fundamento { get; set; }
         public int id_clasif_inf_gravedad { get; set; }
+
+        public List<getInsertDemeritoFlt> listDemeritado { get; set; }
+
+    }
+
+    public class getInsertDemeritoFlt {
+        public string codigo_infraccion { get; set; }
+        public int id_grado { get; set; }
+        public int id_tipo_sancion { get; set; }
+        public int puntaje_demerito { get; set; }
+
+
 
     }
     public class GetSearchSancionadorFlt

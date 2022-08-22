@@ -181,6 +181,30 @@ namespace Sanciones.Logica
             return response;
         }
 
+        public ApiResponse SaveRegistroInfraccionMaestro(GetSearchInfraccionFlt saveEntity)
+        {
+            ApiResponse response = new ApiResponse("OK", string.Empty);
+
+            try
+            {
+                var oSancionDa = new SancionDa();
+                oSancionDa.SaveRegistroInfraccionMaestro(saveEntity);
+
+                //registrar demeritos puntajes
+                foreach (getInsertDemeritoFlt item in saveEntity.listDemeritado) {
+                    oSancionDa.SaveRegistroInfraccionDemerito(item);
+                }
+            }
+            catch (Exception ex)
+            {
+                response.status = "Error";
+                response.msg = ex.Message;
+            }
+            return response;
+        }
+
+        
+
         public ApiResponse GetListRegistroInfraccion(string cip_sancionado)
         {
             ApiResponse response = new ApiResponse("OK", string.Empty);

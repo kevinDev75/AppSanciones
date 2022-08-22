@@ -192,6 +192,56 @@ namespace Sanciones.Data
                 throw;
             }
         }
+        public void SaveRegistroInfraccionMaestro(GetSearchInfraccionFlt oSaveRegistroInfraccionFlt)
+        {
+            try
+            {
+                using (IDbConnection db = new SqlConnection(cadenaConexion))
+                {
+                    db.Open();
+                    var parametros = new DynamicParameters();
+                    parametros.Add("@codigo_infraccion", oSaveRegistroInfraccionFlt.codigo_infraccion.ToUpper());
+                    parametros.Add("@des_infraccion", oSaveRegistroInfraccionFlt.des_infraccion);
+                    parametros.Add("@id_clasif_inf_fundamento", oSaveRegistroInfraccionFlt.id_clasif_inf_fundamento);
+                    parametros.Add("@id_clasif_inf_gravedad", oSaveRegistroInfraccionFlt.id_clasif_inf_gravedad);
+                    parametros.Add("@id_tipo_sancion", oSaveRegistroInfraccionFlt.id_tipo_sancion);
+
+                    db.Execute("SP_REGISTRO_INFRA_MAE_INS_01", param: parametros, commandType: CommandType.StoredProcedure);
+                    db.Close();
+                    db.Dispose();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+
+        public void SaveRegistroInfraccionDemerito(getInsertDemeritoFlt oSaveRegistroInfraccionFlt)
+        {
+            try
+            {
+                using (IDbConnection db = new SqlConnection(cadenaConexion))
+                {
+                    db.Open();
+                    var parametros = new DynamicParameters();
+                    parametros.Add("@codigo_infraccion", oSaveRegistroInfraccionFlt.codigo_infraccion);
+                    parametros.Add("@id_grado", oSaveRegistroInfraccionFlt.id_grado);
+                    parametros.Add("@id_tipo_sancion", oSaveRegistroInfraccionFlt.id_tipo_sancion);
+                    parametros.Add("@puntaje_demerito", oSaveRegistroInfraccionFlt.puntaje_demerito);
+
+                    db.Execute("SP_REGISTRO_REL_PUNTJ_01", param: parametros, commandType: CommandType.StoredProcedure);
+                    db.Close();
+                    db.Dispose();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+
+
 
         public List<GetListRegistroInfraccionRsl> GetListRegistroInfraccion(string cip_sancionado)
         {

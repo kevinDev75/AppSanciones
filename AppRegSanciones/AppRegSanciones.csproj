@@ -2089,6 +2089,7 @@
     <Content Include="Scripts\Manage\aprobar_papeleta_infraccion.js" />
     <Content Include="Scripts\Manage\createIncidence.js" />
     <Content Include="Scripts\Manage\mantenimiento_infraccion.js" />
+    <Content Include="Scripts\Manage\registrar_infraccion.js" />
     <Content Include="Scripts\Manage\registrar_papeleta_infraccion.js" />
     <Content Include="Scripts\Manage\Sancion.js" />
     <Content Include="Scripts\Manage\search.js" />
@@ -2462,6 +2463,7 @@
     <Content Include="Views\Sancion\ListarInfracciones.cshtml" />
     <Content Include="Views\Home\_MenuLayout.cshtml" />
     <Content Include="Views\Sancion\AprobarInfracciones.cshtml" />
+    <Content Include="Views\Modals\ModalCrearInfraccion.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

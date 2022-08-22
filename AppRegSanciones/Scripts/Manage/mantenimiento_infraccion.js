@@ -1,4 +1,6 @@
 ﻿
+const functions = new Functions()
+
 var codigo_infraccion_selected = null
 var cip_sancionador = null
 var listSancion = new Array()
@@ -11,6 +13,8 @@ var indexListSancionador = 1
 // -- TABLE
 var tableDataInfraciones = $('#tbl_data_infraciones').DataTable({
 });
+
+
 
 
 function buscarInfracion() {
@@ -64,14 +68,17 @@ function buscarInfracion() {
                         element.des_clasif_inf_gravedad,
                         element.des_breve_sancion,
                         //' <div style="text-align:center;" data-id="' + element.codigo_infraccion + '" id="btn_seleccionar_sancion_row"><i style="color: #50BDBA" class="fa fa-check"></i></div>' +
-                        ' <div style="text-align:center;" class= "btn btn-sm btn-primary" data-id="' + element.codigo_infraccion + '" id="btn_seleccionar_sancion_row"> <i class="fa fa-check"></i></div>'
+                        '<div style="text-align:center;">' + 
+                        ' <div style="text-align:center;" class= "btn btn-sm btn-primary" data-id="' + element.codigo_infraccion + '" id="btn_seleccionar_sancion_row"> <i class="fa fa-edit"></i></div>' + 
+                        ' <div style="text-align:center;" class= "btn btn-sm btn-danger" data-id="' + element.codigo_infraccion + '" id="btn_anular_papeleta_row"> <i class="fa fa-window-close"></i></div>'
+                        + '</div>'
                     ]).draw(false);
                     tableDataInfraciones.columns.adjust()
                         .responsive.recalc();
                 })
 
 
-
+                functions.notify_message(MESSAGE.es.success_select, 'success')
             }
         }
     });
@@ -81,3 +88,15 @@ function buscarInfracion() {
 $('#btnbuscar').on('click', function () {
     buscarInfracion();
 });
+
+$('#btncrearinfracion').on('click', function () {
+
+    $('#txtcodigoinfra').val('')
+    $('#idNombreInfra2').val('')
+    $('#idTipoSancion2').val(2)
+    $('#idtipoClasFunda2').val(1)
+    $('#idtipoClasGrave2').val(1)
+});
+
+
+//buscarInfracion();

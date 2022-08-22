@@ -16,7 +16,8 @@
         </div>
         <div class="col-lg-2 ">
             <!---data-toggle="modal" data-target=".bd-incidence-modal-lg" type="button"-->
-            <button style="float:right;margin:auto" class="btn btn-dark" id="btnNuevoCadete">Crear Infraccion</button>
+            <button style="float:right;margin:auto" class="btn btn-dark" data-toggle="modal" data-target=".bd-Crearincidencia-modal-lg"  id="btncrearinfracion">Crear Infraccion</button>
+            
         </div>
     </div>
 
@@ -43,7 +44,7 @@
         <div class="row">
             <div class="col-lg-4">
                 <div class="form-group mg-b-0">
-                    <label style="font-weight:500" >Tipo Sancion: </label>
+                    <label style="font-weight:500">Tipo Sancion: </label>
                     <div class="input-group">
                         <select class="form-control form-control-line" id="idTipoSancion">
                             <option value="0">TODOS</option>
@@ -56,7 +57,7 @@
             </div>
             <div class="col-lg-4">
                 <div class="form-group mg-b-0">
-                    <label style="font-weight:500" >Clasf Fundamento: </label>
+                    <label style="font-weight:500">Clasf Fundamento: </label>
                     <div class="input-group">
                         <select class="form-control form-control-line" id="idtipoClasFunda">
                             <option value="0">TODOS</option>
@@ -70,7 +71,7 @@
             </div>
             <div class="col-lg-4">
                 <div class="form-group mg-b-0">
-                    <label style="font-weight:500" >Clasf. Gravedad: </label>
+                    <label style="font-weight:500">Clasf. Gravedad: </label>
                     <div class="input-group">
                         <select class="form-control form-control-line" id="idtipoClasGrave">
                             <option value="0">TODOS</option>
@@ -127,7 +128,7 @@
 </div>
 
 
-
+@Html.Partial("../Modals/ModalCrearInfraccion")
 
 <script type="text/javascript">
     var urlGetSearchSanciones = '@Url.Action("GetSearchSanciones", "Sancion")';

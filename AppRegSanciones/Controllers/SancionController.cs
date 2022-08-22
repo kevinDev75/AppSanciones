@@ -28,6 +28,18 @@ namespace AppRegSanciones.Controllers
                 response
             }, JsonRequestBehavior.AllowGet);
         }
+        [HttpPost]
+        public JsonResult SaveRegistroInfraccionMaestro(GetSearchInfraccionFlt request)
+        {
+            var response = _SancionBl.SaveRegistroInfraccionMaestro(request);
+
+            return Json(new
+            {
+                response
+            }, JsonRequestBehavior.AllowGet);
+        }
+
+        
 
         [HttpPost]
         public JsonResult UpdateEstadoPapeletaInfraccion(UpdatePapeletaInfraccionFlt request)
