@@ -2455,6 +2455,7 @@
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Modals\ModalSearchSancion.cshtml" />
     <Content Include="Views\Manage\SearchCadete.cshtml" />
+    <Content Include="Views\Sancion\ListarInfracciones.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

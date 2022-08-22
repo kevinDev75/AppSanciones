@@ -120,6 +120,12 @@ namespace AppRegSanciones.Controllers
             }, JsonRequestBehavior.AllowGet);
         }
 
+        [Autenticado]
+        public ActionResult ListarInfracciones()
+        {
+            return View();
+        }
+        
 
 
     }
