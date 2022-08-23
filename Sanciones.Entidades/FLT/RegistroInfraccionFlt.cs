@@ -13,15 +13,13 @@ namespace Sanciones.Entidades.FLT
     public class SaveRegistroInfraccionFlt
     {
         public long id_papeleta_infraccion_disc { get; set; }
+        public string codigo_infraccion { get; set; }
         public string cip_sancionador { get; set; }
         public string cip_sancionado { get; set; }
-        public string codigo_infraccion { get; set; }
-        public string Nota { get; set; }
-        public int puntaje_anterior { get; set; }
-        public int puntaje_demerito { get; set; }
-        public int puntaje_posterior { get; set; }
+        public int id_tipo_sancion { get; set; }
         public int cant_arresto_simple { get; set; }
         public int cant_arresto_rigor { get; set; }
+        public string Nota { get; set; }
     }
 
 }

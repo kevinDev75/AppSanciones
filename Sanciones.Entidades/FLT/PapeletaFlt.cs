@@ -35,4 +35,10 @@ namespace Sanciones.Entidades.FLT
         public string cip_sancionado { get; set; }
     }
 
+    public class GetListPapeletaInfraccionParaAprobarFlt
+    {
+        public string cip_sancionador { get; set; }
+        public int id_estado_papeleta { get; set; }
+    }
+
 }

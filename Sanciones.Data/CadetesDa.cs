@@ -26,9 +26,9 @@ namespace Sanciones.Data
                 {
                     db.Open();
                     var parametros = new DynamicParameters();
-                    parametros.Add("@ape_paterno", oSaveCadeteFlt.ape_paterno);
-                    parametros.Add("@ape_materno", oSaveCadeteFlt.ape_materno);
-                    parametros.Add("@nombres", oSaveCadeteFlt.nombres);
+                    parametros.Add("@ape_paterno", oSaveCadeteFlt.ape_paterno.ToUpper());
+                    parametros.Add("@ape_materno", oSaveCadeteFlt.ape_materno.ToUpper());
+                    parametros.Add("@nombres", oSaveCadeteFlt.nombres.ToUpper());
                     parametros.Add("@id_grado", oSaveCadeteFlt.id_grado);
                     parametros.Add("@id_cargo", oSaveCadeteFlt.id_cargo);
                     parametros.Add("@puntaje_actual", oSaveCadeteFlt.puntaje_actual);

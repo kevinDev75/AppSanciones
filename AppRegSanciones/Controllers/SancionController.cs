@@ -21,9 +21,17 @@ namespace AppRegSanciones.Controllers
         [HttpPost]
         public JsonResult SavePapeletaInfraccion(SavePapeletaFlt request)
         {
-            var DataString = System.Web.HttpContext.Current.Request.Params.Get("JsonMaster").ToString();
+            var response = _SancionBl.SavePapeletaInfraccion(request);
 
-            var response = _SancionBl.SavePapeletaInfraccion(DataString);
+            return Json(new
+            {
+                response
+            }, JsonRequestBehavior.AllowGet);
+        }
+        [HttpPost]
+        public JsonResult SaveRegistroInfraccionMaestro(GetSearchInfraccionFlt request)
+        {
+            var response = _SancionBl.SaveRegistroInfraccionMaestro(request);
 
             return Json(new
             {
@@ -31,12 +39,12 @@ namespace AppRegSanciones.Controllers
             }, JsonRequestBehavior.AllowGet);
         }
 
+        
+
         [HttpPost]
         public JsonResult UpdateEstadoPapeletaInfraccion(UpdatePapeletaInfraccionFlt request)
         {
-            var DataString = System.Web.HttpContext.Current.Request.Params.Get("JsonMaster").ToString();
-
-            var response = _SancionBl.UpdateEstadoPapeletaInfraccion(DataString);
+            var response = _SancionBl.UpdateEstadoPapeletaInfraccion(request);
 
             return Json(new
             {
@@ -56,6 +64,18 @@ namespace AppRegSanciones.Controllers
                 response
             }, JsonRequestBehavior.AllowGet);
         }
+
+        [HttpPost]
+        public JsonResult GetListPapeletaInfraccionParaAprobar()
+        {
+            var response = _SancionBl.GetListPapeletaInfraccionParaAprobar();
+
+            return Json(new
+            {
+                response
+            }, JsonRequestBehavior.AllowGet);
+        }
+
         [HttpGet]
         public JsonResult GetListTipoSancion()
         {
@@ -69,11 +89,9 @@ namespace AppRegSanciones.Controllers
         
 
         [HttpPost]
-        public JsonResult SaveRegistroInfraccion(SaveRegistroInfraccionFlt request)
+        public JsonResult EjecutarSancionPapeleta(SaveRegistroInfraccionFlt request)
         {
-            var DataString = System.Web.HttpContext.Current.Request.Params.Get("JsonMaster").ToString();
-
-            var response = _SancionBl.SaveRegistroInfraccion(DataString);
+            var response = _SancionBl.SaveRegistroInfraccion(request);
 
             return Json(new
             {
@@ -109,6 +127,12 @@ namespace AppRegSanciones.Controllers
             return View();
         }
 
+        [Autenticado]
+        public ActionResult AprobarInfracciones()
+        {
+            return View();
+        }
+
         [HttpPost]
         public JsonResult GetSearchSancionador(GetSearchSancionadorFlt request)
         {
@@ -120,6 +144,12 @@ namespace AppRegSanciones.Controllers
             }, JsonRequestBehavior.AllowGet);
         }
 
+        [Autenticado]
+        public ActionResult ListarInfracciones()
+        {
+            return View();
+        }
+        
 
 
     }

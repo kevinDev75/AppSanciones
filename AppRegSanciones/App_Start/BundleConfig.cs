@@ -137,8 +137,21 @@ namespace AppRegSanciones
             bundles.Add(new ScriptBundle("~/bundles/Sancion").Include(
                 "~/Scripts/Manage/Sancion.js"));
 
+
+            bundles.Add(new ScriptBundle("~/bundles/mantenimiento_infraccion").Include(
+                "~/Scripts/Manage/mantenimiento_infraccion.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/registrar_infraccion").Include(
+               "~/Scripts/Manage/registrar_infraccion.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/mantenimiento_cadete").Include(
                 "~/Scripts/cadetes/mantenimiento_cadete.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/registrar_papeleta_infraccion").Include(
+                "~/Scripts/Manage/registrar_papeleta_infraccion.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/aprobar_papeleta_infraccion").Include(
+                "~/Scripts/Manage/aprobar_papeleta_infraccion.js"));
 
             #endregion
 

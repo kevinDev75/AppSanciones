@@ -18,8 +18,15 @@ function logout() {
 }
 
 // --
+function RutaAprobarInfracciones() {
+    // --
+    window.location.href = RouteAprobarInfracciones;
+}
+
+
+// --
 function GetUser() {
-    console.log('GetUser')
+    //console.log('GetUser')
     // --
     $.ajax({
         url: urlGetUser,
@@ -29,10 +36,10 @@ function GetUser() {
         dataType: 'json',
         success: function (data) {
             let objData = data.response.data
-            console.log(data);
+            //console.log(data);
             if (data.response.status == "OK") {
                 //$('#lbl_login_usuario').text(objData.CIP)
-                console.log(objData.nombre + ' ' + objData.apellido_paterno + ' ' + objData.apellido_materno)
+                //console.log(objData.nombre + ' ' + objData.apellido_paterno + ' ' + objData.apellido_materno)
                 $('#lbl_nombre_apellido_usuario').text(objData.nombre + ' ' + objData.apellido_paterno)
             }
         }
@@ -88,5 +95,32 @@ function ValidateAcceso() {
     })
 }
 
+
+function TimerVerificarPapeletasParaAprobar() {
+    console.log('TimerVerificarPapeletasParaAprobar')
+    $.ajax({
+        type: "POST",
+        url: urlGetListPapeletasParaAprobar,
+        data: '',
+        dataType: 'json',
+        cache: false,
+        success: function (data) {
+            let obj = data.response.data
+            console.log(obj)
+
+            if (obj != null) {
+                let lista = obj
+                if (lista.length > 0) {
+                    $('#lbl_cantidad_papeletas_por_aprobar').text(lista.length)
+                    $('#mostrar_notificaciones_papeletas').removeAttr('hidden')
+                }
+            }
+        }
+    });
+
+}
+
 //ValidateAcceso()
 GetUser()
+TimerVerificarPapeletasParaAprobar()
+setInterval(TimerVerificarPapeletasParaAprobar, 5000);

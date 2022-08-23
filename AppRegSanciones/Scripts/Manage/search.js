@@ -1,7 +1,6 @@
 ﻿
 
 const functions = new Functions();
-console.log("aaa");
 
 
 
@@ -20,7 +19,7 @@ $('#txt_fecha_final').datepicker({
 const now = new Date();
 
 const today = new Date(now.getFullYear(), now.getMonth(), 1);
-console.log(today);
+//console.log(today);
 
 var fechaInicial = convertDatetoString(today);
 var fechaFinal = convertDatetoString(new Date());

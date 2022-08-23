@@ -1,0 +1,135 @@
+﻿<!-- Modal -->
+
+<div class="modal fade bd-Crearincidencia-modal-lg" id="ModalCreateIncidence" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content" style="border:none">
+            <div class="modal-content" style="border:none">
+                <div class="modal-header" style="        background: #5FC9DC">
+                    <h5 style="        font-weight: 500;color:white;
+
+" class="modal-title" id="exampleModalLabel">
+                        Registrar Infracción
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <div class="row">
+
+                                <div class="col-lg-3">
+                                    <label for="recipient-name" class="col-form-label">Codigo :</label>
+                                    <input type="text" class="form-control" value="" id="txtcodigoinfra">
+                                </div>
+                               
+                            </div>
+                            <div class="row">
+
+                                <div class="col-lg-12">
+                                    <label for="recipient-name" class="col-form-label">Nombres Infracción:</label>
+                                    <input type="text" class="form-control" value="" id="idNombreInfra2">
+                                </div>
+
+                            </div>
+
+                            <div class="row" style="margin-top:1rem;">
+                                <div class="col-lg-4">
+                                    <div class="form-group mg-b-0">
+                                        <label style="font-weight:500">Tipo Sancion: </label>
+                                        <div class="input-group">
+                                            <select class="form-control form-control-line" id="idTipoSancion2">
+                                                <option value="2">A/S</option>
+                                                <option value="3">A/R</option>
+                                                <option value="1">Amonestación</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group mg-b-0">
+                                        <label style="font-weight:500">Clasf Fundamento: </label>
+                                        <div class="input-group">
+                                            <select class="form-control form-control-line" id="idtipoClasFunda2">
+
+                                                <option value="1">Contra la jerarquía/subordinación</option>
+                                                <option value="2">Contra la disciplina, el orden y los deberes militares.</option>
+                                                <option value="3">Contra el honor, moral, decoro, la ética y el espíritu militar.</option>
+                                                <option value="4">Contra la capacidad operativa y logística.</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group mg-b-0">
+                                        <label style="font-weight:500">Clasf. Gravedad: </label>
+                                        <div class="input-group">
+                                            <select class="form-control form-control-line" id="idtipoClasGrave2">
+
+                                                <option value="1">LEVE</option>
+                                                <option value="2">GRAVE</option>
+                                                <option value="3">MUY GRAVE</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+
+                            <div class="row">
+
+                                
+                                <!-- Column -->
+                                <div class="col-lg-12">
+                                    <div class="card">
+                                        <div class="card-body" style="text-align:center">
+                                            <label for="recipient-name" class="col-form-label">Puntaje Demerito </label>
+                                            <div class="table-responsive m-t-20 no-wrap">
+                                                <table id="tbl_data_relDemeritado" class="table vm no-th-brd pro-of-month" style="width:100% !important">
+                                                    <thead>
+                                                        <tr style="text-align:center;">
+                                                            <th>Grado Cadete</th>
+                                                            <th>Puntaje Demeritado</th>
+                                                            <th>Tipo Sanción</th>
+
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <!--------data-dismiss="modal"-->
+                    <button type="button" class="btn waves-effect waves-light btn btn-info pull-right hidden-sm-down" id="btngrabar">guardar</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+<script>
+    var urlGetListGrado = '@Url.Action("GetListGrado", "Cadete")';
+    var urlSaveInfraccionMaestro = '@Url.Action("SaveRegistroInfraccionMaestro", "Sancion")';
+    
+</script>
+@Styles.Render("~/css/ModalCreateIncidence")
+@Scripts.Render("~/bundles/registrar_infraccion")
+

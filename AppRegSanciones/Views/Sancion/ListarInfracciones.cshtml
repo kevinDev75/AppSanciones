@@ -1,0 +1,138 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="Tittle" style="margin-top:1rem">
+    <div class="row">
+        <div class="col-lg-10">
+            <h1 style="        margin-bottom: 0;
+        font-weight: 600;
+        color: #072327 !important" class="text-themecolor">
+                Lista de Infraciones
+            </h1>
+        </div>
+        <div class="col-lg-2 ">
+            <!---data-toggle="modal" data-target=".bd-incidence-modal-lg" type="button"-->
+            <button style="float:right;margin:auto" class="btn btn-dark" data-toggle="modal" data-target=".bd-Crearincidencia-modal-lg"  id="btncrearinfracion">Crear Infraccion</button>
+            
+        </div>
+    </div>
+
+
+
+</div>
+<br />
+
+
+<div class="row">
+    <div class="col-lg-8">
+        <div class="row" style="margin-bottom:1rem">
+            <div class="col-lg-2">
+                <label style="padding-top: 0;  padding-bottom: calc(0.5rem + 1px);" for="recipient-name" class="col-form-label">N° Codigo:</label>
+                <input type="text" class="form-control" id="idCodigoInfra" value="">
+            </div>
+            <div class="col-lg-10">
+                <label style="padding-top: 0;  padding-bottom: calc(0.5rem + 1px);" for="recipient-name" class="col-form-label">Nombre :</label>
+                <input type="text" class="form-control" id="idNombreInfra" value="">
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="form-group mg-b-0">
+                    <label style="font-weight:500">Tipo Sancion: </label>
+                    <div class="input-group">
+                        <select class="form-control form-control-line" id="idTipoSancion">
+                            <option value="0">TODOS</option>
+                            <option value="1">Amonestación</option>
+                            <option value="2">A/S</option>
+                            <option value="3">A/R</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="form-group mg-b-0">
+                    <label style="font-weight:500">Clasf Fundamento: </label>
+                    <div class="input-group">
+                        <select class="form-control form-control-line" id="idtipoClasFunda">
+                            <option value="0">TODOS</option>
+                            <option value="1">Contra la jerarquía/subordinación</option>
+                            <option value="2">Contra la disciplina, el orden y los deberes militares.</option>
+                            <option value="3">Contra el honor, moral, decoro, la ética y el espíritu militar.</option>
+                            <option value="4">Contra la capacidad operativa y logística.</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="form-group mg-b-0">
+                    <label style="font-weight:500">Clasf. Gravedad: </label>
+                    <div class="input-group">
+                        <select class="form-control form-control-line" id="idtipoClasGrave">
+                            <option value="0">TODOS</option>
+                            <option value="1">LEVE</option>
+                            <option value="2">GRAVE</option>
+                            <option value="3">MUY GRAVE</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+        <div class="row" style="margin-bottom:2rem">
+            <div class="col-lg-12">
+                <div class="align-self-lg-auto">
+                    <a style=" padding: 7px 25px;color:white" id="btnbuscar" class="btn waves-effect waves-light btn btn-info pull-right hidden-sm-down">Buscar</a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<div class="row">
+    <!-- Column -->
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+
+                <div class="table-responsive m-t-20 no-wrap">
+                    <table id="tbl_data_infraciones" class="table vm no-th-brd pro-of-month">
+                        <thead>
+                            <tr style="text-align:center;">
+                                <th>Codigo</th>
+                                <th>nombre Infracción</th>
+                                <th>Clasf. Fundamento</th>
+                                <th>Clasf. Gravedad</th>
+                                <th>Tipo Sanción</th>
+                                <th>Opciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+@Html.Partial("../Modals/ModalCrearInfraccion")
+
+<script type="text/javascript">
+    var urlGetSearchSanciones = '@Url.Action("GetSearchSanciones", "Sancion")';
+</script>
+@Scripts.Render("~/bundles/mantenimiento_infraccion")
+
+

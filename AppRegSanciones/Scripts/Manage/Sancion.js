@@ -20,6 +20,12 @@ var tableDataSancionador = $('#tbl_data_sancionador').DataTable({
     //order: [[0, "desc"]]
 })
 
+$('#txt_fecha_registroInfr').datepicker({
+    showOtherMonths: true,
+    selectOtherMonths: true,
+    dateFormat: 'dd/mm/yy'
+})
+
 function cargarTipoSancion() {
    
         $.ajax({
@@ -91,7 +97,7 @@ function buscarInfracion() {
                         element.des_breve_sancion,
 
                         //' <div style="text-align:center;" data-id="' + element.codigo_infraccion + '" id="btn_seleccionar_sancion_row"><i style="color: #50BDBA" class="fa fa-check"></i></div>' +
-                        ' <div class= "btn btn-sm btn-primary" data-id="' + element.codigo_infraccion + '" id="btn_seleccionar_sancion_row"> <i class="fa fa-check"></i></div>'
+                        ' <div style="text-align:center;" class= "btn btn-sm btn-primary" data-id="' + element.codigo_infraccion + '" id="btn_seleccionar_sancion_row"> <i class="fa fa-check"></i></div>'
                     ]).draw(false);
                     tableDataSancion.columns.adjust()
                         .responsive.recalc();
@@ -109,7 +115,7 @@ function buscarInfracion() {
 $(document).on('click', '#btn_seleccionar_sancion_row', function () {
     // --
     let value = $(this).attr('data-id')
-    console.log('value', value)
+    //console.log('value', value)
     //let index = null;
     // --
     //tableDataSancion.rows(function (idx, data, node) {
@@ -122,7 +128,7 @@ $(document).on('click', '#btn_seleccionar_sancion_row', function () {
     let indexObject = listSancion.findIndex(x => x.codigo_infraccion == value)
 
     let ObjInfraccion = listSancion.find(x => x.codigo_infraccion == value)
-    console.log(ObjInfraccion)
+    //console.log(ObjInfraccion)
 
     $('#txtInfraccion').val(ObjInfraccion.codigo_infraccion + ' - ' + ObjInfraccion.des_infraccion)
     $('#ModalSancionID').modal('hide')
@@ -189,7 +195,7 @@ function buscarSancionador() {
 $(document).on('click', '#btn_seleccionar_sancionador_row', function () {
     // --
     let value = $(this).attr('data-id')
-    console.log('value', value)
+    //console.log('value', value)
     //let index = null;
     // --
     //tableDataSancionador.rows(function (idx, data, node) {
@@ -202,7 +208,7 @@ $(document).on('click', '#btn_seleccionar_sancionador_row', function () {
     let indexObject = listSancionador.findIndex(x => x.CIP == value)
 
     let ObjSancionador = listSancionador.find(x => x.CIP == value)
-    console.log(ObjSancionador)
+    //console.log(ObjSancionador)
 
     $('#txtSancionador').val(ObjSancionador.CIP + ' - ' + ObjSancionador.nombre_completo)
     $('#ModalPersonSearch').modal('hide')
