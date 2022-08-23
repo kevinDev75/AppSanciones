@@ -79,6 +79,7 @@ namespace Sanciones.Data
                     parametros.Add("@codigo_papeleta_infraccion_disc", oGetListPapeletaInfraccionFlt.codigo_papeleta_infraccion_disc);
                     parametros.Add("@cip_sancionador", oGetListPapeletaInfraccionFlt.cip_sancionador);
                     parametros.Add("@cip_sancionado", oGetListPapeletaInfraccionFlt.cip_sancionado);
+                    parametros.Add("@id_estado_papeleta", oGetListPapeletaInfraccionFlt.id_estado_papeleta);
                     db.Open();
                     ListEntityRsl = db.Query<GetListPapeletaRsl>("SP_PAPELETA_INFRACCION_DISCIPLINARIA_SEL_01", param: parametros, commandType: CommandType.StoredProcedure).ToList();
                     db.Close();

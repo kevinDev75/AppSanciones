@@ -58,6 +58,14 @@ namespace Sanciones.Logica
             {
                 //GetListPapeletaInfraccionFlt request = JsonConvert.DeserializeObject<GetListPapeletaInfraccionFlt>(stringJson);
                 var oSancionDa = new SancionDa();
+               
+                    if (!string.IsNullOrEmpty(request.cip_sancionador)  && request.cip_sancionador.Split('-').Count() > 0)
+                    {
+                        var codsancionador = request.cip_sancionador.Split('-')[0].ToString();
+                        request.cip_sancionador = codsancionador.Trim();
+                    }
+                
+
                 ListEntity = oSancionDa.GetListPapeletaInfraccion(request);
                 response.data = ListEntity;
             }
@@ -136,7 +144,7 @@ namespace Sanciones.Logica
             return response;
         }
 
-       public ApiResponse GetListTipoSancion( )
+        public ApiResponse GetListTipoSancion()
         {
             ApiResponse response = new ApiResponse("OK", string.Empty);
             List<TipoSancionRsl> ListEntity = new List<TipoSancionRsl>();
@@ -165,7 +173,8 @@ namespace Sanciones.Logica
             {
                 var oSancionDa = new SancionDa();
 
-                var oUpdatePapeletaInfraccionFlt = new UpdatePapeletaInfraccionFlt() { 
+                var oUpdatePapeletaInfraccionFlt = new UpdatePapeletaInfraccionFlt()
+                {
                     id_papeleta_infraccion_disc = saveEntity.id_papeleta_infraccion_disc,
                     id_estado_papeleta = 3,
                     Nota = saveEntity.Nota
@@ -191,7 +200,8 @@ namespace Sanciones.Logica
                 oSancionDa.SaveRegistroInfraccionMaestro(saveEntity);
 
                 //registrar demeritos puntajes
-                foreach (getInsertDemeritoFlt item in saveEntity.listDemeritado) {
+                foreach (getInsertDemeritoFlt item in saveEntity.listDemeritado)
+                {
                     oSancionDa.SaveRegistroInfraccionDemerito(item);
                 }
             }
@@ -203,7 +213,7 @@ namespace Sanciones.Logica
             return response;
         }
 
-        
+
 
         public ApiResponse GetListRegistroInfraccion(string cip_sancionado)
         {
@@ -235,11 +245,11 @@ namespace Sanciones.Logica
                 var oCadetesDa = new CadetesDa();
                 ListEntity = oCadetesDa.GetListCadetes();
                 ListEntity = ListEntity.Where(x => x.Nivel > 1).ToList(); //Omitimos a los aspirantes
-                if(request.CIP != null && request.CIP.Length > 0)
+                if (request.CIP != null && request.CIP.Length > 0)
                 {
                     ListEntity = ListEntity.Where(x => x.CIP == request.CIP).ToList();
                 }
-                else if(request.nombres_completos != null && request.nombres_completos.Length > 0)
+                else if (request.nombres_completos != null && request.nombres_completos.Length > 0)
                 {
                     ListEntity = ListEntity.FindAll(
                             delegate (GetListCadetesRsl current)

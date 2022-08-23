@@ -22,12 +22,12 @@
     @Styles.Render("~/Content/sweetalert-minimal")
 
     <!-- Variables -->
-<script>
+    <script>
     var urlGetUser = '@Url.Action("GetUsuario", "Home")';
     var urlLogOut = '@Url.Action("SingOut", "Login")';
     var RouteAprobarInfracciones = '@Url.Action("AprobarInfracciones", "Sancion")';
     var urlGetListPapeletasParaAprobar = '@Url.Action("GetListPapeletaInfraccionParaAprobar", "Sancion")';
-</script>
+    </script>
 
     <!-- Libs -->
     @RenderSection("scripts", required: false)
@@ -98,22 +98,24 @@
                 <!-- ============================================================== -->
                 <!-- Logo -->
                 <!-- ============================================================== -->
-                <div class="navbar-header">
+                <div class="navbar-header" style="text-align:center">
                     <a class="navbar-brand" @*href="index.html"*@>
                         <!-- Logo icon --><b>
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                             <!-- Dark Logo icon -->
                             <img src="../../assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
+                            
                             <!-- Light Logo icon -->
-                            <img src="../../assets/images/logo-light-icon.png" alt="homepage" class="light-logo" />
+                            <!--  <img src="../../assets/images/logo-light-icon.png" alt="homepage" class="light-logo" />-->
                         </b>
                         <!--End Logo icon -->
                         <!-- Logo text --><span>
-                            <!-- dark Logo text -->
-                            <img src="../../assets/images/logo-text.png" alt="homepage" class="dark-logo" />
-                            <!-- Light Logo text -->
-                            <img src="../../assets/images/logo-light-text.png" class="light-logo" alt="homepage" />
-                        </span>
+    <!--<h3 class="dark-logo" style="font-weight: 500;color: #64C7EC">Sanciones App</h3>-->
+    <!-- dark Logo text -->
+    <!--<img src="../../assets/images/logo-text.png" alt="homepage" class="dark-logo" />-->
+    <!-- Light Logo text -->
+    <!-- <img src="../../assets/images/logo-light-text.png" class="light-logo" alt="homepage" />-->
+</span>
                     </a>
                 </div>
                 <!-- ============================================================== -->
@@ -166,34 +168,34 @@
                     <!--  <ul id="sidebarnav">
 
 
-                    <!--      <li>
-                            <a class="waves-effect waves-dark" href="/Home/Index" aria-expanded="false"><i class="fa fa-tachometer"></i><span class="hide-menu">Gestión</span></a>
-                        </li>
-                        <li>
-                            <a class="waves-effect waves-dark" href="/Cadete/Index" aria-expanded="false"><i class="fa fa-tachometer"></i><span class="hide-menu">Cadetes</span></a>
-                        </li>
-                        <li>
-                            <a class="waves-effect waves-dark" href="pages-profile.html" aria-expanded="false"><i class="fa fa-user-circle-o"></i><span class="hide-menu">Perfil</span></a>
-                        </li>
-                        <li>
-                            <a class="waves-effect waves-dark" href="table-basic.html" aria-expanded="false"><i class="fa fa-table"></i><span class="hide-menu">Reportes</span></a>
-                        </li>
-                        <li>
-                            <a class="waves-effect waves-dark" href="/Sancion/ListarInfracciones" aria-expanded="false"><i class="fa fa-gears"></i><span class="hide-menu">Infracciones</span></a>
-                        </li>
-                   <li>
-        <a class="waves-effect waves-dark" href="icon-fontawesome.html" aria-expanded="false"><i class="fa fa-smile-o"></i><span class="hide-menu">Icons</span></a>
-    </li>
-    <li>
-        <a class="waves-effect waves-dark" href="map-google.html" aria-expanded="false"><i class="fa fa-globe"></i><span class="hide-menu">Map</span></a>
-    </li>
-    <li>
-        <a class="waves-effect waves-dark" href="pages-blank.html" aria-expanded="false"><i class="fa fa-bookmark-o"></i><span class="hide-menu">Blank</span></a>
-    </li>
-    <li>
-        <a class="waves-effect waves-dark" href="pages-error-404.html" aria-expanded="false"><i class="fa fa-question-circle"></i><span class="hide-menu">404</span></a>
-    </li>
-                </ul>-->
+                                    <!--      <li>
+                                            <a class="waves-effect waves-dark" href="/Home/Index" aria-expanded="false"><i class="fa fa-tachometer"></i><span class="hide-menu">Gestión</span></a>
+                                        </li>
+                                        <li>
+                                            <a class="waves-effect waves-dark" href="/Cadete/Index" aria-expanded="false"><i class="fa fa-tachometer"></i><span class="hide-menu">Cadetes</span></a>
+                                        </li>
+                                        <li>
+                                            <a class="waves-effect waves-dark" href="pages-profile.html" aria-expanded="false"><i class="fa fa-user-circle-o"></i><span class="hide-menu">Perfil</span></a>
+                                        </li>
+                                        <li>
+                                            <a class="waves-effect waves-dark" href="table-basic.html" aria-expanded="false"><i class="fa fa-table"></i><span class="hide-menu">Reportes</span></a>
+                                        </li>
+                                        <li>
+                                            <a class="waves-effect waves-dark" href="/Sancion/ListarInfracciones" aria-expanded="false"><i class="fa fa-gears"></i><span class="hide-menu">Infracciones</span></a>
+                                        </li>
+                                   <li>
+                        <a class="waves-effect waves-dark" href="icon-fontawesome.html" aria-expanded="false"><i class="fa fa-smile-o"></i><span class="hide-menu">Icons</span></a>
+                    </li>
+                    <li>
+                        <a class="waves-effect waves-dark" href="map-google.html" aria-expanded="false"><i class="fa fa-globe"></i><span class="hide-menu">Map</span></a>
+                    </li>
+                    <li>
+                        <a class="waves-effect waves-dark" href="pages-blank.html" aria-expanded="false"><i class="fa fa-bookmark-o"></i><span class="hide-menu">Blank</span></a>
+                    </li>
+                    <li>
+                        <a class="waves-effect waves-dark" href="pages-error-404.html" aria-expanded="false"><i class="fa fa-question-circle"></i><span class="hide-menu">404</span></a>
+                    </li>
+                                </ul>-->
 
 
 

@@ -3,6 +3,11 @@
 const functions = new Functions();
 
 
+var tableDataPapeleta = $('#table_lista_papeletas').DataTable({
+    //responsive: true,
+    //order: [[0, "desc"]]
+})
+
 
 $('#txt_fecha_inicio').datepicker({
     showOtherMonths: true,
@@ -47,38 +52,68 @@ function getPerson(cip, nombre) {
 
 }
 function ShowRegistrarIncidencia() {
-   
+
 }
 $('#btnIncidencia').on('click', function () {
-    
-    window.location.href = RouteRegistrar;
+
+    window.location.href = RouteRegistrarInfr;
 
 
 })
 $('#btnbuscar').on('click', function () {
     // --
-    let datos = {
-        "fecha_inicio": "01/08/2022",
-        "fecha_fin": "30/08/2022"
+
+    $("#table_lista_papeletas").DataTable().clear().draw()
+
+    let objectData = {
+        "fecha_inicio": $('#txt_fecha_inicio').val(),
+        "fecha_fin": $('#txt_fecha_final').val(),
+        "codigo_papeleta_infraccion_disc": $('#txtcodigoPapeleta').val(),
+        "cip_sancionador": $('#txtSancionador').val(),
+        "cip_sancionado": null,
+        "id_estado_papeleta": $('#idestadoPapeleta').val()
     }
+    console.log(objectData);
+
+
+       
 
 
     $.ajax({
-        url: '/Sancion/GetListPapeletaInfraccion',
-        type: 'POST',
-        data: datos,
+        type: "POST",
+        url: RouteRegistrar,
+        data: objectData,
         dataType: 'json',
         cache: false,
         success: function (data) {
-            console.log(data);
-            // --
-            //if (data.Status === 'OK') {
+            let obj = data.response.data
 
-            //} else {
-            //    functions.notify_message('Ups! Crendenciales incorrectas :(', 'warning')
-            //}
+            if (obj != null) {
+
+                // -- CADETES
+                let lista = obj
+                listSancion = lista
+
+                listSancion.forEach((element) => {
+
+                    tableDataPapeleta.row.add([
+                        element.codigo_papeleta_infraccion_disc,
+                        element.des_infraccion,
+                        element.fecha_registro_sancionado,
+                        element.cadete_sancionador,
+                        element.nom_estado,
+                        //' <div style="text-align:center;" data-id="' + element.codigo_infraccion + '" id="btn_seleccionar_sancion_row"><i style="color: #50BDBA" class="fa fa-check"></i></div>' +
+                        '<div style="cursor:pointer;text-align:center;"><i style="color: #50BDBA" class="fa fa-folder"></i></div>'
+                    ]).draw(false);
+                    tableDataPapeleta.columns.adjust()
+                        .responsive.recalc();
+                })
+
+                functions.notify_message(MESSAGE.es.success_insert, 'success')
+            }
         }
-    })
+    });
+
 })
 
 

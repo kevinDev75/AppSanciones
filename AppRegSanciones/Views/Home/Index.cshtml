@@ -24,7 +24,7 @@
         <div class="row" style="margin-bottom:1rem">
             <div class="col-lg-4">
                 <label style="padding-top: 0;  padding-bottom: calc(0.5rem + 1px);" for="recipient-name" class="col-form-label">N° Codigo Papeleta:</label>
-                <input type="text" class="form-control" id="recipient-name" value="">
+                <input type="text" class="form-control" id="txtcodigoPapeleta" value="">
             </div>
         </div>
 
@@ -32,7 +32,7 @@
         <div class="row">
             <div class="col-lg-6">
                 <div class="form-group mg-b-0">
-                    <label style="font-weight:500" id="lbl_fecha_inicio_buscador" >Fecha Inicio: </label> <span class="tx-danger">*</span>
+                    <label style="font-weight:500" id="lbl_fecha_inicio_buscador">Fecha Inicio: </label> <span class="tx-danger">*</span>
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <div class="input-group-text">
@@ -45,7 +45,7 @@
             </div>
             <div class="col-lg-6">
                 <div class="form-group mg-b-0">
-                    <label style="font-weight:500" id="lbl_fecha_inicio_buscador" >Fecha Final: </label> <span class="tx-danger">*</span>
+                    <label style="font-weight:500" id="lbl_fecha_inicio_buscador">Fecha Final: </label> <span class="tx-danger">*</span>
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <div class="input-group-text">
@@ -64,11 +64,12 @@
                 <div class="form-group mg-b-0">
                     <label style="font-weight:500" id="lbl_fecha_inicio_buscador" data-i18n="start-date">Estado: </label>
                     <div class="input-group">
-                        <select class="form-control form-control-line">
-                            <option>Procesado</option>
-
-                            <option>Ejecutado</option>
-                            <option>Anulado</option>
+                        <select class="form-control form-control-line" id="idestadoPapeleta">
+                            <option value="0">-TODOS-</option>
+                            <option value="1">Procesado</option>
+                            <option value="2">Aprobado</option>
+                            <option value="3">Ejecutado</option>
+                            <option value="5">Anulado</option>
                         </select>
                     </div>
                 </div>
@@ -79,7 +80,7 @@
                 <div class="form-group">
                     <label style="font-weight:500" class="">Sancionador : </label>
                     <div class="" style="display:flex">
-                        <input disabled="disabled" id="txtSancionador" type="text" placeholder="Johnathan Doe" class="form-control form-control-line">
+                        <input disabled="disabled" id="txtSancionador" type="text" class="form-control form-control-line">
 
                         <div style="margin: auto;padding: 0px 0.5rem 0 0.5rem;" class="" data-toggle="modal" data-target=".bd-example-modal-lg">
                             <i style="cursor: pointer; font-size: 25px" class="fa fa-search"></i>
@@ -138,55 +139,19 @@
             <div class="card-body">
 
                 <div class="table-responsive m-t-20 no-wrap">
-                    <table class="table vm no-th-brd pro-of-month">
+                    <table class="table vm no-th-brd pro-of-month" id="table_lista_papeletas" style="width:100%">
                         <thead>
                             <tr style="text-align:center;">
-                                <th>Codigo</th>
-                                <th>Descripción</th>
-                                <th>Fecha ejecutado</th>
+                                <th>N° Papeleta</th>
+                                <th>Des.Infracción</th>
+                                <th>Fecha Registro</th>
                                 <th>Sancionador</th>
                                 <th>Estado</th>
-
                                 <th>Opciónes</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr style="text-align:center;font-weight:400">
-
-                                <td>
-                                    <h6>01604844</h6>
-                                </td>
-                                <td>Fumar o poseción de dragos o cigarros</td>
-                                <td>10/01/2022</td>
-                                <td>Kevin Rafael Cordova Sanchez</td>
-                                <td>Procesado</td>
-
-                                <td><div style="cursor:pointer"><i style="color: #50BDBA" class="fa fa-folder"></i></div></td>
-                            </tr>
-                            <tr style="text-align:center;font-weight:400">
-
-                                <td>
-                                    <h6>01604844</h6>
-                                </td>
-                                <td>Fumar o poseción de dragos o cigarros</td>
-                                <td>10/01/2022</td>
-                                <td>Kevin Rafael Cordova Sanchez</td>
-                                <td>Procesado</td>
-
-                                <td><div style="cursor:pointer"><i style="color: #50BDBA" class="fa fa-folder"></i></div></td>
-                            </tr>
-                            <tr style="text-align:center;font-weight:400">
-
-                                <td>
-                                    <h6>01604844</h6>
-                                </td>
-                                <td>Fumar o poseción de dragos o cigarros</td>
-                                <td>10/01/2022</td>
-                                <td>Kevin Rafael Cordova Sanchez</td>
-                                <td>Procesado</td>
-
-                                <td><div style="cursor:pointer"><i style="color: #50BDBA" class="fa fa-folder"></i></div></td>
-                            </tr>
+                           
 
                         </tbody>
                     </table>
@@ -201,7 +166,9 @@
 </div>
 
 <script type="text/javascript">
-    var RouteRegistrar = '@Url.Action("Registrar", "Sancion")';
+    var RouteRegistrar = '@Url.Action("GetListPapeletaInfraccion", "Sancion")';
+    var RouteRegistrarInfr = '@Url.Action("Registrar", "Sancion")';
+    var urlGetTipoSancion = '@Url.Action("GetListTipoSancion", "Sancion")';
 </script>
-
+@Scripts.Render("~/bundles/Sancion")
 @Scripts.Render("~/bundles/Manage")
