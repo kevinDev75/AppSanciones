@@ -25,7 +25,7 @@ $('#btngrabar').on('click', function () {
             var id_tipo_sancion = $('#TipoSancion_' + element.id_grado).val();
             var puntaje_demerito = $('#puntajeDeme_' + element.id_grado).val();
 
-            if (puntaje_demerito != null && puntaje_demerito != undefined && puntaje_demerito != 0) {
+            if (puntaje_demerito != null && puntaje_demerito != undefined ) {
                 var lista = {
                     "codigo_infraccion": txtcodinfra,
                     "id_grado": element.id_grado,
