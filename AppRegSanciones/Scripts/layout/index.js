@@ -97,7 +97,7 @@ function ValidateAcceso() {
 
 
 function TimerVerificarPapeletasParaAprobar() {
-    console.log('TimerVerificarPapeletasParaAprobar')
+    //console.log('TimerVerificarPapeletasParaAprobar')
     $.ajax({
         type: "POST",
         url: urlGetListPapeletasParaAprobar,
@@ -106,7 +106,7 @@ function TimerVerificarPapeletasParaAprobar() {
         cache: false,
         success: function (data) {
             let obj = data.response.data
-            console.log(obj)
+            //console.log(obj)
 
             if (obj != null) {
                 let lista = obj

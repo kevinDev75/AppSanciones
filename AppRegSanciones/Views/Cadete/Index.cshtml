@@ -4,6 +4,41 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@*<style>
+        .modal-lg {
+            max-width: 90%;
+        }
+    </style>*@
+<style>
+    /*
+Full screen Modal
+*/
+    .fullscreen-modal .modal-dialog {
+        margin: 0;
+        margin-right: auto;
+        margin-left: auto;
+        width: 100%;
+    }
+
+    @@media (min-width: 768px) {
+        .fullscreen-modal .modal-dialog {
+            width: 750px;
+        }
+    }
+
+    @@media (min-width: 992px) {
+        .fullscreen-modal .modal-dialog {
+            width: 970px;
+        }
+    }
+
+    @@media (min-width: 1200px) {
+        .fullscreen-modal .modal-dialog {
+            width: 1170px;
+        }
+    }
+</style>
+
 
 <div class="Tittle" style="margin-top:1rem">
     <div class="row">
@@ -73,11 +108,17 @@
                                 <table id="tbl_data_registro_sanciones" class="table vm no-th-brd pro-of-month">
                                     <thead>
                                         <tr style="text-align:center;">
-                                            <th>CIP</th>
-                                            <th>nombre_completo</th>
-                                            <th>des_grado</th>
-                                            <th>des_cargo</th>
-                                            <th>Opciones</th>
+                                            <th>ID</th>
+                                            <th>SANCIONADOR</th>
+                                            <th>GRADO</th>
+                                            <th>SANCIONADO</th>
+                                            <th>GRADO</th>
+                                            <th>FECHA</th>
+                                            <th>PUNT. ANT.</th>
+                                            <th>PUNT.DEMERITO</th>
+                                            <th>PUNT. POSTERIOR</th>
+                                            <th>CANT. A/S</th>
+                                            <th>CANT. A/R</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -99,6 +140,8 @@
 <script type="text/javascript">
     var RouteRegistrar = '@Url.Action("Registrar", "Cadete")';
     var urlGetListCadetes = '@Url.Action("GetListCadetes", "Cadete")';
+    var urlGetListRegistroInfraccion = '@Url.Action("GetListRegistroInfraccion", "Sancion")';
+
 </script>
 
 @Scripts.Render("~/bundles/cadetes")

@@ -1,4 +1,5 @@
 ﻿using AppMercurial.Tags;
+using Sanciones.Entidades.FLT;
 using Sanciones.Logica;
 using System;
 using System.Collections.Generic;
@@ -56,6 +57,50 @@ namespace AppRegSanciones.Controllers
         public JsonResult GetListPrivilegios()
         {
             var response = _UsuarioBl.GetListPrivilegios();
+
+            return Json(new
+            {
+                response
+            }, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public JsonResult GetListRolesSinAsignarAUsuario(GetRolFlt oGetRolFlt)
+        {
+            var response = _UsuarioBl.GetListRolesSinAsignarAUsuario(oGetRolFlt.id_usuario);
+
+            return Json(new
+            {
+                response
+            }, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public JsonResult GetListRolesAsignadosAUsuario(GetRolFlt oGetRolFlt)
+        {
+            var response = _UsuarioBl.GetListRolesAsignadosAUsuario(oGetRolFlt.id_usuario);
+
+            return Json(new
+            {
+                response
+            }, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public JsonResult SaveRolUsuario(SaveRolUsuarioFlt oSaveRolUsuarioFlt)
+        {
+            var response = _UsuarioBl.SaveRolUsuario(oSaveRolUsuarioFlt);
+
+            return Json(new
+            {
+                response
+            }, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public JsonResult DeleteRolUsuario(DeleteRolUsuarioFlt oDeleteRolUsuarioFlt)
+        {
+            var response = _UsuarioBl.DeleteRolUsuario(oDeleteRolUsuarioFlt);
 
             return Json(new
             {
