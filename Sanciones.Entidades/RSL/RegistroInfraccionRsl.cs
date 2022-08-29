@@ -17,7 +17,9 @@ namespace Sanciones.Entidades.RSL
         public string id_papeleta_infraccion_disc { get; set; }
         public string fecha { get; set; }
         public string cadete_sancionador { get; set; }
+        public string grado_sancionador { get; set; }
         public string cadete_sancionado { get; set; }
+        public string grado_sancionado { get; set; }
         public string codigo_infraccion { get; set; }
         public string des_infraccion { get; set; }
         public string Nota { get; set; }

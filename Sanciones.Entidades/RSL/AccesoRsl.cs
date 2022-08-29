@@ -21,4 +21,10 @@ namespace Sanciones.Entidades.RSL
         public string view { get; set; }
         public string icon { get; set; }
     }
+
+    public class GetRolesRsl
+    {
+        public int id_rol { get; set; }
+        public string nom_rol { get; set; }
+    }
 }

@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using Sanciones.Data;
 using Sanciones.Entidades;
+using Sanciones.Entidades.FLT;
 using Sanciones.Entidades.GEN;
 using Sanciones.Entidades.RSL;
 using Sanciones.Utilities;
@@ -112,6 +113,88 @@ namespace Sanciones.Logica
                 resp = false;
             }
             return resp;
+        }
+
+        public ApiResponse GetListRolesSinAsignarAUsuario(int IdUsuario)
+        {
+            ApiResponse response = new ApiResponse("OK", string.Empty);
+            List<GetRolesRsl> ListEntity = new List<GetRolesRsl>();
+
+            try
+            {
+                //int IdUsuario;
+                //IdUsuario = SessionHelper.GetUser();
+
+                var oUsuarioDa = new UsuarioDa();
+                ListEntity = oUsuarioDa.GetListRolesSinAsignarAUsuario(IdUsuario);
+                response.data = ListEntity;
+            }
+            catch (Exception ex)
+            {
+                ListEntity = null;
+                response.status = "Error";
+                response.msg = ex.Message;
+            }
+            return response;
+        }
+
+        public ApiResponse GetListRolesAsignadosAUsuario(int IdUsuario)
+        {
+            ApiResponse response = new ApiResponse("OK", string.Empty);
+            List<GetRolesRsl> ListEntity = new List<GetRolesRsl>();
+
+            try
+            {
+                //int IdUsuario;
+                //IdUsuario = SessionHelper.GetUser();
+
+                var oUsuarioDa = new UsuarioDa();
+                ListEntity = oUsuarioDa.GetListRolesAsignadosAUsuario(IdUsuario);
+                response.data = ListEntity;
+            }
+            catch (Exception ex)
+            {
+                ListEntity = null;
+                response.status = "Error";
+                response.msg = ex.Message;
+            }
+            return response;
+        }
+
+        public ApiResponse SaveRolUsuario(SaveRolUsuarioFlt oSaveRolUsuarioFlt)
+        {
+            ApiResponse response = new ApiResponse("OK", string.Empty);
+
+            try
+            {
+                //SaveCadeteFlt saveEntity = JsonConvert.DeserializeObject<SaveCadeteFlt>(stringJson);
+                var oUsuarioDa = new UsuarioDa();
+                oUsuarioDa.SaveRolUsuario(oSaveRolUsuarioFlt);
+            }
+            catch (Exception ex)
+            {
+                response.status = "Error";
+                response.msg = ex.Message;
+            }
+            return response;
+        }
+
+        public ApiResponse DeleteRolUsuario(DeleteRolUsuarioFlt oDeleteRolUsuarioFlt)
+        {
+            ApiResponse response = new ApiResponse("OK", string.Empty);
+
+            try
+            {
+                //SaveCadeteFlt saveEntity = JsonConvert.DeserializeObject<SaveCadeteFlt>(stringJson);
+                var oUsuarioDa = new UsuarioDa();
+                oUsuarioDa.DeleteRolUsuario(oDeleteRolUsuarioFlt);
+            }
+            catch (Exception ex)
+            {
+                response.status = "Error";
+                response.msg = ex.Message;
+            }
+            return response;
         }
 
 

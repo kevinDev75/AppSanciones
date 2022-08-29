@@ -63,6 +63,39 @@
                         </div>
                     </div>
                 </div>
+                <br />
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="table-wrapper" id="zona_tbl_roles_sin_asignar">
+                            <table class="table table-sm display responsive nowrap table-bordered table-colored table-dark" id="tbl_roles_sin_asignar" style="width: 100%;">
+                                <thead>
+                                    <tr>
+                                        <th class="w-75">Todos los Roles</th>
+                                        <th class="w-25">Accion</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbl_roles_body">
+                                    <!-- DYNAMIC -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="table-wrapper" id="zona_tbl_roles_asignados">
+                            <table class="table table-sm display responsive nowrap table-bordered table-colored table-dark" id="tbl_roles_asignados" style="width: 100%;">
+                                <thead>
+                                    <tr>
+                                        <th class="w-75">Roles Asignados</th>
+                                        <th class="w-25">Accion</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbl_roles_asignados_body">
+                                    <!-- DYNAMIC -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
                 <div class="row" style="margin-top:3rem;">
                     <div class="col-lg-12">
                         <button style="padding: .6rem 2rem 0.6rem 2rem; float: right;margin-left: 1rem;" type="button" id="btnGuardar" class="btn btn-info">Guardar</button>
@@ -83,9 +116,13 @@
 <script>
     var urlGetListGrado = '@Url.Action("GetListGrado", "Cadete")';
     var urlGetListCargo = '@Url.Action("GetListCargo", "Cadete")';
+    var urlGetListRolesSinAsignarAUsuario = '@Url.Action("GetListRolesSinAsignarAUsuario", "Home")';
+    var urlGetListRolesAsignadosAUsuario = '@Url.Action("GetListRolesAsignadosAUsuario", "Home")';
     var RouteCancelar = '@Url.Action("Index", "Cadete")';
     var urlGetDatosCadete = '@Url.Action("GetDatosCadete", "Cadete")';
     var urlSaveCadete = '@Url.Action("SaveCadete", "Cadete")';
+    var urlSaveRolUsuario = '@Url.Action("SaveRolUsuario", "Home")';
+    var urlDeleteRolUsuario = '@Url.Action("DeleteRolUsuario", "Home")';
 </script>
 
 @*@Styles.Render("~/css/RegistrarIncidence")*@

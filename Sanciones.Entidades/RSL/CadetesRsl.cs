@@ -23,6 +23,7 @@ namespace Sanciones.Entidades.RSL
         public string des_grado { get; set; }
         public string des_cargo { get; set; }
         public int Nivel { get; set; }
+        public int id_usuario { get; set; }
     }
 
 

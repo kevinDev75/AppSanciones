@@ -45,6 +45,7 @@
     <Compile Include="FLT\CadeteFlt.cs" />
     <Compile Include="FLT\PapeletaFlt.cs" />
     <Compile Include="FLT\RegistroInfraccionFlt.cs" />
+    <Compile Include="FLT\RolFlt.cs" />
     <Compile Include="FLT\SancionFlt.cs" />
     <Compile Include="GEN\LoginRequest.cs" />
     <Compile Include="GEN\Rol.cs" />
