@@ -58,20 +58,23 @@ $('#btnbuscar').on('click', function () {
 
     $.ajax({
         type: "POST",
-        url: RouteRegistrar,
+        url: urlgetReporteListaInfracciones,
         data: objectData,
         dataType: 'json',
         cache: false,
         success: function (data) {
+            $(".preloader").hide();
                 let obj = data.response.data
-            console.log(obj);
+            console.log(data);
+            console.log(window.location.origin);
             if (obj != "") {
-                var ruta = window.location.hostname;
+                var ruta = window.location.origin;
                 console.log(ruta);
                 let a = document.createElement('a');
                 a.target = '_blank';
                 a.href = ruta + "/" + obj;
                 a.click();
+                
                 functions.notify_message(MESSAGE.es.success_insert, 'success')
             }
         },

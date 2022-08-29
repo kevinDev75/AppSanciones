@@ -1,4 +1,4 @@
-﻿using Microsoft.Reporting.WinForms;
+﻿using Microsoft.Reporting.WebForms;
 using Sanciones.Data;
 using Sanciones.Entidades;
 using Sanciones.Entidades.FLT;
@@ -80,7 +80,7 @@ namespace Sanciones.Logica
 
                 file.Close();
                 file.Dispose();
-                patchreturn = ConfigurationManager.AppSettings["RutaArchivo"] + "InfraccionesReporte.pdf";
+                patchreturn = ConfigurationManager.AppSettings["RutaArchivoView"] + "InfraccionesReporte.pdf";
 
             }
             catch (Exception ex)

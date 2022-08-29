@@ -13,6 +13,11 @@ namespace AppRegSanciones.Controllers
     {
 
         public readonly ReportesBl _ReporteBl;
+
+        public ReportesController()
+        {
+            _ReporteBl = new ReportesBl();
+        }
         // GET: Reportes
         public ActionResult Index()
         {
