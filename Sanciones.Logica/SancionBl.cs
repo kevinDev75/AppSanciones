@@ -49,6 +49,31 @@ namespace Sanciones.Logica
             return response;
         }
 
+        public ApiResponse getActualPuntajeInfracciones(GetListPapeletaInfraccionFlt request)
+        {
+            ApiResponse response = new ApiResponse("OK", string.Empty);
+            GetListPuntaje ListEntity = new GetListPuntaje();
+
+            try
+            {
+                //GetListPapeletaInfraccionFlt request = JsonConvert.DeserializeObject<GetListPapeletaInfraccionFlt>(stringJson);
+                var oSancionDa = new SancionDa();
+
+
+
+
+                ListEntity = oSancionDa.getActualPuntajeInfracciones(request);
+                response.data = ListEntity;
+            }
+            catch (Exception ex)
+            {
+                ListEntity = null;
+                response.status = "Error";
+                response.msg = ex.Message;
+            }
+            return response;
+        }
+
         public ApiResponse GetListPapeletaInfraccion(GetListPapeletaInfraccionFlt request)
         {
             ApiResponse response = new ApiResponse("OK", string.Empty);
@@ -58,13 +83,13 @@ namespace Sanciones.Logica
             {
                 //GetListPapeletaInfraccionFlt request = JsonConvert.DeserializeObject<GetListPapeletaInfraccionFlt>(stringJson);
                 var oSancionDa = new SancionDa();
-               
-                    if (!string.IsNullOrEmpty(request.cip_sancionador)  && request.cip_sancionador.Split('-').Count() > 0)
-                    {
-                        var codsancionador = request.cip_sancionador.Split('-')[0].ToString();
-                        request.cip_sancionador = codsancionador.Trim();
-                    }
-                
+
+                if (!string.IsNullOrEmpty(request.cip_sancionador) && request.cip_sancionador.Split('-').Count() > 0)
+                {
+                    var codsancionador = request.cip_sancionador.Split('-')[0].ToString();
+                    request.cip_sancionador = codsancionador.Trim();
+                }
+
 
                 ListEntity = oSancionDa.GetListPapeletaInfraccion(request);
                 response.data = ListEntity;

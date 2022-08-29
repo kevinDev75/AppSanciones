@@ -1,0 +1,117 @@
+﻿<!-- Modal -->
+
+<div class="modal fade bd-Crearincidencia-modal-lg" id="modalDetallePapelera" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content" style="border:none">
+            <div class="modal-content" style="border:none">
+                <div class="modal-header" style="        background: #5FC9DC">
+                    <h5 style="        font-weight: 500;color:white;
+
+" class="modal-title" id="exampleModalLabel">
+                        Detalle Papeleta
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <div class="row">
+
+                                <div class="col-lg-4">
+                                    <label for="recipient-name" class="col-form-label">Codigo Papelera :</label>
+                                    <input type="text" disabled="disabled" class="form-control" value="" id="txtcodigoPape">
+                                </div>
+                                <div class="col-lg-4">
+                                    <label for="recipient-name" class="col-form-label">Fecha Registro :</label>
+                                    <input type="text" disabled="disabled" class="form-control" value="" id="txtfechaRegistro">
+                                </div>
+                                <div class="col-lg-4">
+                                    <label for="recipient-name" class="col-form-label">Fecha Aprobación :</label>
+                                    <input type="text" disabled="disabled" class="form-control" value="" id="txtfechaAprobacion">
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <label for="recipient-name" class="col-form-label">Grado° Sancionador :</label>
+                                    <input type="text"  disabled="disabled" class="form-control" value="" id="txtgradosancionador">
+                                </div>
+                                <div class="col-lg-9">
+                                    <label for="recipient-name" class="col-form-label">Nombre Sancionador:</label>
+                                    <input type="text" disabled="disabled" class="form-control" value="" id="txtnombresancionador">
+                                </div>
+
+                            </div>
+                            <div class="row">
+
+                                <div class="col-lg-3">
+                                    <label for="recipient-name" class="col-form-label">Grado° Sancionado :</label>
+                                    <input type="text" disabled="disabled"  class="form-control" value="" id="txtgradosancionado">
+                                </div>
+                                <div class="col-lg-9">
+                                    <label for="recipient-name" class="col-form-label">Nombre Sancionado :</label>
+                                    <input type="text"  disabled="disabled" class="form-control" value="" id="txtnombresancionado">
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+
+
+                                <div class="col-lg-3">
+                                    <label for="recipient-name" class="col-form-label">Codigo Infracción :</label>
+                                    <input type="text"  disabled="disabled" class="form-control" value="" id="txtcodigoInfra">
+                                </div>
+
+                                <div class="col-lg-9">
+                                    <label for="recipient-name" class="col-form-label">Nombre Infracción :</label>
+                                    <input type="text" disabled="disabled"  class="form-control" value="" id="txtnombreInfra">
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+
+
+                                <div class="col-lg-3">
+                                    <label for="recipient-name" class="col-form-label"> Estado :</label>
+                                    <input type="text" disabled="disabled" class="form-control" value="" id="txtestadoInfra">
+                                </div>
+
+                                <div class="col-lg-9">
+                                    <label for="recipient-name" class="col-form-label">Nota :</label>
+                                    <textarea class="form-control" disabled="disabled" id="txtnotaInfra" rows="3"></textarea>
+                                </div>
+
+                            </div>
+
+
+                           
+
+
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <!--------data-dismiss="modal"-->
+                    <!---<button type="button" class="btn waves-effect waves-light btn btn-info pull-right hidden-sm-down" id="btngrabar">guardar</button>-->
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+
+                </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <script>
+        var urlGetListGrado = '@Url.Action("GetListGrado", "Cadete")';
+        var urlSaveInfraccionMaestro = '@Url.Action("SaveRegistroInfraccionMaestro", "Sancion")';
+
+    </script>
+
+    @Scripts.Render("~/bundles/ModalDetallePapelera")

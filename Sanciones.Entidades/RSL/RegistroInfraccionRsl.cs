@@ -27,4 +27,15 @@ namespace Sanciones.Entidades.RSL
         public string cant_arresto_simple { get; set; }
         public string cant_arresto_rigor { get; set; }
     }
+
+    public class GetListPuntaje
+    {
+        public string cip_sancionado { get; set; }
+        public int puntaje_anterior { get; set; }
+        public int puntaje_demerito { get; set; }
+        public int puntaje_posterior { get; set; }
+        public int cant_arresto_simple { get; set; }
+        public int cant_arresto_rigor { get; set; }
+    
+    }
 }

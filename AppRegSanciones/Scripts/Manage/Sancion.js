@@ -15,10 +15,7 @@ var tableDataSancion= $('#tbl_data_sancion').DataTable({
 })
 
 // -- TABLE
-var tableDataSancionador = $('#tbl_data_sancionador').DataTable({
-    //responsive: true,
-    //order: [[0, "desc"]]
-})
+
 
 $('#txt_fecha_registroInfr').datepicker({
     showOtherMonths: true,
@@ -192,27 +189,7 @@ function buscarSancionador() {
 }
 
 // -- EDITAR DATOS DE LA TABLA
-$(document).on('click', '#btn_seleccionar_sancionador_row', function () {
-    // --
-    let value = $(this).attr('data-id')
-    //console.log('value', value)
-    //let index = null;
-    // --
-    //tableDataSancionador.rows(function (idx, data, node) {
-    //    if (data[0] == value) {
-    //        index = idx;
-    //    }
-    //});
-    cip_sancionador = value
-    // --
-    let indexObject = listSancionador.findIndex(x => x.CIP == value)
 
-    let ObjSancionador = listSancionador.find(x => x.CIP == value)
-    //console.log(ObjSancionador)
-
-    $('#txtSancionador').val(ObjSancionador.CIP + ' - ' + ObjSancionador.nombre_completo)
-    $('#ModalPersonSearch').modal('hide')
-})
 
 $('#btnbuscarSancionador').on('click', function () {
     buscarSancionador();

@@ -57,6 +57,7 @@
     <Compile Include="RSL\PapeletaRsl.cs" />
     <Compile Include="RSL\PrivilegioRsl.cs" />
     <Compile Include="RSL\RegistroInfraccionRsl.cs" />
+    <Compile Include="RSL\ReportesRsl.cs" />
     <Compile Include="RSL\SancionRsl.cs" />
     <Compile Include="RSL\TipoSancionRsl.cs" />
     <Compile Include="VM\UsuarioVm.cs" />

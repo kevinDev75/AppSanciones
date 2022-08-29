@@ -4,45 +4,47 @@ Author: Wrappixel
 Email: niravjoshi87@gmail.com
 File: js
 */
-$(function() {
+$(function () {
+    console.log(puntaje_posterior);
     "use strict";
     // ============================================================== 
     // Our Visitor
     // ============================================================== 
 
-    var chart = c3.generate({
-        bindto: '#visitor',
-        data: {
-            columns: [
-                ['Other', 0],
-                ['A/S', 85],
-                ['A/R', 14],
-                ['BAJA', 1],
-            ],
+    if (puntaje_posterior != undefined) {
+        var chart = c3.generate({
+            bindto: '#visitor',
+            data: {
+                columns: [
+                    ['BAJA', obj.cant_arresto_rigor],
+                    ['A/R', obj.cant_arresto_simple],
+                    ['A/S', obj.puntaje_posterior]
+                ],
 
-            type: 'donut',
-            onclick: function(d, i) { console.log("onclick", d, i); },
-            onmouseover: function(d, i) { console.log("onmouseover", d, i); },
-            onmouseout: function(d, i) { console.log("onmouseout", d, i); }
-        },
-        donut: {
-            label: {
-                show: false
+                type: 'donut',
+                onclick: function (d, i) { console.log("onclick", d, i); },
+                onmouseover: function (d, i) { console.log("onmouseover", d, i); },
+                onmouseout: function (d, i) { console.log("onmouseout", d, i); }
             },
-            title: "% Sancion-",
-            width: 20,
+            donut: {
+                label: {
+                    show: false
+                },
+                title: "% Sancion-",
+                width: 20,
 
-        },
+            },
 
-        legend: {
-            hide: true
-            //or hide: 'data1'
-            //or hide: ['data1', 'data2']
-        },
-        color: {
-            pattern: ['#eceff1', '#24d2b5', '#6772e5', '#20aee3']
-        }
-    });
+            legend: {
+                hide: true
+                //or hide: 'data1'
+                //or hide: ['data1', 'data2']
+            },
+            color: {
+                pattern: ['#24d2b5', '#20aee3', '#6772e5']
+            }
+        });
+    }
     // ============================================================== 
     // Our Income
     // ==============================================================
@@ -105,9 +107,9 @@ $(function() {
             ],
 
             type: 'donut',
-            onclick: function(d, i) { console.log("onclick", d, i); },
-            onmouseover: function(d, i) { console.log("onmouseover", d, i); },
-            onmouseout: function(d, i) { console.log("onmouseout", d, i); }
+            onclick: function (d, i) { console.log("onclick", d, i); },
+            onmouseover: function (d, i) { console.log("onmouseover", d, i); },
+            onmouseout: function (d, i) { console.log("onmouseout", d, i); }
         },
         donut: {
             label: {
@@ -140,9 +142,9 @@ $(function() {
                 ['data', 91.4]
             ],
             type: 'gauge',
-            onclick: function(d, i) { console.log("onclick", d, i); },
-            onmouseover: function(d, i) { console.log("onmouseover", d, i); },
-            onmouseout: function(d, i) { console.log("onmouseout", d, i); }
+            onclick: function (d, i) { console.log("onclick", d, i); },
+            onmouseover: function (d, i) { console.log("onmouseover", d, i); },
+            onmouseout: function (d, i) { console.log("onmouseout", d, i); }
         },
 
         color: {
@@ -161,7 +163,7 @@ $(function() {
             width: 150
         }
     });
-    setTimeout(function() {
+    setTimeout(function () {
         chart.load({
             columns: [
                 ['data', 10]
@@ -169,7 +171,7 @@ $(function() {
         });
     }, 1000);
 
-    setTimeout(function() {
+    setTimeout(function () {
         chart.load({
             columns: [
                 ['data', 50]
@@ -177,7 +179,7 @@ $(function() {
         });
     }, 2000);
 
-    setTimeout(function() {
+    setTimeout(function () {
         chart.load({
             columns: [
                 ['data', 70]
@@ -191,42 +193,42 @@ $(function() {
     Morris.Area({
         element: 'sales-chart',
         data: [{
-                period: '2011',
-                Sales: 50,
-                Earning: 80,
-                Marketing: 20
-            }, {
-                period: '2012',
-                Sales: 130,
-                Earning: 100,
-                Marketing: 80
-            }, {
-                period: '2013',
-                Sales: 80,
-                Earning: 60,
-                Marketing: 70
-            }, {
-                period: '2014',
-                Sales: 70,
-                Earning: 200,
-                Marketing: 140
-            }, {
-                period: '2015',
-                Sales: 180,
-                Earning: 150,
-                Marketing: 140
-            }, {
-                period: '2016',
-                Sales: 105,
-                Earning: 100,
-                Marketing: 80
-            },
-            {
-                period: '2017',
-                Sales: 250,
-                Earning: 150,
-                Marketing: 200
-            }
+            period: '2011',
+            Sales: 50,
+            Earning: 80,
+            Marketing: 20
+        }, {
+            period: '2012',
+            Sales: 130,
+            Earning: 100,
+            Marketing: 80
+        }, {
+            period: '2013',
+            Sales: 80,
+            Earning: 60,
+            Marketing: 70
+        }, {
+            period: '2014',
+            Sales: 70,
+            Earning: 200,
+            Marketing: 140
+        }, {
+            period: '2015',
+            Sales: 180,
+            Earning: 150,
+            Marketing: 140
+        }, {
+            period: '2016',
+            Sales: 105,
+            Earning: 100,
+            Marketing: 80
+        },
+        {
+            period: '2017',
+            Sales: 250,
+            Earning: 150,
+            Marketing: 200
+        }
         ],
         xkey: 'period',
         ykeys: ['Sales', 'Earning', 'Marketing'],

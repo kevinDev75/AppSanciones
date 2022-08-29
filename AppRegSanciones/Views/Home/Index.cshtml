@@ -110,7 +110,7 @@
         TEXT-ALIGN: CENTER;
         color: #545454
 ">
-                    Puntaje Actual : <span style="FONT-WEIGHT: 800;">184</span>
+                    Puntaje Actual : <span id="idpuntaje" style="FONT-WEIGHT: 800;">184</span>
                 </h2>
                 <div class="d-flex m-b-30 no-block">
                     <h5 class="card-title m-b-0 align-self-center">% Infracciones</h5>
@@ -151,8 +151,6 @@
                             </tr>
                         </thead>
                         <tbody>
-                           
-
                         </tbody>
                     </table>
                 </div>
@@ -163,12 +161,22 @@
     @Html.Partial("../Modals/ModalSearchPerson")
 
     @Html.Partial("../Modals/ModalCreateincidence")
+
+    @Html.Partial("../Modals/ModalDetallePapelera")
 </div>
 
 <script type="text/javascript">
     var RouteRegistrar = '@Url.Action("GetListPapeletaInfraccion", "Sancion")';
     var RouteRegistrarInfr = '@Url.Action("Registrar", "Sancion")';
     var urlGetTipoSancion = '@Url.Action("GetListTipoSancion", "Sancion")';
+    var urlGetPuntajeActual = '@Url.Action("getActualPuntajeInfracciones", "Sancion")';
+
+    var urlGetUsuario = '@Url.Action("GetUsuario", "Home")';
+
+
+
 </script>
-@Scripts.Render("~/bundles/Sancion")
 @Scripts.Render("~/bundles/Manage")
+
+
+<!--@Scripts.Render("~/bundles/Sancion")-->

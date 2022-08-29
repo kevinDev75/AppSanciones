@@ -48,6 +48,7 @@
     <Compile Include="CadetesDa.cs" />
     <Compile Include="LoginDa.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportesDa.cs" />
     <Compile Include="SancionDa.cs" />
     <Compile Include="UsuarioDa.cs" />
   </ItemGroup>

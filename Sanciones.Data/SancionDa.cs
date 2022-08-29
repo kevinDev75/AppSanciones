@@ -65,6 +65,8 @@ namespace Sanciones.Data
             }
         }
 
+
+
         public List<GetListPapeletaRsl> GetListPapeletaInfraccion(GetListPapeletaInfraccionFlt oGetListPapeletaInfraccionFlt)
         {
             List<GetListPapeletaRsl> ListEntityRsl = new List<GetListPapeletaRsl>();
@@ -257,6 +259,32 @@ namespace Sanciones.Data
                     parametros.Add("@cip_sancionado", cip_sancionado);
 
                     ListEntityRsl = db.Query<GetListRegistroInfraccionRsl>("SP_REGISTRO_INFRACCIONES_SEL_01", param: parametros, commandType: CommandType.StoredProcedure).ToList();
+                    db.Close();
+                    db.Dispose();
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return ListEntityRsl;
+        }
+
+
+
+        public GetListPuntaje getActualPuntajeInfracciones(GetListPapeletaInfraccionFlt oGetListPapeletaInfraccionFlt)
+        {
+            GetListPuntaje ListEntityRsl = new GetListPuntaje();
+
+            try
+            {
+                using (IDbConnection db = new SqlConnection(cadenaConexion))
+                {
+                    var parametros = new DynamicParameters();
+                    parametros.Add("@cip_mes", oGetListPapeletaInfraccionFlt.id_mes);
+                    parametros.Add("@cip_sancionado", oGetListPapeletaInfraccionFlt.cip_sancionado);
+                    db.Open();
+                    ListEntityRsl = db.Query<GetListPuntaje>("SP_PUNTAJE_ACTUAL_CADETE_SEL_01", param: parametros, commandType: CommandType.StoredProcedure).First();
                     db.Close();
                     db.Dispose();
                 }

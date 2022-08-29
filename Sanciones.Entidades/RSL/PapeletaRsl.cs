@@ -27,5 +27,10 @@ namespace Sanciones.Entidades.RSL
         public string nom_estado { get; set; }
         public int id_tipo_sancion { get; set; }
         public string des_breve_sancion { get; set; }
+        public string des_grado_sancionado { get; set; }
+        public string des_grado_sancionador { get; set; }
     }
+
+
+
 }

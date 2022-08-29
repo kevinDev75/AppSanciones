@@ -124,6 +124,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ReportesController.cs" />
     <Compile Include="Controllers\SancionController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -2089,6 +2090,8 @@
     <Content Include="Scripts\Manage\aprobar_papeleta_infraccion.js" />
     <Content Include="Scripts\Manage\createIncidence.js" />
     <Content Include="Scripts\Manage\mantenimiento_infraccion.js" />
+    <Content Include="Scripts\Manage\ModalDetallePapelera.js" />
+    <Content Include="Scripts\Manage\ModalSancionPerson.js" />
     <Content Include="Scripts\Manage\registrar_infraccion.js" />
     <Content Include="Scripts\Manage\registrar_papeleta_infraccion.js" />
     <Content Include="Scripts\Manage\Sancion.js" />
@@ -2298,6 +2301,7 @@
     <Content Include="Scripts\pdf\pdf.worker.js" />
     <Content Include="Scripts\peity\jquery.peity.min.js" />
     <Content Include="Scripts\perfect-scrollbar\perfect-scrollbar.min.js" />
+    <Content Include="Scripts\reportes\reporte_infracciones.js" />
     <Content Include="Scripts\riskmanagement\riskmanagement.js" />
     <Content Include="Scripts\riskmap\riskmap.js" />
     <Content Include="Scripts\safety\safety.js" />
@@ -2464,6 +2468,8 @@
     <Content Include="Views\Home\_MenuLayout.cshtml" />
     <Content Include="Views\Sancion\AprobarInfracciones.cshtml" />
     <Content Include="Views\Modals\ModalCrearInfraccion.cshtml" />
+    <Content Include="Views\Modals\ModalDetallePapelera.cshtml" />
+    <Content Include="Views\Reportes\Infracciones.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -2499,6 +2505,9 @@
       <Project>{409A24DE-AE5F-45F3-82A0-4E0F19E0B640}</Project>
       <Name>Sanciones.Utilidades</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Reportes\ReportError.rdlc" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

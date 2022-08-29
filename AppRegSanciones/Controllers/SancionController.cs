@@ -39,7 +39,7 @@ namespace AppRegSanciones.Controllers
             }, JsonRequestBehavior.AllowGet);
         }
 
-        
+
 
         [HttpPost]
         public JsonResult UpdateEstadoPapeletaInfraccion(UpdatePapeletaInfraccionFlt request)
@@ -55,7 +55,7 @@ namespace AppRegSanciones.Controllers
         [HttpPost]
         public JsonResult GetListPapeletaInfraccion(GetListPapeletaInfraccionFlt request)
         {
-           
+
 
             var response = _SancionBl.GetListPapeletaInfraccion(request);
 
@@ -76,6 +76,8 @@ namespace AppRegSanciones.Controllers
             }, JsonRequestBehavior.AllowGet);
         }
 
+
+
         [HttpGet]
         public JsonResult GetListTipoSancion()
         {
@@ -86,7 +88,7 @@ namespace AppRegSanciones.Controllers
                 response
             }, JsonRequestBehavior.AllowGet);
         }
-        
+
 
         [HttpPost]
         public JsonResult EjecutarSancionPapeleta(SaveRegistroInfraccionFlt request)
@@ -111,7 +113,7 @@ namespace AppRegSanciones.Controllers
         }
 
         [HttpPost]
-        public JsonResult GetSearchSanciones(GetSearchInfraccionFlt request )
+        public JsonResult GetSearchSanciones(GetSearchInfraccionFlt request)
         {
             var response = _SancionBl.GetSearchSanciones(request);
 
@@ -120,6 +122,18 @@ namespace AppRegSanciones.Controllers
                 response
             }, JsonRequestBehavior.AllowGet);
         }
+
+        [HttpPost]
+        public JsonResult getActualPuntajeInfracciones(GetListPapeletaInfraccionFlt request)
+        {
+            var response = _SancionBl.getActualPuntajeInfracciones(request);
+
+            return Json(new
+            {
+                response
+            }, JsonRequestBehavior.AllowGet);
+        }
+
 
         [Autenticado]
         public ActionResult Registrar()
@@ -149,7 +163,7 @@ namespace AppRegSanciones.Controllers
         {
             return View();
         }
-        
+
 
 
     }
