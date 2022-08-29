@@ -1,4 +1,6 @@
 ﻿using AppMercurial.Tags;
+using Sanciones.Entidades.FLT;
+using Sanciones.Logica;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +11,8 @@ namespace AppRegSanciones.Controllers
 {
     public class ReportesController : Controller
     {
+
+        public readonly ReportesBl _ReporteBl;
         // GET: Reportes
         public ActionResult Index()
         {
@@ -91,6 +95,19 @@ namespace AppRegSanciones.Controllers
         {
             return View();
         }
-        
+
+        [HttpPost]
+        public JsonResult getReporteListaInfracciones(GetListPapeletaInfraccionFlt request)
+        {
+
+
+            var response = _ReporteBl.getReporteListaInfracciones(request);
+
+            return Json(new
+            {
+                response
+            }, JsonRequestBehavior.AllowGet);
+        }
+
     }
 }

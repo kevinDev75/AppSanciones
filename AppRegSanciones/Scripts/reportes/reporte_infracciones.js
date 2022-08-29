@@ -29,6 +29,11 @@ $('#txt_fecha_inicio').val(fechaInicial);
 $('#txt_fecha_final').val(fechaFinal);
 
 
+
+
+
+
+
 function convertDatetoString(today) {
     var dd = String(today.getDate()).padStart(2, '0');
     var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
@@ -37,3 +42,42 @@ function convertDatetoString(today) {
     return dd + '/' + mm + '/' + yyyy;
 
 }
+
+
+
+$('#btnbuscar').on('click', function () {
+    // --
+    $(".preloader").show()
+
+    let objectData = {
+        "fecha_inicio": $('#txt_fecha_inicio').val(),
+        "fecha_fin": $('#txt_fecha_final').val()
+      
+    }
+    console.log(objectData);
+
+    $.ajax({
+        type: "POST",
+        url: RouteRegistrar,
+        data: objectData,
+        dataType: 'json',
+        cache: false,
+        success: function (data) {
+                let obj = data.response.data
+            console.log(obj);
+            if (obj != "") {
+                var ruta = window.location.hostname;
+                console.log(ruta);
+                let a = document.createElement('a');
+                a.target = '_blank';
+                a.href = ruta + "/" + obj;
+                a.click();
+                functions.notify_message(MESSAGE.es.success_insert, 'success')
+            }
+        },
+        error: function (e) {
+            $(".preloader").hide();
+        }
+    });
+
+})

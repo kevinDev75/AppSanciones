@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetReporteInfracciones" targetNamespace="http://tempuri.org/DataSetReporteInfracciones.xsd" xmlns:mstns="http://tempuri.org/DataSetReporteInfracciones.xsd" xmlns="http://tempuri.org/DataSetReporteInfracciones.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetReporteInfracciones" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetReporteInfracciones" msprop:Generator_UserDSName="DataSetReporteInfracciones">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ReportesRsl" msprop:Generator_TableClassName="ReportesRslDataTable" msprop:Generator_TableVarName="tableReportesRsl" msprop:Generator_TablePropName="ReportesRsl" msprop:Generator_RowDeletingName="ReportesRslRowDeleting" msprop:Generator_RowChangingName="ReportesRslRowChanging" msprop:Generator_RowEvHandlerName="ReportesRslRowChangeEventHandler" msprop:Generator_RowDeletedName="ReportesRslRowDeleted" msprop:Generator_UserTableName="ReportesRsl" msprop:Generator_RowChangedName="ReportesRslRowChanged" msprop:Generator_RowEvArgName="ReportesRslRowChangeEvent" msprop:Generator_RowClassName="ReportesRslRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="codigo_infraccion" msprop:Generator_ColumnVarNameInTable="columncodigo_infraccion" msprop:Generator_ColumnPropNameInRow="codigo_infraccion" msprop:Generator_ColumnPropNameInTable="codigo_infraccionColumn" msprop:Generator_UserColumnName="codigo_infraccion" type="xs:string" minOccurs="0" />
+              <xs:element name="des_infraccion" msprop:Generator_ColumnVarNameInTable="columndes_infraccion" msprop:Generator_ColumnPropNameInRow="des_infraccion" msprop:Generator_ColumnPropNameInTable="des_infraccionColumn" msprop:Generator_UserColumnName="des_infraccion" type="xs:string" minOccurs="0" />
+              <xs:element name="des_breve_sancion" msprop:Generator_ColumnVarNameInTable="columndes_breve_sancion" msprop:Generator_ColumnPropNameInRow="des_breve_sancion" msprop:Generator_ColumnPropNameInTable="des_breve_sancionColumn" msprop:Generator_UserColumnName="des_breve_sancion" type="xs:string" minOccurs="0" />
+              <xs:element name="des_clasif_inf_fundamento" msprop:Generator_ColumnVarNameInTable="columndes_clasif_inf_fundamento" msprop:Generator_ColumnPropNameInRow="des_clasif_inf_fundamento" msprop:Generator_ColumnPropNameInTable="des_clasif_inf_fundamentoColumn" msprop:Generator_UserColumnName="des_clasif_inf_fundamento" type="xs:string" minOccurs="0" />
+              <xs:element name="des_clasif_inf_gravedad" msprop:Generator_ColumnVarNameInTable="columndes_clasif_inf_gravedad" msprop:Generator_ColumnPropNameInRow="des_clasif_inf_gravedad" msprop:Generator_ColumnPropNameInTable="des_clasif_inf_gravedadColumn" msprop:Generator_UserColumnName="des_clasif_inf_gravedad" type="xs:string" minOccurs="0" />
+              <xs:element name="cantidad" msprop:Generator_ColumnVarNameInTable="columncantidad" msprop:Generator_ColumnPropNameInRow="cantidad" msprop:Generator_ColumnPropNameInTable="cantidadColumn" msprop:Generator_UserColumnName="cantidad" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
