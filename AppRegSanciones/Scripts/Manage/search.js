@@ -92,7 +92,7 @@ function getPuntaje() {
                         var obj = data.response.data;
                         console.log(obj);
                        
-                        $('#idpuntaje').html(obj.puntaje_posterior);
+                        $('#idpuntaje').html((obj.puntaje_posterior == 0 ? 200 : obj.puntaje_posterior ));
                         puntaje_posterior = obj.puntaje_posterior;
                         cant_arresto_rigor = obj.cant_arresto_rigor;
                         cant_arresto_simple = obj.cant_arresto_simple;
