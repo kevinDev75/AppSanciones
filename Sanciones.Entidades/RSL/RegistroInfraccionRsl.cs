@@ -13,8 +13,8 @@ namespace Sanciones.Entidades.RSL
 
     public class GetListRegistroInfraccionRsl
     {
-        public string id_reg_infraccion { get; set; }
-        public string id_papeleta_infraccion_disc { get; set; }
+        public long id_reg_infraccion { get; set; }
+        public long id_papeleta_infraccion_disc { get; set; }
         public string fecha { get; set; }
         public string cadete_sancionador { get; set; }
         public string grado_sancionador { get; set; }
@@ -23,11 +23,11 @@ namespace Sanciones.Entidades.RSL
         public string codigo_infraccion { get; set; }
         public string des_infraccion { get; set; }
         public string Nota { get; set; }
-        public string puntaje_anterior { get; set; }
-        public string puntaje_demerito { get; set; }
-        public string puntaje_posterior { get; set; }
-        public string cant_arresto_simple { get; set; }
-        public string cant_arresto_rigor { get; set; }
+        public int puntaje_anterior { get; set; }
+        public int puntaje_demerito { get; set; }
+        public int puntaje_posterior { get; set; }
+        public int cant_arresto_simple { get; set; }
+        public int cant_arresto_rigor { get; set; }
     }
 
     public class GetListPuntaje
