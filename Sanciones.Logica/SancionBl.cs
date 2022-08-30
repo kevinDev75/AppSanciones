@@ -91,6 +91,7 @@ namespace Sanciones.Logica
                 }
 
 
+
                 ListEntity = oSancionDa.GetListPapeletaInfraccion(request);
                 response.data = ListEntity;
             }
