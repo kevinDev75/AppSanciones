@@ -125,6 +125,7 @@ $(document).on('click', '#btn_ver_detalle_papeleta_row', function () {
 // -- EDITAR DATOS DE LA TABLA
 $(document).on('click', '#btn_aprobar_papeleta_row', function () {
     // --
+    console.log("ttt");
     let id_papeleta = $(this).attr('data-id')
     let id_estado_papeleta = $(this).attr('data-id-estado-papeleta')
     let indexObject = listPapeletasPorAprobar.findIndex(x => x.id_papeleta_infraccion_disc == id_papeleta)

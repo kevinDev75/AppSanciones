@@ -20,6 +20,32 @@ namespace Sanciones.Data
             cadenaConexion = ConfigurationManager.ConnectionStrings["conexionBD"].ConnectionString;
         }
 
+
+
+        public List<ReportesSancionadorRsl> getReporteSancionador(GetListPapeletaInfraccionFlt oGetListPapeletaInfraccionFlt)
+        {
+            List<ReportesSancionadorRsl> ListEntityRsl = new List<ReportesSancionadorRsl>();
+
+            try
+            {
+                using (IDbConnection db = new SqlConnection(cadenaConexion))
+                {
+                    var parametros = new DynamicParameters();
+                    parametros.Add("@fecha_inicio", oGetListPapeletaInfraccionFlt.fecha_inicio);
+                    parametros.Add("@fecha_fin", oGetListPapeletaInfraccionFlt.fecha_fin);
+                    parametros.Add("@cip_sancionador", oGetListPapeletaInfraccionFlt.cip_sancionador);
+                    db.Open();
+                    ListEntityRsl = db.Query<ReportesSancionadorRsl>("SP_REPORTE_SEL_LIST_SANCIONADORES_01", param: parametros, commandType: CommandType.StoredProcedure).ToList();
+                    db.Close();
+                    db.Dispose();
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return ListEntityRsl;
+        }
         public List<ReportesRsl> getReporteListaInfracciones(GetListPapeletaInfraccionFlt oGetListPapeletaInfraccionFlt)
         {
             List<ReportesRsl> ListEntityRsl = new List<ReportesRsl>();

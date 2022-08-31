@@ -98,6 +98,9 @@ namespace AppRegSanciones
             bundles.Add(new ScriptBundle("~/bundles/reporteInfraccion").Include(
                     "~/Scripts/reportes/reporte_infracciones.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/reporteSancionadores").Include(
+                   "~/Scripts/reportes/reporte_sancionadores.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/createIncidence").Include(
                     "~/Scripts/Manage/createIncidence.js"));
 
@@ -143,7 +146,7 @@ namespace AppRegSanciones
             bundles.Add(new ScriptBundle("~/bundles/ModalSancionPerson").Include(
                 "~/Scripts/Manage/ModalSancionPerson.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/ModalSancionPerson").Include(
+            bundles.Add(new ScriptBundle("~/bundles/ModalDetallePapelera").Include(
                 "~/Scripts/Manage/ModalDetallePapelera.js"));
             
 

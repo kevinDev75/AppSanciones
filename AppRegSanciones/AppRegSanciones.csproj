@@ -2320,6 +2320,7 @@
     <Content Include="Scripts\peity\jquery.peity.min.js" />
     <Content Include="Scripts\perfect-scrollbar\perfect-scrollbar.min.js" />
     <Content Include="Scripts\reportes\reporte_infracciones.js" />
+    <Content Include="Scripts\reportes\reporte_sancionadores.js" />
     <Content Include="Scripts\riskmanagement\riskmanagement.js" />
     <Content Include="Scripts\riskmap\riskmap.js" />
     <Content Include="Scripts\safety\safety.js" />
@@ -2488,6 +2489,7 @@
     <Content Include="Views\Modals\ModalCrearInfraccion.cshtml" />
     <Content Include="Views\Modals\ModalDetallePapelera.cshtml" />
     <Content Include="Views\Reportes\Infracciones.cshtml" />
+    <Content Include="Views\Reportes\Sancionadores.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -2525,6 +2527,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Reportes\ReportSancionador.rdlc" />
     <EmbeddedResource Include="Reportes\ReportInfracciones.rdlc" />
   </ItemGroup>
   <PropertyGroup>

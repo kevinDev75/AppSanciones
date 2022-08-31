@@ -10,7 +10,7 @@ function buscarSancionador() {
 
     var txt_cip_buscar_sancionador = $('#txt_cip_buscar_sancionador').val()
     var txt_nombres_buscar_sancionador = $('#txt_nombres_buscar_sancionador').val()
-
+    console.log("as");
 
     // -- OBJECT
     var objectData = {
@@ -28,6 +28,7 @@ function buscarSancionador() {
         cache: false,
         success: function (data) {
             let obj = data.response.data
+            console.log(obj);
             //console.log(obj)
             if (obj != null) {
 

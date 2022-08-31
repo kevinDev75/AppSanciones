@@ -100,6 +100,12 @@ namespace AppRegSanciones.Controllers
         {
             return View();
         }
+        [Autenticado]
+        public ActionResult Sancionadores()
+        {
+            return View();
+        }
+
 
         [HttpPost]
         public JsonResult getReporteListaInfracciones(GetListPapeletaInfraccionFlt request)
@@ -107,6 +113,18 @@ namespace AppRegSanciones.Controllers
 
 
             var response = _ReporteBl.getReporteListaInfracciones(request);
+
+            return Json(new
+            {
+                response
+            }, JsonRequestBehavior.AllowGet);
+        }
+        [HttpPost]
+        public JsonResult getReporteSancionador(GetListPapeletaInfraccionFlt request)
+        {
+
+
+            var response = _ReporteBl.getReporteSancionador(request);
 
             return Json(new
             {
