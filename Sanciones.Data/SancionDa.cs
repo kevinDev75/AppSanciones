@@ -42,6 +42,56 @@ namespace Sanciones.Data
             }
         }
 
+        public void UpdateInfraccionXID(GetSearchInfraccionFlt oSavePapeletaFlt)
+        {
+            try
+            {
+                using (IDbConnection db = new SqlConnection(cadenaConexion))
+                {
+                    db.Open();
+                    var parametros = new DynamicParameters();
+                    parametros.Add("@codigo_infraccion", oSavePapeletaFlt.codigo_infraccion);
+                    parametros.Add("@id_tipo_sancion", oSavePapeletaFlt.id_tipo_sancion);
+                    parametros.Add("@id_clasif_inf_gravedad", oSavePapeletaFlt.id_clasif_inf_gravedad);
+                    parametros.Add("@id_clasif_inf_fundamento", oSavePapeletaFlt.id_clasif_inf_fundamento);
+                    parametros.Add("@des_infraccion", oSavePapeletaFlt.des_infraccion);
+
+                    db.Execute("SP_UPDATE_INFRACCION_SEL_XID_01", param: parametros, commandType: CommandType.StoredProcedure);
+                    db.Close();
+                    db.Dispose();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+        
+        public void UpdateInfraccionDemeritadoXID(getInsertDemeritoFlt oSavePapeletaFlt)
+        {
+            try
+            {
+                using (IDbConnection db = new SqlConnection(cadenaConexion))
+                {
+                    db.Open();
+                    var parametros = new DynamicParameters();
+                    parametros.Add("@codigo_infraccion", oSavePapeletaFlt.codigo_infraccion);
+                    parametros.Add("@id_grado", oSavePapeletaFlt.id_grado);
+                    parametros.Add("@id_tipo_sancion", oSavePapeletaFlt.id_tipo_sancion);
+                    parametros.Add("@puntaje_demerito", oSavePapeletaFlt.puntaje_demerito);
+                    
+
+                    db.Execute("SP_UPDATE_REL_PUNTAJE_X_GRADO_SEL_01", param: parametros, commandType: CommandType.StoredProcedure);
+                    db.Close();
+                    db.Dispose();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+
         public void UpdateEstadoPapeletaInfraccion(UpdatePapeletaInfraccionFlt oUpdatePapeletaInfraccionFlt)
         {
             try
@@ -285,6 +335,53 @@ namespace Sanciones.Data
                     parametros.Add("@cip_sancionado", oGetListPapeletaInfraccionFlt.cip_sancionado);
                     db.Open();
                     ListEntityRsl = db.Query<GetListPuntaje>("SP_PUNTAJE_ACTUAL_CADETE_SEL_01", param: parametros, commandType: CommandType.StoredProcedure).First();
+                    db.Close();
+                    db.Dispose();
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return ListEntityRsl;
+        }
+
+
+        public GetSearchInfraccionRsl getInfraccionDetailxID(GetSearchInfraccionFlt oGetListPapeletaInfraccionFlt)
+        {
+            GetSearchInfraccionRsl ListEntityRsl = new GetSearchInfraccionRsl();
+
+            try
+            {
+                using (IDbConnection db = new SqlConnection(cadenaConexion))
+                {
+                    var parametros = new DynamicParameters();
+                    parametros.Add("@codigo_infraccion", oGetListPapeletaInfraccionFlt.codigo_infraccion);
+                    db.Open();
+                    ListEntityRsl = db.Query<GetSearchInfraccionRsl>("SP_BUSCAR_INFRACCION_SEL_XID_01", param: parametros, commandType: CommandType.StoredProcedure).First();
+                    db.Close();
+                    db.Dispose();
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return ListEntityRsl;
+        }
+
+        public List<getInsertDemeritoRsl> getPuntajesxInfraccionxID(GetSearchInfraccionFlt oGetListPapeletaInfraccionFlt)
+        {
+            List<getInsertDemeritoRsl> ListEntityRsl = new List<getInsertDemeritoRsl>();
+
+            try
+            {
+                using (IDbConnection db = new SqlConnection(cadenaConexion))
+                {
+                    var parametros = new DynamicParameters();
+                    parametros.Add("@codigo_infraccion", oGetListPapeletaInfraccionFlt.codigo_infraccion);
+                    db.Open();
+                    ListEntityRsl = db.Query<getInsertDemeritoRsl>("SP_BUSCAR_REL_PUNTAJE_X_GRADO_SEL_01", param: parametros, commandType: CommandType.StoredProcedure).ToList();
                     db.Close();
                     db.Dispose();
                 }

@@ -19,7 +19,7 @@ var tableDataInfraciones = $('#tbl_data_infraciones').DataTable({
 
 function buscarInfracion() {
 
-
+    listSancion = new Array();
     $("#tbl_data_infraciones").DataTable().clear().draw()
 
     var txtcodinfra = $('#idCodigoInfra').val()
@@ -55,8 +55,8 @@ function buscarInfracion() {
             if (obj != null) {
 
                 // -- CADETES
-                let lista = obj
-                listSancion = lista
+                //let lista = obj
+                listSancion = obj
 
                 console.log(listSancion);
                 listSancion.forEach((element) => {
@@ -69,7 +69,7 @@ function buscarInfracion() {
                         element.des_breve_sancion,
                         //' <div style="text-align:center;" data-id="' + element.codigo_infraccion + '" id="btn_seleccionar_sancion_row"><i style="color: #50BDBA" class="fa fa-check"></i></div>' +
                         '<div style="text-align:center;">' + 
-                        ' <div style="text-align:center;" class= "btn btn-sm btn-primary" data-id="' + element.codigo_infraccion + '" id="btn_seleccionar_sancion_row"> <i class="fa fa-edit"></i></div>' + 
+                        ' <div style="text-align:center;" onclick="editarInfra(\'' + element.codigo_infraccion + '\')" '  + ' class= "btn btn-sm btn-primary" data-id="' + element.codigo_infraccion + '" id="btn_seleccionar_sancion_row"> <i class="fa fa-edit"></i></div>' + 
                         ' <div style="text-align:center;" class= "btn btn-sm btn-danger" data-id="' + element.codigo_infraccion + '" id="btn_anular_papeleta_row"> <i class="fa fa-window-close"></i></div>'
                         + '</div>'
                     ]).draw(false);
@@ -89,7 +89,69 @@ $('#btnbuscar').on('click', function () {
     buscarInfracion();
 });
 
+function limpiarInfra() {
+    $("#txtcodigoinfra").val("");
+    $("#idNombreInfra2").val("");
+    $("#idTipoSancion2").val(1);
+    $("#idtipoClasFunda2").val(1);
+    $("#idtipoClasGrave2").val(1);
+
+  
+}
+function editarInfra(codigo) {
+    isupdate = true;
+    console.log(listSancion);
+    $("#txtcodigoinfra").prop('disabled', true);
+
+    var item = listSancion.find(x => x.codigo_infraccion == codigo);
+    console.log(item);
+    limpiarInfra();
+    $("#txtcodigoinfra").val(codigo);
+    $("#txtcodigoinfra").val(codigo);
+    $("#idNombreInfra2").val(item.des_infraccion);
+    $("#idTipoSancion2").val(item.id_tipo_sancion);
+    $("#idtipoClasFunda2").val(item.id_clasif_inf_fundamento);
+    $("#idtipoClasGrave2").val(item.id_clasif_inf_gravedad);
+
+    var objectData = {
+        // --
+        "codigo_infraccion": $("#txtcodigoinfra").val()
+    }
+
+
+    $.ajax({
+        type: "POST",
+        url: urlGetPuntajexInfraccionxID,
+        data: objectData,
+        dataType: 'json',
+        cache: false,
+        success: function (data) {
+            let obj = data.response.data
+            
+            if (obj != null) {
+                console.log(obj);
+                obj.forEach((element) => {
+                    console.log(element.id_grado);
+                    $("#puntajeDeme_" + element.id_grado).val(element.puntaje_demerito); 
+                    $("#TipoSancion_" + element.id_grado).val(element.id_tipo_sancion); 
+                    
+                }) 
+                //puntajeDeme_2
+                $('#ModalCreateIncidence').modal('show')
+            }
+        }
+    });
+
+
+
+    
+}
+
+
+
 $('#btncrearinfracion').on('click', function () {
+    isupdate = false;
+    $("#txtcodigoinfra").prop('disabled', false);
 
     $('#txtcodigoinfra').val('')
     $('#idNombreInfra2').val('')

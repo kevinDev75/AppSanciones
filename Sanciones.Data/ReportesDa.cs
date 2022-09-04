@@ -70,5 +70,7 @@ namespace Sanciones.Data
             return ListEntityRsl;
         }
 
+
+
     }
 }

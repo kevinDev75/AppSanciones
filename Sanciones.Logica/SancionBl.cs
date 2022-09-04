@@ -239,8 +239,66 @@ namespace Sanciones.Logica
             return response;
         }
 
+        public ApiResponse UpdateInfraccionXID (GetSearchInfraccionFlt saveEntity)
+        {
+            ApiResponse response = new ApiResponse("OK", string.Empty);
 
+            try
+            {
+                var oSancionDa = new SancionDa();
+                oSancionDa.UpdateInfraccionXID(saveEntity);
 
+                //registrar demeritos puntajes
+                foreach (getInsertDemeritoFlt item in saveEntity.listDemeritado)
+                {
+                    oSancionDa.UpdateInfraccionDemeritadoXID(item);
+                }
+            }
+            catch (Exception ex)
+            {
+                response.status = "Error";
+                response.msg = ex.Message;
+            }
+            return response;
+        }
+        public ApiResponse getInfraccionDetailxID(GetSearchInfraccionFlt saveEntity)
+        {
+            ApiResponse response = new ApiResponse("OK", string.Empty);
+            GetSearchInfraccionRsl ListEntity = new GetSearchInfraccionRsl();
+            try
+            {
+                var oSancionDa = new SancionDa();
+                ListEntity = oSancionDa.getInfraccionDetailxID(saveEntity);
+                response.data = ListEntity;
+
+            }
+            catch (Exception ex)
+            {
+                response.status = "Error";
+                response.msg = ex.Message;
+            }
+            return response;
+        }
+
+        public ApiResponse getPuntajesxInfraccionxID(GetSearchInfraccionFlt oGetListPapeletaInfraccionFlt)
+        {
+            ApiResponse response = new ApiResponse("OK", string.Empty);
+            List<getInsertDemeritoRsl> ListEntity = new List<getInsertDemeritoRsl>();
+
+            try
+            {
+                var oSancionDa = new SancionDa();
+                ListEntity = oSancionDa.getPuntajesxInfraccionxID(oGetListPapeletaInfraccionFlt);
+                response.data = ListEntity;
+            }
+            catch (Exception ex)
+            {
+                ListEntity = null;
+                response.status = "Error";
+                response.msg = ex.Message;
+            }
+            return response;
+        }
         public ApiResponse GetListRegistroInfraccion(string cip_sancionado)
         {
             ApiResponse response = new ApiResponse("OK", string.Empty);

@@ -38,7 +38,16 @@ namespace AppRegSanciones.Controllers
                 response
             }, JsonRequestBehavior.AllowGet);
         }
+        [HttpPost]
+        public JsonResult UpdateInfraccionXID(GetSearchInfraccionFlt request)
+        {
+            var response = _SancionBl.UpdateInfraccionXID(request);
 
+            return Json(new
+            {
+                response
+            }, JsonRequestBehavior.AllowGet);
+        }
 
 
         [HttpPost]
@@ -76,6 +85,28 @@ namespace AppRegSanciones.Controllers
             }, JsonRequestBehavior.AllowGet);
         }
 
+        [HttpPost]
+        public JsonResult getPuntajesxInfraccionxID(GetSearchInfraccionFlt oGetListPapeletaInfraccionFlt)
+        {
+            var response = _SancionBl.getPuntajesxInfraccionxID(oGetListPapeletaInfraccionFlt);
+
+            return Json(new
+            {
+                response
+            }, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public JsonResult getInfraccionDetailxID(GetSearchInfraccionFlt saveEntity)
+        {
+            var response = _SancionBl.getInfraccionDetailxID(saveEntity);
+
+            return Json(new
+            {
+                response
+            }, JsonRequestBehavior.AllowGet);
+        }
+        
 
 
         [HttpGet]

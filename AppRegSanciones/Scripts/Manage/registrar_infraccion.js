@@ -1,6 +1,6 @@
 ﻿
 var listaGrados = null;
-
+var isupdate = false;
 var tableRelDemeritado = $('#tbl_data_relDemeritado').DataTable({
     //responsive: true,
     //order: [[0, "desc"]]
@@ -9,7 +9,8 @@ var tableRelDemeritado = $('#tbl_data_relDemeritado').DataTable({
 
 
 $('#btngrabar').on('click', function () {
-
+    isupdate = $("#txtcodigoinfra").prop('disabled');
+    console.log(isupdate);
     var txtcodinfra = $('#txtcodigoinfra').val()
     var txtNombreInfra = $('#idNombreInfra2').val()
     var idTipoSancion = $('#idTipoSancion2').val()
@@ -65,7 +66,7 @@ $('#btngrabar').on('click', function () {
                 // --
                 $.ajax({
                     type: "POST",
-                    url: urlSaveInfraccionMaestro,
+                    url: (isupdate) ? UpdateInfraccionXID : urlSaveInfraccionMaestro,
                     data: objectData,
                     dataType: 'json',
                     cache: false,
@@ -76,7 +77,8 @@ $('#btngrabar').on('click', function () {
                         // --
                         if (obj.status == 'OK') {
                             $('#ModalCreateIncidence').modal('hide');
-                            functions.notify_message(MESSAGE.es.success_insert, 'success')
+                            //functions.notify_message(MESSAGE.es.success_insert, 'success')
+                            buscarInfracion();
 
                         } else {
 
